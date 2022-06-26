@@ -52,7 +52,7 @@ const DatagridBody: FunctionComponent<DatagridBodyProps> = React.forwardRef(
             selected: selectedIds?.includes(record.id),
             style: rowStyle ? rowStyle(record, rowIndex) : null,
           },
-          children
+          children as any
         )
       )}
     </TableBody>

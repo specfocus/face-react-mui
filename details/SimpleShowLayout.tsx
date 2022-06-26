@@ -7,7 +7,7 @@ import { Entity } from '@specfocus/spec-focus/entities/Entity';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Children, isValidElement, ReactNode } from 'react';
-import { Labeled } from '../core/Labeled';
+import { Labeled } from '../apps/Labeled';
 
 /**
  * Layout for a Show view showing fields in one column.
@@ -102,7 +102,7 @@ SimpleShowLayout.propTypes = {
   sx: PropTypes.any,
 };
 
-const PREFIX = 'RaSimpleShowLayout';
+const PREFIX = 'SimpleShowLayout';
 
 export const SimpleShowLayoutClasses = {
   stack: `${PREFIX}-stack`,

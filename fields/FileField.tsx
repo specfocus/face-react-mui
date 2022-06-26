@@ -120,7 +120,7 @@ FileField.propTypes = {
   rel: PropTypes.string,
 };
 
-const PREFIX = 'RaFileField';
+const PREFIX = 'FileField';
 
 const Root = styled('div', {
   name: PREFIX,

@@ -97,7 +97,7 @@ export const SavedQueryFilterListItem = memo(
   arePropsEqual
 );
 
-const PREFIX = 'RaSavedQueryFilterListItem';
+const PREFIX = 'SavedQueryFilterListItem';
 export const SavedQueryFilterListItemClasses = {
   listItemButton: `${PREFIX}-listItemButton`,
   listItemText: `${PREFIX}-listItemText`,

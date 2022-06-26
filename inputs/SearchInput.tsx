@@ -37,7 +37,7 @@ export const SearchInput = (props: SearchInputProps) => {
 
 export type SearchInputProps = CommonInputProps & TextInputProps;
 
-const PREFIX = 'RaSearchInput';
+const PREFIX = 'SearchInput';
 
 const StyledTextInput = styled(TextInput, {
   name: PREFIX,

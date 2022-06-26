@@ -146,7 +146,7 @@ export interface BulkDeleteWithConfirmButtonProps
   mutationMode: MutationMode;
 }
 
-const PREFIX = 'RaBulkDeleteWithConfirmButton';
+const PREFIX = 'BulkDeleteWithConfirmButton';
 
 const StyledButton = styled(Button, {
   name: PREFIX,

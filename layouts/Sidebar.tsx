@@ -62,7 +62,7 @@ export interface SidebarProps extends DrawerProps {
   size?: number;
 }
 
-const PREFIX = 'RaSidebar';
+const PREFIX = 'Sidebar';
 
 export const SidebarClasses = {
   docked: `${PREFIX}-docked`,

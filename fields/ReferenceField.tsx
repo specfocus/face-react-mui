@@ -8,7 +8,7 @@ import ErrorIcon from '@mui/icons-material/Error';
 import { ResourceContextProvider } from '@specfocus/view-focus/core';
 
 import { LinearProgress } from '../layouts';
-import { Link } from '../core/Link';
+import { Link } from '../apps/Link';
 import { PublicFieldProps, fieldPropTypes, InjectedFieldProps } from './types';
 import { SxProps } from '@mui/system';
 import { useCreatePath } from '@specfocus/view-focus.navigation/routes/useCreatePath';
@@ -241,7 +241,7 @@ export interface ReferenceFieldViewProps
 
 const PureReferenceFieldView = memo(ReferenceFieldView);
 
-const PREFIX = 'RaReferenceField';
+const PREFIX = 'ReferenceField';
 
 export const ReferenceFieldClasses = {
   link: `${PREFIX}-link`,

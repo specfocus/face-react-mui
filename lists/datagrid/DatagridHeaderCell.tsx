@@ -97,7 +97,7 @@ export default memo(
     props.resource === nextProps.resource
 );
 
-const PREFIX = 'RaDatagridHeaderCell';
+const PREFIX = 'DatagridHeaderCell';
 
 export const DatagridHeaderCellClasses = {
   icon: `${PREFIX}-icon`,

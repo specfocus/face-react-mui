@@ -90,7 +90,7 @@ export interface BulkActionsToolbarProps {
   className?: string;
 }
 
-const PREFIX = 'RaBulkActionsToolbar';
+const PREFIX = 'BulkActionsToolbar';
 
 export const BulkActionsToolbarClasses = {
   toolbar: `${PREFIX}-toolbar`,

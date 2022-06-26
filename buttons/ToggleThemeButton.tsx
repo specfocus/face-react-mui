@@ -4,7 +4,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
 import { useTheme } from '../layouts';
-import { RaThemeOptions } from '../core';
+import { RaThemeOptions } from '../apps';
 
 /**
  * Button toggling the theme (light or dark).

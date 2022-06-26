@@ -110,7 +110,7 @@ const sanitizeRestProps = ({
   ...rest
 }) => rest;
 
-const PREFIX = 'RaEdit';
+const PREFIX = 'Edit';
 
 export const EditClasses = {
   main: `${PREFIX}-main`,

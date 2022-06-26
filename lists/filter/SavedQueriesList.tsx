@@ -105,7 +105,7 @@ export const SavedQueriesList = ({
   );
 };
 
-const PREFIX = 'RaSavedQueriesList';
+const PREFIX = 'SavedQueriesList';
 
 export const SavedQueriesListClasses = {
   floatingIcon: `${PREFIX}-floatingIcon`,

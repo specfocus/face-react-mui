@@ -156,7 +156,7 @@ export interface UserMenuProps {
   icon?: ReactNode;
 }
 
-const PREFIX = 'RaUserMenu';
+const PREFIX = 'UserMenu';
 
 export const UserMenuClasses = {
   userButton: `${PREFIX}-userButton`,

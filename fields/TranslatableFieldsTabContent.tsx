@@ -8,7 +8,7 @@ import {
   ReactElement,
   ReactNode
 } from 'react';
-import { Labeled } from '../core/Labeled';
+import { Labeled } from '../apps/Labeled';
 
 /**
  * Default container for a group of translatable fields inside a TranslatableFields components.
@@ -83,7 +83,7 @@ export type TranslatableFieldsTabContentProps = {
   resource: string;
 };
 
-const PREFIX = 'RaTranslatableFieldsTabContent';
+const PREFIX = 'TranslatableFieldsTabContent';
 
 const Root = styled('div', {
   name: PREFIX,

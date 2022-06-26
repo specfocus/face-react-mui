@@ -58,7 +58,7 @@ export interface ListToolbarProps
   hasCreate?: boolean;
 }
 
-const PREFIX = 'RaListToolbar';
+const PREFIX = 'ListToolbar';
 
 const Root = styled(Toolbar, {
   name: PREFIX,

@@ -102,7 +102,7 @@ export interface TranslatableInputsProps extends UseTranslatableOptions {
   variant?: 'standard' | 'outlined' | 'filled';
 }
 
-const PREFIX = 'RaTranslatableInputs';
+const PREFIX = 'TranslatableInputs';
 
 const Root = styled('div', {
   name: PREFIX,

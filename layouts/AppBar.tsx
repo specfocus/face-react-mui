@@ -129,7 +129,7 @@ export interface AppBarProps extends Omit<MuiAppBarProps, 'title'> {
   userMenu?: JSX.Element | boolean;
 }
 
-const PREFIX = 'RaAppBar';
+const PREFIX = 'AppBar';
 
 export const AppBarClasses = {
   appBar: `${PREFIX}-appBar`,

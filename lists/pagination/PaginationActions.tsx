@@ -79,7 +79,7 @@ PaginationActions.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
-const PREFIX = 'RaPaginationActions';
+const PREFIX = 'PaginationActions';
 
 const Root = styled('div', {
   name: PREFIX,

@@ -115,7 +115,7 @@ Notification.propTypes = {
   multiLine: PropTypes.bool,
 };
 
-const PREFIX = 'RaNotification';
+const PREFIX = 'Notification';
 
 export const NotificationClasses = {
   success: `${PREFIX}-success`,

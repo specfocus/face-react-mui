@@ -84,7 +84,7 @@ export interface LoginProps extends HtmlHTMLAttributes<HTMLDivElement> {
   sx?: SxProps;
 }
 
-const PREFIX = 'RaLogin';
+const PREFIX = 'Login';
 export const LoginClasses = {
   card: `${PREFIX}-card`,
   avatar: `${PREFIX}-avatar`,

@@ -28,7 +28,7 @@ export interface CardContentInnerProps {
   children: ReactNode;
 }
 
-const PREFIX = 'RaCardContentInner';
+const PREFIX = 'CardContentInner';
 
 export const CardContentInnerClasses = {
   root: `${PREFIX}-root`,

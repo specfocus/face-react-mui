@@ -46,7 +46,7 @@ export interface LoadingProps {
   sx?: SxProps;
 }
 
-const PREFIX = 'RaLoading';
+const PREFIX = 'Loading';
 
 export const LoadingClasses = {
   root: `${PREFIX}-root`,

@@ -128,7 +128,7 @@ DeleteWithConfirmButton.propTypes = {
   translateOptions: PropTypes.object,
 };
 
-const PREFIX = 'RaDeleteWithConfirmButton';
+const PREFIX = 'DeleteWithConfirmButton';
 
 const StyledButton = styled(Button, {
   name: PREFIX,

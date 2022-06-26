@@ -164,7 +164,7 @@ BulkUpdateWithConfirmButton.propTypes = {
   mutationMode: PropTypes.oneOf(['pessimistic', 'optimistic', 'undoable']),
 };
 
-const PREFIX = 'RaBulkUpdateWithConfirmButton';
+const PREFIX = 'BulkUpdateWithConfirmButton';
 
 const StyledButton = styled(Button, {
   name: PREFIX,

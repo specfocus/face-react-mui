@@ -50,7 +50,7 @@ FilterFormInput.propTypes = {
   resource: PropTypes.string,
 };
 
-const PREFIX = 'RaFilterFormInput';
+const PREFIX = 'FilterFormInput';
 
 export const FilterFormInputClasses = {
   spacer: `${PREFIX}-spacer`,

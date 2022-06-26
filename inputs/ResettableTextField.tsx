@@ -205,7 +205,7 @@ export type ResettableTextFieldProps = Props &
     onChange?: (eventOrValue: any) => void;
   };
 
-const PREFIX = 'RaResettableTextField';
+const PREFIX = 'ResettableTextField';
 
 export const ResettableTextFieldClasses = {
   clearIcon: `${PREFIX}-clearIcon`,

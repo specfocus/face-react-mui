@@ -6,7 +6,7 @@ import { Tab as MuiTab, TabProps as MuiTabProps, Stack } from '@mui/material';
 import { ResponsiveStyleValue } from '@mui/system';
 import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
 import clsx from 'clsx';
-import { Labeled } from '../core/Labeled';
+import { Labeled } from '../apps/Labeled';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';
 
 /**

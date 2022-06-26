@@ -45,7 +45,7 @@ export interface LinearProgressProps extends ProgressProps {
   timeout?: number;
 }
 
-const PREFIX = 'RaLinearProgress';
+const PREFIX = 'LinearProgress';
 
 const StyledProgress = styled(Progress, {
   name: PREFIX,

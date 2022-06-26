@@ -174,7 +174,7 @@ SaveButton.propTypes = {
   alwaysEnable: PropTypes.bool,
 };
 
-const PREFIX = 'RaSaveButton';
+const PREFIX = 'SaveButton';
 
 const StyledButton = styled(Button, {
   name: PREFIX,

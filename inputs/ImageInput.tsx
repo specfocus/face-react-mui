@@ -12,7 +12,7 @@ export const ImageInput = (props: ImageInputProps) => (
 
 export type ImageInputProps = FileInputProps;
 
-const PREFIX = 'RaImageInput';
+const PREFIX = 'ImageInput';
 
 const StyledFileInput = styled(FileInput, {
   name: PREFIX,

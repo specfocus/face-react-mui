@@ -93,7 +93,7 @@ CreateButton.propTypes = {
   label: PropTypes.string,
 };
 
-const PREFIX = 'RaCreateButton';
+const PREFIX = 'CreateButton';
 
 export const CreateButtonClasses = {
   floating: `${PREFIX}-floating`,

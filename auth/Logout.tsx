@@ -56,7 +56,7 @@ Logout.propTypes = {
   icon: PropTypes.element,
 };
 
-const PREFIX = 'RaLogout';
+const PREFIX = 'Logout';
 
 export const LogoutClasses = {
   icon: `${PREFIX}-icon`,

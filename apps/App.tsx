@@ -3,8 +3,8 @@ import { CoreAdminProps } from '@specfocus/view-focus/core';
 import { localStorageStore } from '@specfocus/view-focus.states/states/localStorageStore';
 import { ComponentType } from 'react';
 import { defaultI18nProvider } from './defaultI18nProvider';
-import { AdminContext } from './AdminContext';
-import { AdminUI } from './AdminUI';
+import { AdminContext } from './AppContext';
+import { AdminUI } from './AppUI';
 
 /**
  * Main admin component, entry point to the application.

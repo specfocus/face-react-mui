@@ -127,7 +127,7 @@ Button.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
-const PREFIX = 'RaButton';
+const PREFIX = 'Button';
 
 const StyledButton = styled(MuiButton, {
   name: PREFIX,

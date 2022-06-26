@@ -91,7 +91,7 @@ const sanitizeRestProps = ({
   ...rest
 }) => rest;
 
-const PREFIX = 'RaCreate';
+const PREFIX = 'Create';
 
 export const CreateClasses = {
   main: `${PREFIX}-main`,

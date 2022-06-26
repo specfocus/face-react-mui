@@ -92,7 +92,7 @@ export const LoginForm = (props: LoginFormProps) => {
   );
 };
 
-const PREFIX = 'RaLoginForm';
+const PREFIX = 'LoginForm';
 
 export const LoginFormClasses = {
   content: `${PREFIX}-content`,

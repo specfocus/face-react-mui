@@ -195,7 +195,7 @@ TabbedShowLayout.propTypes = {
 
 const DefaultTabs = <TabbedShowLayoutTabs />;
 
-const PREFIX = 'RaTabbedShowLayout';
+const PREFIX = 'TabbedShowLayout';
 
 export const TabbedShowLayoutClasses = {
   content: `${PREFIX}-content`,

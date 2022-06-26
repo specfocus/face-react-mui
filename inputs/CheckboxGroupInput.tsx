@@ -13,7 +13,7 @@ import clsx from 'clsx';
 import get from 'lodash/get';
 import PropTypes from 'prop-types';
 import { FunctionComponent, useCallback } from 'react';
-import { Labeled } from '../core/Labeled';
+import { Labeled } from '../apps/Labeled';
 import { LinearProgress } from '../layouts';
 import { CheckboxGroupInputItem } from './CheckboxGroupInputItem';
 import { CommonInputProps } from './CommonInputProps';
@@ -270,7 +270,7 @@ export type CheckboxGroupInputProps = Omit<CommonInputProps, 'source'> &
     source?: string;
   };
 
-const PREFIX = 'RaCheckboxGroupInput';
+const PREFIX = 'CheckboxGroupInput';
 
 export const CheckboxGroupInputClasses = {
   label: `${PREFIX}-label`,

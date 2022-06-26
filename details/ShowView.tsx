@@ -78,7 +78,7 @@ const sanitizeRestProps = ({
   ...rest
 }) => rest;
 
-const PREFIX = 'RaShow';
+const PREFIX = 'Show';
 
 export const ShowClasses = {
   main: `${PREFIX}-main`,

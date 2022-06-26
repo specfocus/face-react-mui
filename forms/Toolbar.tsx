@@ -96,7 +96,7 @@ Toolbar.propTypes = {
   resource: PropTypes.string,
 };
 
-const PREFIX = 'RaToolbar';
+const PREFIX = 'Toolbar';
 
 export const ToolbarClasses = {
   desktopToolbar: `${PREFIX}-desktopToolbar`,

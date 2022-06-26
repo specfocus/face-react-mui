@@ -35,7 +35,7 @@ export interface TranslatableInputsTabProps {
   locale: string;
 }
 
-const PREFIX = 'RaTranslatableInputsTab';
+const PREFIX = 'TranslatableInputsTab';
 
 export const TranslatableInputsTabClasses = {
   root: `${PREFIX}-root`,

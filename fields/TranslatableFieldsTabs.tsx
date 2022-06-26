@@ -47,7 +47,7 @@ export interface TranslatableFieldsTabsProps {
   groupKey?: string;
 }
 
-const PREFIX = 'RaTranslatableFieldsTabs';
+const PREFIX = 'TranslatableFieldsTabs';
 
 const StyledAppBar = styled(AppBar, {
   name: PREFIX,

@@ -15,7 +15,7 @@ export const SkipNavigationButton = () => {
   );
 };
 
-const PREFIX = 'RaSkipNavigationButton';
+const PREFIX = 'SkipNavigationButton';
 
 const StyledButton = styled(Button, {
   name: PREFIX,

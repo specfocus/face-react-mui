@@ -81,7 +81,7 @@ DeleteWithUndoButton.propTypes = {
   icon: PropTypes.element,
 };
 
-const PREFIX = 'RaDeleteWithUndoButton';
+const PREFIX = 'DeleteWithUndoButton';
 
 const StyledButton = styled(Button, {
   name: PREFIX,

@@ -17,7 +17,7 @@ export const Link = (props: LinkProps) => {
   );
 };
 
-const PREFIX = 'RaLink';
+const PREFIX = 'Link';
 
 export const LinkClasses = {
   link: `${PREFIX}-link`,

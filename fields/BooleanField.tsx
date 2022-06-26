@@ -91,7 +91,7 @@ export interface BooleanFieldProps
   looseValue?: boolean;
 }
 
-const PREFIX = 'RaBooleanField';
+const PREFIX = 'BooleanField';
 
 const StyledTypography = styled(Typography, {
   name: PREFIX,

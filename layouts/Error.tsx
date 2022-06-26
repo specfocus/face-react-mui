@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentType, ErrorInfo, Fragment, HtmlHTMLAttributes } from 'react';
-import { FallbackProps } from '@specfocus/view-focus/errors/fallback';
+import { FallbackProps } from '@specfocus/view-focus.notification/errors/fallback';
 import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import {
@@ -140,7 +140,7 @@ export interface ErrorProps extends Pick<FallbackProps, 'error'> {
   title?: TitleComponent;
 }
 
-const PREFIX = 'RaError';
+const PREFIX = 'Error';
 
 export const ErrorClasses = {
   container: `${PREFIX}-container`,

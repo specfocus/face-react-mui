@@ -78,7 +78,7 @@ export interface LabeledProps extends StackProps {
   source?: string;
 }
 
-const PREFIX = 'RaLabeled';
+const PREFIX = 'Labeled';
 
 export const LabeledClasses = {
   label: `${PREFIX}-label`,

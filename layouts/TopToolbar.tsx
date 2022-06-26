@@ -11,7 +11,7 @@ TopToolbar.propTypes = {
 };
 
 export default TopToolbar;
-const PREFIX = 'RaTopToolbar';
+const PREFIX = 'TopToolbar';
 
 const StyledToolbar = styled(Toolbar, {
   name: PREFIX,

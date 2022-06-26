@@ -224,7 +224,7 @@ export interface FilterButtonProps extends HtmlHTMLAttributes<HTMLDivElement> {
   filters?: ReactNode[];
 }
 
-const PREFIX = 'RaFilterButton';
+const PREFIX = 'FilterButton';
 
 const Root = styled('div', {
   name: PREFIX,

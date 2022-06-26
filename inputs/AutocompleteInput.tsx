@@ -523,7 +523,7 @@ If you provided a React element for the optionText prop, you must also provide t
   );
 };
 
-const PREFIX = 'RaAutocompleteInput';
+const PREFIX = 'AutocompleteInput';
 
 export const AutocompleteInputClasses = {
   textField: `${PREFIX}-textField`,

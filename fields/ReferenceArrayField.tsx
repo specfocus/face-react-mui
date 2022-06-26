@@ -157,7 +157,7 @@ ReferenceArrayFieldView.propTypes = {
   reference: PropTypes.string.isRequired,
 };
 
-const PREFIX = 'RaReferenceArrayField';
+const PREFIX = 'ReferenceArrayField';
 
 export const ReferenceArrayFieldClasses = {
   progress: `${PREFIX}-progress`,

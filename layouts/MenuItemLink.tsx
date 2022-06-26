@@ -155,7 +155,7 @@ MenuItemLink.propTypes = {
   sidebarIsOpen: PropTypes.bool,
 };
 
-const PREFIX = 'RaMenuItemLink';
+const PREFIX = 'MenuItemLink';
 
 export const MenuItemLinkClasses = {
   active: `${PREFIX}-active`,

@@ -47,7 +47,7 @@ NotFound.propTypes = {
   location: PropTypes.object,
 };
 
-const PREFIX = 'RaNotFound';
+const PREFIX = 'NotFound';
 
 export const NotFoundClasses = {
   icon: `${PREFIX}-icon`,

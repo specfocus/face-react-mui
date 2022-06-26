@@ -191,7 +191,7 @@ export const mergeInitialValuesWithDefaultValues = (
 
 const handleFormSubmit = () => { };
 
-const PREFIX = 'RaFilterForm';
+const PREFIX = 'FilterForm';
 
 export const FilterFormClasses = {
   clearFix: `${PREFIX}-clearFix`,

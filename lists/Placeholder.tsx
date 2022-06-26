@@ -9,7 +9,7 @@ export const Placeholder = (props: PlaceholderProps) => (
   <Root className={props.className}>&nbsp;</Root>
 );
 
-const PREFIX = 'RaPlaceholder';
+const PREFIX = 'Placeholder';
 
 const Root = styled('span', {
   name: PREFIX,

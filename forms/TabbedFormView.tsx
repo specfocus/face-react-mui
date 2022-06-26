@@ -134,7 +134,7 @@ export interface TabbedFormViewProps {
   sx?: SxProps;
 }
 
-const PREFIX = 'RaTabbedForm';
+const PREFIX = 'TabbedForm';
 
 export const TabbedFormClasses = {
   errorTabButton: `${PREFIX}-errorTabButton`,

@@ -105,7 +105,7 @@ export interface TranslatableFieldsProps extends UseTranslatableOptions {
   groupKey?: string;
 }
 
-const PREFIX = 'RaTranslatableFields';
+const PREFIX = 'TranslatableFields';
 
 const Root = styled('div', {
   name: PREFIX,

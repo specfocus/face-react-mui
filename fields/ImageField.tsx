@@ -76,7 +76,7 @@ ImageField.propTypes = {
   title: PropTypes.string,
 };
 
-const PREFIX = 'RaImageField';
+const PREFIX = 'ImageField';
 
 export const ImageFieldClasses = {
   list: `${PREFIX}-list`,

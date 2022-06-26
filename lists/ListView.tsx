@@ -157,7 +157,7 @@ export interface ListViewProps {
   sx?: SxProps;
 }
 
-const PREFIX = 'RaList';
+const PREFIX = 'List';
 
 export const ListClasses = {
   main: `${PREFIX}-main`,

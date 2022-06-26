@@ -95,7 +95,7 @@ export interface BulkDeleteWithUndoButtonProps
   icon?: ReactElement;
 }
 
-const PREFIX = 'RaBulkDeleteWithUndoButton';
+const PREFIX = 'BulkDeleteWithUndoButton';
 
 const StyledButton = styled(Button, {
   name: PREFIX,

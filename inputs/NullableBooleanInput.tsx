@@ -98,7 +98,7 @@ NullableBooleanInput.propTypes = {
   trueLabel: PropTypes.string,
 };
 
-const PREFIX = 'RaNullableBooleanInput';
+const PREFIX = 'NullableBooleanInput';
 
 export const NullableBooleanInputClasses = {
   input: `${PREFIX}-input`,

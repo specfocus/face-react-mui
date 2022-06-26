@@ -48,7 +48,7 @@ Filter.propTypes = {
   context: PropTypes.oneOf(['form', 'button']),
 };
 
-const PREFIX = 'RaFilter';
+const PREFIX = 'Filter';
 
 export const FilterClasses = {
   button: `${PREFIX}-button`,

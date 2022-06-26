@@ -57,7 +57,7 @@ export interface EmptyProps {
   className?: string;
 }
 
-const PREFIX = 'RaEmpty';
+const PREFIX = 'Empty';
 
 export const EmptyClasses = {
   message: `${PREFIX}-message`,

@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import React, {
   Children, cloneElement, ComponentType, HtmlHTMLAttributes
 } from 'react';
-import { Link } from '../core/Link';
+import { Link } from '../apps/Link';
 
 /**
  * Iterator component to be used to display a list of entities, using a single field
@@ -143,7 +143,7 @@ export interface SingleFieldListProps<RecordType extends Entity = any>
   sx?: SxProps;
 }
 
-const PREFIX = 'RaSingleFieldList';
+const PREFIX = 'SingleFieldList';
 
 export const SingleFieldListClasses = {
   link: `${PREFIX}-link`,

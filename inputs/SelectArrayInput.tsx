@@ -11,7 +11,7 @@ import FieldTitle from '@specfocus/view-focus/utils/FieldTitle';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { ChangeEvent, useCallback, useRef } from 'react';
-import { Labeled } from '../core/Labeled';
+import { Labeled } from '../apps/Labeled';
 import { LinearProgress } from '../layouts';
 import { CommonInputProps } from './CommonInputProps';
 import { InputHelperText } from './InputHelperText';
@@ -357,7 +357,7 @@ const sanitizeRestProps = ({
   ...rest
 }: any) => rest;
 
-const PREFIX = 'RaSelectArrayInput';
+const PREFIX = 'SelectArrayInput';
 
 export const SelectArrayInputClasses = {
   chips: `${PREFIX}-chips`,

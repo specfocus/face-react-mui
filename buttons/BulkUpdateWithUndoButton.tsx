@@ -115,7 +115,7 @@ BulkUpdateWithUndoButton.propTypes = {
   data: PropTypes.any.isRequired,
 };
 
-const PREFIX = 'RaBulkUpdateWithUndoButton';
+const PREFIX = 'BulkUpdateWithUndoButton';
 
 const StyledButton = styled(Button, {
   name: PREFIX,

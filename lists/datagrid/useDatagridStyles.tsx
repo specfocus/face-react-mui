@@ -1,6 +1,7 @@
-import { styled } from '@mui/material';
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
 
-const PREFIX = 'RaDatagrid';
+const PREFIX = 'Datagrid';
 
 export const DatagridClasses = {
   table: `${PREFIX}-table`,
@@ -23,7 +24,6 @@ export const DatagridClasses = {
   expanded: `${PREFIX}-expanded`,
   expandedPanel: `${PREFIX}-expandedPanel`,
 };
-
 export const DatagridRoot = styled('div', {
   name: PREFIX,
   overridesResolver: (props, styles) => styles.root,

@@ -205,7 +205,7 @@ export const FilterListItem = memo((props: FilterListItemProps) => {
   );
 }, arePropsEqual);
 
-const PREFIX = 'RaFilterListItem';
+const PREFIX = 'FilterListItem';
 
 export const FilterListItemClasses = {
   listItemButton: `${PREFIX}-listItemButton`,

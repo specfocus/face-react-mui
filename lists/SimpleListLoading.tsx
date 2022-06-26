@@ -73,7 +73,7 @@ SimpleListLoading.propTypes = {
   nbFakeLines: PropTypes.number,
 };
 
-const PREFIX = 'RaSimpleListLoading';
+const PREFIX = 'SimpleListLoading';
 
 export const SimpleListLoadingClasses = {
   primary: `${PREFIX}-primary`,

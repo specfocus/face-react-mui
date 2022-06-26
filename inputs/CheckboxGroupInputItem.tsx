@@ -53,7 +53,7 @@ export const CheckboxGroupInputItem = props => {
   );
 };
 
-const PREFIX = 'RaCheckboxGroupInputItem';
+const PREFIX = 'CheckboxGroupInputItem';
 
 export const CheckboxGroupInputItemClasses = {
   checkbox: `${PREFIX}-checkbox`,

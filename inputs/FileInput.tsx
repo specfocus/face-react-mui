@@ -14,7 +14,7 @@ import {
   ReactNode
 } from 'react';
 import { DropzoneOptions, useDropzone } from 'react-dropzone';
-import { Labeled } from '../core/Labeled';
+import { Labeled } from '../apps/Labeled';
 import { CommonInputProps } from './CommonInputProps';
 import { FileInputPreview } from './FileInputPreview';
 import { InputHelperText } from './InputHelperText';
@@ -228,7 +228,7 @@ FileInput.propTypes = {
   placeholder: PropTypes.node,
 };
 
-const PREFIX = 'RaFileInput';
+const PREFIX = 'FileInput';
 
 export const FileInputClasses = {
   dropZone: `${PREFIX}-dropZone`,

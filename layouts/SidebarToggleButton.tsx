@@ -50,7 +50,7 @@ export type SidebarToggleButtonProps = {
   className?: string;
 };
 
-const PREFIX = 'RaSidebarToggleButton';
+const PREFIX = 'SidebarToggleButton';
 
 export const SidebarToggleButtonClasses = {
   menuButtonIconClosed: `${PREFIX}-menuButtonIconClosed`,

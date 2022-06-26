@@ -15,7 +15,7 @@ import warning from '@specfocus/spec-focus/rules/warning';
 import clsx from 'clsx';
 import get from 'lodash/get';
 import PropTypes from 'prop-types';
-import { Labeled } from '../core/Labeled';
+import { Labeled } from '../apps/Labeled';
 import { LinearProgress } from '../layouts';
 import { CommonInputProps } from './CommonInputProps';
 import { InputHelperText } from './InputHelperText';
@@ -260,7 +260,7 @@ export type RadioButtonGroupInputProps = Omit<CommonInputProps, 'source'> &
     source?: string;
   };
 
-const PREFIX = 'RaRadioButtonGroupInput';
+const PREFIX = 'RadioButtonGroupInput';
 
 export const RadioButtonGroupInputClasses = {
   label: `${PREFIX}-label`,

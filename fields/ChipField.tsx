@@ -51,7 +51,7 @@ export interface ChipFieldProps
   InjectedFieldProps,
   Omit<ChipProps, 'label'> { }
 
-const PREFIX = 'RaChipField';
+const PREFIX = 'ChipField';
 
 const ChipFieldClasses = {
   chip: `${PREFIX}-chip`,

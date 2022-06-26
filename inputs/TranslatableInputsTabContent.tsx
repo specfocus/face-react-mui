@@ -66,7 +66,7 @@ export type TranslatableInputsTabContentProps<
   variant?: 'standard' | 'outlined' | 'filled';
 };
 
-const PREFIX = 'RaTranslatableInputsTabContent';
+const PREFIX = 'TranslatableInputsTabContent';
 
 export const TranslatableInputsTabContentClasses = {
   root: `${PREFIX}-root`,

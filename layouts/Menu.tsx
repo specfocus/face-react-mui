@@ -79,7 +79,7 @@ Menu.propTypes = {
   hasDashboard: PropTypes.bool,
 };
 
-const PREFIX = 'RaMenu';
+const PREFIX = 'Menu';
 
 export const MenuClasses = {
   open: `${PREFIX}-open`,

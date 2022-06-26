@@ -82,7 +82,7 @@ export const LocalesMenuButton = ({ languages }: LocalesMenuButtonProps) => {
   );
 };
 
-const PREFIX = 'RaLocalesMenuButton';
+const PREFIX = 'LocalesMenuButton';
 
 export const LocalesMenuButtonClasses = {
   selectedLanguage: `${PREFIX}-selectedLanguage`,

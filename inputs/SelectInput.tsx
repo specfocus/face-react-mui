@@ -10,7 +10,7 @@ import FieldTitle from '@specfocus/view-focus/utils/FieldTitle';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React, { ChangeEvent, ReactElement, useCallback } from 'react';
-import { Labeled } from '../core/Labeled';
+import { Labeled } from '../apps/Labeled';
 import { LinearProgress } from '../layouts';
 import { CommonInputProps } from './CommonInputProps';
 import { InputHelperText } from './InputHelperText';
@@ -354,7 +354,7 @@ const sanitizeRestProps = ({
   ...rest
 }: any) => sanitizeInputRestProps(rest);
 
-const PREFIX = 'RaSelectInput';
+const PREFIX = 'SelectInput';
 
 const StyledResettableTextField = styled(ResettableTextField, {
   name: PREFIX,

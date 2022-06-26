@@ -143,7 +143,7 @@ Confirm.propTypes = {
   sx: PropTypes.any,
 };
 
-const PREFIX = 'RaConfirm';
+const PREFIX = 'Confirm';
 
 export const ConfirmClasses = {
   confirmPrimary: `${PREFIX}-confirmPrimary`,

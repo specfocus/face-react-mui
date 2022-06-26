@@ -12,13 +12,13 @@ import {
 } from '@specfocus/view-focus.forms/forms';
 import { useApplyInputDefaultValues } from '@specfocus/view-focus/forms';
 import isRequired from '@specfocus/view-focus.forms/forms/isRequired';
-import { useFieldArray } from '@specfocus/view-focus.forms/forms/useFieldArray';
+import { useFieldArray } from '@specfocus/view-focus.forms/fields/useFieldArray';
 import { useWatch } from '@specfocus/view-focus.forms/forms/useWatch';
 import { FieldTitle } from '@specfocus/view-focus/utils/FieldTitle';
 import clsx from 'clsx';
 import isEqual from 'lodash/isEqual';
 import { Children, cloneElement, ReactElement, useEffect, useRef } from 'react';
-import { Labeled } from '../../core/Labeled';
+import { Labeled } from '../../apps/Labeled';
 import { LinearProgress } from '../../layouts';
 import { CommonInputProps } from '../CommonInputProps';
 import { InputHelperText } from '../InputHelperText';

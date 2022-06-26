@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import ErrorBoundary from '@specfocus/view-focus/errors/boundary';
+import ErrorBoundary from '@specfocus/view-focus.notification/errors/boundary';
 import { CoreLayoutProps } from '@specfocus/view-focus/types';
 import clsx from 'clsx';
 import {
@@ -83,7 +83,7 @@ export interface LayoutState {
   errorInfo?: ErrorInfo;
 }
 
-const PREFIX = 'RaLayout';
+const PREFIX = 'Layout';
 export const LayoutClasses = {
   appFrame: `${PREFIX}-appFrame`,
   contentWithSidebar: `${PREFIX}-contentWithSidebar`,

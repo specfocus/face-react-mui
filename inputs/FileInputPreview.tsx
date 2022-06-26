@@ -48,7 +48,7 @@ FileInputPreview.defaultProps = {
   file: undefined,
 };
 
-const PREFIX = 'RaFileInputPreview';
+const PREFIX = 'FileInputPreview';
 
 const FileInputPreviewClasses = {
   removeButton: `${PREFIX}-removeButton`,

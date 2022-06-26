@@ -269,7 +269,7 @@ export interface LinkOrNotProps {
   children: ReactNode;
 }
 
-const PREFIX = 'RaSimpleList';
+const PREFIX = 'SimpleList';
 
 export const SimpleListClasses = {
   tertiary: `${PREFIX}-tertiary`,

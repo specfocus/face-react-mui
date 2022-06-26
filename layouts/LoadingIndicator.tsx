@@ -44,7 +44,7 @@ interface LoadingIndicatorProps {
   sx?: SxProps;
 }
 
-const PREFIX = 'RaLoadingIndicator';
+const PREFIX = 'LoadingIndicator';
 
 export const LoadingIndicatorClasses = {
   loader: `${PREFIX}-loader`,

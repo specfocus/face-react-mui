@@ -2,7 +2,7 @@ import { CoreAdminContext, CoreAdminContextProps } from '@specfocus/view-focus/c
 import { ThemeProvider } from '../themes';
 import { defaultTheme } from './defaultTheme';
 
-export const AdminContext = (props: CoreAdminContextProps) => {
+export const AppContext = (props: CoreAdminContextProps) => {
   const { theme = defaultTheme, children, ...rest } = props;
   return (
     <CoreAdminContext {...rest}>
@@ -11,4 +11,4 @@ export const AdminContext = (props: CoreAdminContextProps) => {
   );
 };
 
-AdminContext.displayName = 'AdminContext';
+AppContext.displayName = 'AppContext';

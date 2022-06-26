@@ -1,7 +1,7 @@
 import { Resource } from '@specfocus/view-focus/core/Resource';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { Link, MemoryRouter, Route, Routes } from 'react-router-dom';
-import { Admin } from './Admin';
+import { App } from './App';
 
 export default {
   title: '@specfocus/view-focus.mui/Admin',
@@ -11,18 +11,18 @@ const PostList = () => <h1>Post List</h1>;
 const CommentList = () => <h1>Comment List</h1>;
 
 export const Basic = () => (
-  <Admin dataProvider={testDataProvider()}>
+  <App dataProvider={testDataProvider()}>
     <Resource name="posts" list={PostList} />
     <Resource name="comments" list={CommentList} />
-  </Admin>
+  </App>
 );
 
 export const InsideRouter = () => (
   <MemoryRouter>
-    <Admin dataProvider={testDataProvider()}>
+    <App dataProvider={testDataProvider()}>
       <Resource name="posts" list={PostList} />
       <Resource name="comments" list={CommentList} />
-    </Admin>
+    </App>
   </MemoryRouter>
 );
 
@@ -43,10 +43,10 @@ export const SubPath = () => (
       <Route
         path="/admin/*"
         element={
-          <Admin dataProvider={testDataProvider()} basename="/admin">
+          <App dataProvider={testDataProvider()} basename="/admin">
             <Resource name="posts" list={PostList} />
             <Resource name="comments" list={CommentList} />
-          </Admin>
+          </App>
         }
       />
     </Routes>

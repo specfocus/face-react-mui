@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Basic, InsideRouter, SubPath } from './Admin.stories';
+import { Basic, InsideRouter, SubPath } from './App.stories';
 
 describe('<Admin>', () => {
   beforeEach(() => {

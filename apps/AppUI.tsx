@@ -9,18 +9,18 @@ import {
 } from '../layouts';
 import { Login } from '../auth';
 
-export const AdminUI = ({ notification, ...props }: AdminUIProps) => (
+export const AppUI = ({ notification, ...props }: AppUIProps) => (
   <>
     <CoreAdminUI {...props} />
     {createElement(notification)}
   </>
 );
 
-export interface AdminUIProps extends CoreAdminUIProps {
+export interface AppUIProps extends CoreAdminUIProps {
   notification?: ComponentType;
 }
 
-AdminUI.defaultProps = {
+AppUI.defaultProps = {
   layout: DefaultLayout,
   catchAll: NotFound,
   loading: LoadingPage,

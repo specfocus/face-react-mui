@@ -3,8 +3,8 @@ import { CoreAdminProps } from '@specfocus/view-focus/core';
 import { localStorageStore } from '@specfocus/view-focus.states/states/localStorageStore';
 import { ComponentType } from 'react';
 import { defaultI18nProvider } from './defaultI18nProvider';
-import { AdminContext } from './AppContext';
-import { AdminUI } from './AppUI';
+import { AppContext } from './AppContext';
+import { AppUI } from './AppUI';
 
 /**
  * Main admin component, entry point to the application.
@@ -89,7 +89,7 @@ import { useEffect, useState } from 'react';
  *     );
  * };
  */
-export const Admin = (props: AdminProps) => {
+export const App = (props: AppProps) => {
   const {
     authProvider,
     basename,
@@ -120,7 +120,7 @@ export const Admin = (props: AdminProps) => {
   }
 
   return (
-    <AdminContext
+    <AppContext
       authProvider={authProvider}
       basename={basename}
       dataProvider={dataProvider}
@@ -130,7 +130,7 @@ export const Admin = (props: AdminProps) => {
       queryClient={queryClient}
       theme={theme}
     >
-      <AdminUI
+      <AppUI
         layout={layout}
         dashboard={dashboard}
         disableTelemetry={disableTelemetry}
@@ -144,19 +144,19 @@ export const Admin = (props: AdminProps) => {
         ready={ready}
       >
         {children}
-      </AdminUI>
-    </AdminContext>
+      </AppUI>
+    </AppContext>
   );
 };
 
-Admin.defaultProps = {
+App.defaultProps = {
   i18nProvider: defaultI18nProvider,
   store: localStorageStore(),
 };
 
-export default Admin;
+export default App;
 
-export interface AdminProps extends CoreAdminProps {
+export interface AppProps extends CoreAdminProps {
   theme?: ThemeOptions;
   notification?: ComponentType;
 }

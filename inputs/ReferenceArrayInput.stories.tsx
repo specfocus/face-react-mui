@@ -1,7 +1,7 @@
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { Form } from '@specfocus/view-focus/forms/Form';
 import createI18nProvider from '@specfocus/view-focus.i18next/providers';
-import englishMessages from '@specfocus/locales/en/core';
+import englishMessages from '@specfocus/locales/en/general';
 import { DatagridInput } from '.';
 import { AdminContext } from '../core/AdminContext';
 import { TextField } from '../fields';

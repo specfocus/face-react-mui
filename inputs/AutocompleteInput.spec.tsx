@@ -13,7 +13,7 @@ import { SimpleForm } from '../forms';
 import { AutocompleteInput } from './AutocompleteInput';
 import { useCreateSuggestionContext } from './useSupportCreateSuggestion';
 import { InsideReferenceInput } from './AutocompleteInput.stories';
-import { act } from '@testing-library/react-hooks';
+import { act } from '@testing-library/react';
 import { ReferenceArrayInput } from './ReferenceArrayInput';
 import { AutocompleteArrayInput } from './AutocompleteArrayInput';
 

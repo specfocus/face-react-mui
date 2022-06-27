@@ -24,7 +24,7 @@ import { AppUI } from './AppUI';
  *     Resource,
  *     ListGuesser,
  *     useDataProvider,
- * } from 'react-admin';
+ * } from 'view-focus';
  *
  * const App = () => (
  *     <Admin dataProvider={myDataProvider}>
@@ -39,7 +39,7 @@ import { AppUI } from './AppUI';
  *     Resource,
  *     ListGuesser,
  *     useDataProvider,
- * } from 'react-admin';
+ * } from 'view-focus';
  *
  * const App = () => (
  *     <Admin dataProvider={myDataProvider}>
@@ -63,7 +63,7 @@ import { useEffect, useState } from 'react';
  *     Resource,
  *     ListGuesser,
  *     useDataProvider,
- * } from 'react-admin';
+ * } from 'view-focus';
  *
  * const store = localStorageStore();
  *

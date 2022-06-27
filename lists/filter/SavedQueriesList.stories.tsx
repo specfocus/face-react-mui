@@ -1,8 +1,8 @@
 import BusinessIcon from '@mui/icons-material/Business';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 import { Box, Card, CardContent, styled, Typography } from '@mui/material';
-import englishMessages from '@specfocus/locales/en/core';
-import frenchMessages from '@specfocus/locales/fr/core';
+import englishMessages from '@specfocus/locales/en/general';
+import frenchMessages from '@specfocus/locales/fr/general';
 import fakeRestProvider from '@specfocus/sham-focus.rest';
 import createI18nProvider from '@specfocus/view-focus.i18next/providers';
 import { Resource } from '@specfocus/view-focus/core/Resource';

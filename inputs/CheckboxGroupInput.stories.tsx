@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 import i18nProviderFactory from '@specfocus/view-focus.i18next/providers';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
-import englishMessages from '@specfocus/locales/en/core';
+import englishMessages from '@specfocus/locales/en/general';
 import { AdminContext } from '../core/AdminContext';
 import { Create } from '../details';
 import { SimpleForm } from '../forms';

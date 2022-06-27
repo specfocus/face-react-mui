@@ -1,5 +1,5 @@
 import createI18nProvider from '@specfocus/view-focus.i18next/providers';
-import englishMessages from '@specfocus/locales/en/core';
+import englishMessages from '@specfocus/locales/en/general';
 import { AdminContext } from '../core/AdminContext';
 import { Create } from '../details';
 import { FileField } from '../fields';

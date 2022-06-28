@@ -1,4 +1,4 @@
-import { useResourceDefinition } from '@specfocus/view-focus/core';
+import { useResourceDefinition } from '@specfocus/view-focus/resources';
 import { useEditContext } from '@specfocus/view-focus/mutations/useEditContext';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';
 import PropTypes from 'prop-types';

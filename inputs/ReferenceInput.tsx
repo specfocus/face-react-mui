@@ -1,5 +1,5 @@
 import { ChoicesContextProvider } from '@specfocus/view-focus/choices/ChoicesContextProvider';
-import { ResourceContextProvider } from '@specfocus/view-focus/core';
+import { ResourceContextProvider } from '@specfocus/view-focus/resources';
 import { InputProps } from '@specfocus/view-focus/forms/useInput';
 import { useReferenceInputController } from '@specfocus/view-focus/forms/useReferenceInputController';
 import PropTypes from 'prop-types';

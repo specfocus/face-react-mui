@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { TranslatableContextProvider } from '@specfocus/view-focus.i18n/i18n/TranslatableContextProvider';
+import { TranslatableContextProvider } from '@specfocus/view-focus.i18n/translations/TranslatableContextProvider';
 import { useTranslatable, UseTranslatableOptions } from '@specfocus/view-focus/i18n/useTranslatable';
 import { ReactElement, ReactNode } from 'react';
 import { TranslatableInputsTabContent } from './TranslatableInputsTabContent';

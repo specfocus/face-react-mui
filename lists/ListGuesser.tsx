@@ -2,7 +2,7 @@ import {
   getElementsFromRecords,
   InferredElement,
   useResourceContext
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 import { ListBase } from '@specfocus/view-focus/lists/ListBase';
 import { useListContext } from '@specfocus/view-focus/lists/useListContext';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';

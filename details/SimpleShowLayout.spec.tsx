@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { RecordContextProvider } from '@specfocus/view-focus/core';
+import { RecordContextProvider } from '@specfocus/view-focus/resources';
 import { SimpleShowLayout } from './SimpleShowLayout';
 import { Basic, CustomChild, CustomLabel } from './SimpleShowLayout.stories';
 import { TextField } from '../fields';

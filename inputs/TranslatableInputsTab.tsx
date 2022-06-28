@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import Tab, { TabProps } from '@mui/material/Tab';
 import { useFormGroup } from '@specfocus/view-focus.forms/forms/useFormGroup';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import clsx from 'clsx';
 import { capitalize } from 'inflection';
 

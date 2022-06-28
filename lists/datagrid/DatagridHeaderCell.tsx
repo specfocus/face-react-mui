@@ -1,8 +1,8 @@
 import { TableCell, TableSortLabel, Tooltip } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { TableCellProps } from '@mui/material/TableCell';
-import { useResourceContext } from '@specfocus/view-focus/core';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useResourceContext } from '@specfocus/view-focus/resources';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { SortPayload } from '@specfocus/view-focus.data/operations/SortPayload';
 import FieldTitle from '@specfocus/view-focus/utils/FieldTitle';
 import clsx from 'clsx';

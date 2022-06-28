@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations';
 import { Button } from './Button';
 
 export const SkipNavigationButton = () => {

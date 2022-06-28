@@ -1,7 +1,7 @@
 import AppBar from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
 import Tabs, { TabsProps } from '@mui/material/Tabs';
-import { useTranslatableContext } from '@specfocus/view-focus.i18n/i18n/useTranslatableContext';
+import { useTranslatableContext } from '@specfocus/view-focus.i18n/translations/useTranslatableContext';
 import { ReactElement } from 'react';
 import { AppBarProps } from '../layouts';
 import { TranslatableFieldsTab } from './TranslatableFieldsTab';

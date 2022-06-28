@@ -5,7 +5,7 @@ import {
   RecordContextProvider,
   TestTranslationProvider,
   useRecordContext,
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 
 import { SelectField } from './SelectField';
 

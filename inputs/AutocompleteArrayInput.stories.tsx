@@ -6,7 +6,7 @@ import {
   Stack,
   TextField
 } from '@mui/material';
-import { Resource } from '@specfocus/view-focus/core';
+import { Resource } from '@specfocus/view-focus/resources';
 import { useCreate } from '@specfocus/view-focus.data/operations/create/useCreate';
 import { required } from '@specfocus/view-focus.forms/forms/validate';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';

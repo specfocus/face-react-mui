@@ -1,6 +1,6 @@
 import { FilterPayload } from '@specfocus/view-focus.data/operations/FilterPayload';
 import { SortPayload } from '@specfocus/view-focus.data/operations/SortPayload';
-import { ResourceContextProvider } from '@specfocus/view-focus/core';
+import { ResourceContextProvider } from '@specfocus/view-focus/resources';
 import { ListContextProvider } from '@specfocus/view-focus/lists/ListContextProvider';
 import { ListControllerResult } from '@specfocus/view-focus/lists/useListController';
 import { useReferenceManyFieldController } from '@specfocus/view-focus/lists/useReferenceManyFieldController';

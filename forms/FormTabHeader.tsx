@@ -1,6 +1,6 @@
 import { Tab as MuiTab, TabProps as MuiTabProps } from '@mui/material';
 import { useFormState } from '@specfocus/view-focus.forms/forms/useFormState';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { isValidElement, ReactElement } from 'react';

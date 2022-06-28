@@ -1,7 +1,7 @@
 import React from 'react';
 import { screen, render, waitFor, fireEvent } from '@testing-library/react';
 import expect from 'expect';
-import { CoreAdminContext } from '@specfocus/view-focus/core';
+import { CoreAdminContext } from '@specfocus/view-focus/resources';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { DeleteWithConfirmButton } from './DeleteWithConfirmButton';
 import { Toolbar, SimpleForm } from '../forms';

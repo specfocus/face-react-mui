@@ -2,7 +2,7 @@ import React from 'react';
 import expect from 'expect';
 import { BooleanField } from './BooleanField';
 import { screen, render } from '@testing-library/react';
-import { RecordContextProvider } from '@specfocus/view-focus/core';
+import { RecordContextProvider } from '@specfocus/view-focus/resources';
 
 const defaultProps = {
   record: { id: 123, published: true },

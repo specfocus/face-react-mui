@@ -9,7 +9,7 @@ import {
   ListItemText, ListProps
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useResourceContext } from '@specfocus/view-focus/core';
+import { useResourceContext } from '@specfocus/view-focus/resources';
 import { useListContext } from '@specfocus/view-focus/lists/useListContext';
 import { sanitizeListRestProps } from '@specfocus/view-focus/lists/useListController';
 import { RecordContextProvider } from '@specfocus/view-focus/records/RecordContext';

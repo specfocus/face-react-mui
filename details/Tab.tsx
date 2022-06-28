@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 import { Tab as MuiTab, TabProps as MuiTabProps, Stack } from '@mui/material';
 import { ResponsiveStyleValue } from '@mui/system';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import clsx from 'clsx';
 import { Labeled } from '../apps/Labeled';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';

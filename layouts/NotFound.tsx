@@ -3,7 +3,7 @@ import HotTub from '@mui/icons-material/HotTub';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import { useAuthenticated } from '@specfocus/view-focus.auth/providers/useAuthenticated';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import PropTypes from 'prop-types';
 import { Title } from './Title';
 

@@ -1,7 +1,7 @@
 import {
   getElementsFromRecords, InferredElement,
   useResourceContext
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 import { EditBase } from '@specfocus/view-focus/mutations/EditBase';
 import { useEditContext } from '@specfocus/view-focus/mutations/useEditContext';
 import inflection from 'inflection';

@@ -1,9 +1,9 @@
 import { Checkbox, TableCell, TableRow, TableRowProps } from '@mui/material';
 import { Entity, Identifier } from '@specfocus/spec-focus/entities/Entity';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useCreatePath } from '@specfocus/view-focus.navigation/routes/useCreatePath';
 import { useNavigate } from '@specfocus/view-focus.navigation/routes/useNavigate';
-import { useResourceContext } from '@specfocus/view-focus/core';
+import { useResourceContext } from '@specfocus/view-focus/resources';
 import { useExpanded } from '@specfocus/view-focus/lists/useExpanded';
 import { RecordContextProvider } from '@specfocus/view-focus/records/RecordContext';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';

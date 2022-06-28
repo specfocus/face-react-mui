@@ -4,7 +4,7 @@ import { SortPayload } from '@specfocus/view-focus.data/operations/SortPayload';
 import {
   useResourceContext,
   useResourceDefinition
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 import { useListContext } from '@specfocus/view-focus/lists/useListContext';
 import { sanitizeListRestProps } from '@specfocus/view-focus/lists/useListController';
 import { Exporter } from '@specfocus/view-focus/types';

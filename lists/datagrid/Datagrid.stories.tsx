@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { CoreAdminContext, ResourceContextProvider } from '@specfocus/view-focus/core';
+import { CoreAdminContext, ResourceContextProvider } from '@specfocus/view-focus/resources';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { useGetList } from '@specfocus/view-focus.data/operations/get-list/useGetList';
 import { ListContextProvider } from '@specfocus/view-focus/lists/ListContextProvider';

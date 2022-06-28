@@ -2,7 +2,7 @@ import React from 'react';
 import { ElementType, memo } from 'react';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 
 const ExpandRowButton = ({
   expanded,

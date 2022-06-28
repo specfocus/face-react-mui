@@ -10,7 +10,7 @@ import {
   TextFieldProps,
 } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 
 /**
  * An override of the default MUI TextField which is resettable

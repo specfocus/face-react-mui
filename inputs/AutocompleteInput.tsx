@@ -10,7 +10,7 @@ import { useChoicesContext } from '@specfocus/view-focus/choices/useChoicesConte
 import { ChoicesProps } from '@specfocus/view-focus/forms/useChoices';
 import { useInput } from '@specfocus/view-focus/forms/useInput';
 import { useSuggestions, UseSuggestionsOptions } from '@specfocus/view-focus/forms/useSuggestions';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';
 import FieldTitle from '@specfocus/view-focus/utils/FieldTitle';
 import { useTimeout } from '@specfocus/view-focus.states/states/useTimeout';

@@ -4,7 +4,7 @@ import { useEffect, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import RemoveCircle from '@mui/icons-material/RemoveCircle';
 import IconButton from '@mui/material/IconButton';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 
 export const FileInputPreview = (props: FileInputPreviewProps) => {
   const { children, className, onRemove, file, ...rest } = props;

@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';
 import { FormGroupContextProvider } from '@specfocus/view-focus.forms/forms/FormGroupContextProvider';
-import { useTranslatableContext } from '@specfocus/view-focus.i18n/i18n/useTranslatableContext';
+import { useTranslatableContext } from '@specfocus/view-focus.i18n/translations/useTranslatableContext';
 import {
   Children,
   cloneElement,

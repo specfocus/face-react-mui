@@ -1,5 +1,5 @@
 import ImageEye from '@mui/icons-material/RemoveRedEye';
-import { useResourceContext } from '@specfocus/view-focus/core';
+import { useResourceContext } from '@specfocus/view-focus/resources';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import { useCreatePath } from '@specfocus/view-focus.navigation/routes/useCreatePath';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';

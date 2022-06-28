@@ -6,7 +6,7 @@ import {
   CoreAdminContext,
   testDataProvider,
   useGetMany,
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 import { QueryClient } from 'react-query';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 

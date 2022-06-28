@@ -1,5 +1,5 @@
 import MenuItem from '@mui/material/MenuItem';
-import { useResourceContext } from '@specfocus/view-focus/core';
+import { useResourceContext } from '@specfocus/view-focus/resources';
 import FieldTitle from '@specfocus/view-focus/utils/FieldTitle';
 import PropTypes from 'prop-types';
 import { forwardRef, useCallback } from 'react';

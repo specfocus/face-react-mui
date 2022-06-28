@@ -2,7 +2,7 @@ import React from 'react';
 import expect from 'expect';
 import { render, screen } from '@testing-library/react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { ListPaginationContext } from '@specfocus/view-focus/core';
+import { ListPaginationContext } from '@specfocus/view-focus/resources';
 
 import { Pagination } from './Pagination';
 import { DeviceTestWrapper } from '../../layout';

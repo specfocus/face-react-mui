@@ -1,4 +1,4 @@
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';
 import warning from '@specfocus/spec-focus/rules/warning';
 import PropTypes from 'prop-types';

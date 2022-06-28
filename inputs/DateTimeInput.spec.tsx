@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { required, testDataProvider } from '@specfocus/view-focus/core';
+import { required, testDataProvider } from '@specfocus/view-focus/resources';
 import { format } from 'date-fns';
 import { useFormState } from 'react-hook-form';
 

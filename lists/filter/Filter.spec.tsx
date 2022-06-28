@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { ListContext, ResourceContextProvider } from '@specfocus/view-focus/core';
+import { ListContext, ResourceContextProvider } from '@specfocus/view-focus/resources';
 
 import { TextInput } from '../../input';
 import { Filter } from './Filter';

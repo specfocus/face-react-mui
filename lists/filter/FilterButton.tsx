@@ -1,7 +1,7 @@
 import ContentFilter from '@mui/icons-material/FilterList';
 import { Menu, MenuItem, styled } from '@mui/material';
-import { useResourceContext } from '@specfocus/view-focus/core';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useResourceContext } from '@specfocus/view-focus/resources';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useListContext } from '@specfocus/view-focus/lists/useListContext';
 import lodashGet from 'lodash/get';
 import isEqual from 'lodash/isEqual';

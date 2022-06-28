@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useResourceDefinition } from '@specfocus/view-focus/core';
+import { useResourceDefinition } from '@specfocus/view-focus/resources';
 import { EditButton } from '../buttons';
 import TopToolbar from '../layouts/TopToolbar';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';

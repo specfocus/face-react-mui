@@ -3,7 +3,7 @@ import { ChangeEvent, memo, useMemo } from 'react';
 import { InputAdornment } from '@mui/material';
 import { SxProps } from '@mui/system';
 import SearchIcon from '@mui/icons-material/Search';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 
 import { TextInput } from '../../inputs';
 import { Form } from '@specfocus/view-focus/forms/Form';

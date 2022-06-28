@@ -2,7 +2,7 @@ import React from 'react';
 import expect from 'expect';
 import { render, cleanup } from '@testing-library/react';
 
-import { ListContextProvider } from '@specfocus/view-focus/core';
+import { ListContextProvider } from '@specfocus/view-focus/resources';
 import { FilterListItem } from './FilterListItem';
 
 describe('<FilterListItem/>', () => {

@@ -8,7 +8,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { alpha, styled } from '@mui/material/styles';
 import { SxProps } from '@mui/system';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import clsx from 'clsx';
 import PropTypes, { ReactComponentLike } from 'prop-types';
 import React, { MouseEventHandler, useCallback } from 'react';

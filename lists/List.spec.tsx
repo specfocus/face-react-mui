@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
-import { CoreAdminContext, testDataProvider, useListContext } from '@specfocus/view-focus/core';
+import { CoreAdminContext, testDataProvider, useListContext } from '@specfocus/view-focus/resources';
 import { createMemoryHistory } from 'history';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 

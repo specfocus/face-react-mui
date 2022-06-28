@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { Typography } from '@mui/material';
 import ErrorIcon from '@mui/icons-material/Error';
-import { ResourceContextProvider } from '@specfocus/view-focus/core';
+import { ResourceContextProvider } from '@specfocus/view-focus/resources';
 
 import { LinearProgress } from '../layouts';
 import { Link } from '../apps/Link';

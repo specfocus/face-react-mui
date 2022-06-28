@@ -5,7 +5,7 @@ import {
   Toolbar,
   useMediaQuery
 } from '@mui/material';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { sanitizeListRestProps } from '@specfocus/view-focus/lists/useListController';
 import useListPaginationContext from '@specfocus/view-focus/lists/useListPaginationContext';
 import ComponentPropType from '@specfocus/view-focus/utils/ComponentPropType';

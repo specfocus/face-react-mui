@@ -1,5 +1,5 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { CoreAdminContext } from '@specfocus/view-focus/core';
+import { CoreAdminContext } from '@specfocus/view-focus/resources';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import type { MutationMode } from '@specfocus/view-focus.data/operations/MutationMode';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';

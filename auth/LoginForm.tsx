@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import { TextInput } from '../inputs';
 import useLogin from '@specfocus/view-focus.auth/providers/useLogin';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useNotify } from '@specfocus/view-focus.notification/providers/useNotify';
 import { useSafeSetState } from '@specfocus/view-focus.states/states/useSafeSetState';
 import { required } from '@specfocus/view-focus.forms/forms/validate';

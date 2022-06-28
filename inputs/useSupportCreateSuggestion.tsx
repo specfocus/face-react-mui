@@ -1,5 +1,5 @@
 import { OptionText } from '@specfocus/view-focus/forms/useChoices';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { Identifier } from '@specfocus/spec-focus/entities/Entity';
 import set from 'lodash/set';
 import {

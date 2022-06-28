@@ -7,7 +7,7 @@ import {
   required,
   testDataProvider,
   useNotificationContext,
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 
 import { SaveButton } from './SaveButton';
 import { SimpleForm, Toolbar } from '../forms';

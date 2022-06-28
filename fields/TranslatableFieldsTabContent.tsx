@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { useTranslatableContext } from '@specfocus/view-focus.i18n/i18n/useTranslatableContext';
+import { useTranslatableContext } from '@specfocus/view-focus.i18n/translations/useTranslatableContext';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';
 import {
   Children,

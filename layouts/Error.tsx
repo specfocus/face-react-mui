@@ -15,7 +15,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import History from '@mui/icons-material/History';
 import { Title, TitlePropType } from './Title';
 import { useResetErrorBoundaryOnLocationChange } from './useResetErrorBoundaryOnLocationChange';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { TitleComponent } from '@specfocus/view-focus/types';
 
 export const Error = (

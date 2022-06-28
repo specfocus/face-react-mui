@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material';
 import fakerestDataProvider from '@specfocus/sham-focus.rest';
-import { Resource } from '@specfocus/view-focus/core/Resource';
+import { Resource } from '@specfocus/view-focus/resources/Resource';
 import { ListBase } from '@specfocus/view-focus/lists/ListBase';
 import CreateButton from '../../buttons/CreateButton';
 import Admin from '../../core/Admin';

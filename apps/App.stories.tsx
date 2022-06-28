@@ -1,4 +1,4 @@
-import { Resource } from '@specfocus/view-focus/core/Resource';
+import { Resource } from '@specfocus/view-focus/resources/Resource';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { Link, MemoryRouter, Route, Routes } from 'react-router-dom';
 import { App } from './App';

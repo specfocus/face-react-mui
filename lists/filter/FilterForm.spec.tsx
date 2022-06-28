@@ -6,7 +6,7 @@ import {
   minLength,
   ResourceContextProvider,
   testDataProvider,
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 
 import {
   FilterForm,

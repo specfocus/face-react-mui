@@ -6,7 +6,7 @@ import {
   ListContextProvider,
   CoreAdminContext,
   useRecordContext,
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import {

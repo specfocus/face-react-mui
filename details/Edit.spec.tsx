@@ -12,7 +12,7 @@ import {
   undoableEventEmitter,
   useRecordContext,
   useSaveContext,
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 
 import { AdminContext } from '../core/AdminContext';
 import { Edit } from './Edit';

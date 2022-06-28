@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { minLength, required, testDataProvider } from '@specfocus/view-focus/core';
+import { minLength, required, testDataProvider } from '@specfocus/view-focus/resources';
 
 import { AdminContext } from '../../AdminContext';
 import { SimpleForm } from '../../forms';

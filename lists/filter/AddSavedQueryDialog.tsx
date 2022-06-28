@@ -6,7 +6,7 @@ import {
   DialogTitle,
   TextField
 } from '@mui/material';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useListContext } from '@specfocus/view-focus/lists/useListContext';
 import { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 

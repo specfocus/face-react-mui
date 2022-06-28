@@ -3,7 +3,7 @@ import { memo, FunctionComponent } from 'react';
 import { styled } from '@mui/material/styles';
 import { Pagination, PaginationProps } from '@mui/material';
 import PropTypes from 'prop-types';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 
 export const PaginationActions: FunctionComponent<PaginationActionsProps> = memo(props => {
   const {

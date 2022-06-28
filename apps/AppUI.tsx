@@ -1,6 +1,6 @@
 import React from 'react';
 import { createElement, ComponentType } from 'react';
-import { CoreAdminUI, CoreAdminUIProps } from '@specfocus/view-focus/core';
+import { CoreAdminUI, CoreAdminUIProps } from '@specfocus/view-focus/resources';
 import {
   Layout as DefaultLayout,
   LoadingPage,

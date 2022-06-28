@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import TopToolbar from '../layouts/TopToolbar';
 import { ListButton } from '../buttons';
-import { useResourceDefinition } from '@specfocus/view-focus/core';
+import { useResourceDefinition } from '@specfocus/view-focus/resources';
 
 /**
  * Action Toolbar for the Create view

@@ -9,7 +9,7 @@ import { TransformData } from '@specfocus/view-focus.data/providers/DataProvider
 import { setSubmissionErrors } from '@specfocus/view-focus.forms/forms/setSubmissionErrors';
 import { useFormContext } from '@specfocus/view-focus.forms/forms/useFormContext';
 import { useFormState } from '@specfocus/view-focus.forms/forms/useFormState';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useSaveContext } from '@specfocus/view-focus/mutations/useSaveContext';
 import PropTypes from 'prop-types';
 import { MouseEventHandler, ReactElement, useCallback } from 'react';

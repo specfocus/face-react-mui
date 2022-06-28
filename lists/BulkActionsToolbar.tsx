@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import { lighten, styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useListContext } from '@specfocus/view-focus/lists/useListContext';
 import { sanitizeListRestProps } from '@specfocus/view-focus/lists/useListController';
 import { Identifier } from '@specfocus/spec-focus/entities/Entity';

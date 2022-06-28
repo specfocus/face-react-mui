@@ -1,6 +1,6 @@
 import { ValidationErrorMessage } from '@specfocus/view-focus.forms/forms/validate';
 import ValidationError from '@specfocus/view-focus.forms/forms/ValidationError';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { isValidElement, ReactElement } from 'react';
 
 export const InputHelperText = (props: InputHelperTextProps) => {

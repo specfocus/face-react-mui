@@ -2,7 +2,7 @@ import React from 'react';
 import { Tooltip, IconButton } from '@mui/material';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useTheme } from '../layouts';
 import { RaThemeOptions } from '../apps';
 

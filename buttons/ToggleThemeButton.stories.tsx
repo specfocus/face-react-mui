@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import fakeRestDataProvider from '@specfocus/sham-focus.rest';
-import { Resource } from '@specfocus/view-focus/core';
+import { Resource } from '@specfocus/view-focus/resources';
 import { createMemoryHistory } from 'history';
 import { Admin } from '../core/Admin';
 import { TextField } from '../fields';

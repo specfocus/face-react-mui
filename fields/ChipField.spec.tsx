@@ -2,7 +2,7 @@ import React from 'react';
 import expect from 'expect';
 import { ChipField } from './ChipField';
 import { render } from '@testing-library/react';
-import { RecordContextProvider } from '@specfocus/view-focus/core';
+import { RecordContextProvider } from '@specfocus/view-focus/resources';
 
 describe('<ChipField />', () => {
   it('should display the record value added as source', () => {

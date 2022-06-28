@@ -1,6 +1,6 @@
 import ActionUpdate from '@mui/icons-material/Update';
 import { alpha, styled } from '@mui/material/styles';
-import { useResourceContext } from '@specfocus/view-focus/core/useResourceContext';
+import { useResourceContext } from '@specfocus/view-focus/resources/useResourceContext';
 import { useRefresh } from '@specfocus/view-focus.data/providers/useRefresh';
 import { useUpdateMany } from '@specfocus/view-focus.data/operations/update-many/useUpdateMany';
 import { useListContext } from '@specfocus/view-focus/lists/useListContext';

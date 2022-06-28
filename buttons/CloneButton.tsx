@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Queue from '@mui/icons-material/Queue';
 import { Link } from 'react-router-dom';
 import { stringify } from 'query-string';
-import { useResourceContext } from '@specfocus/view-focus/core';
+import { useResourceContext } from '@specfocus/view-focus/resources';
 import { Button, ButtonProps } from './Button';
 import { useRecordContext } from '@specfocus/view-focus/records';
 import { useCreatePath } from '@specfocus/view-focus.navigation/routes/useCreatePath';

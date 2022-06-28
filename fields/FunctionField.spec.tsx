@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { FunctionField } from './FunctionField';
-import { RecordContextProvider } from '@specfocus/view-focus/core';
+import { RecordContextProvider } from '@specfocus/view-focus/resources';
 
 describe('<FunctionField />', () => {
   it('should render using the render function', () => {

@@ -5,7 +5,7 @@ import {
   required,
   ResourceContextProvider,
   testDataProvider,
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 import {
   fireEvent,
   isInaccessible,

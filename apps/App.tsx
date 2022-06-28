@@ -1,5 +1,5 @@
 import { ThemeOptions } from '@mui/material';
-import { CoreAdminProps } from '@specfocus/view-focus/core';
+import { CoreAdminProps } from '@specfocus/view-focus/resources';
 import { localStorageStore } from '@specfocus/view-focus.states/states/localStorageStore';
 import { ComponentType } from 'react';
 import { defaultI18nProvider } from './defaultI18nProvider';

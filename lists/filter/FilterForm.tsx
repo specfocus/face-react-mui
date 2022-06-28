@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { useResourceContext } from '@specfocus/view-focus/core';
+import { useResourceContext } from '@specfocus/view-focus/resources';
 import { FieldValues } from '@specfocus/view-focus.forms/fields';
 import { useForm } from '@specfocus/view-focus.forms/forms/useForm';
 import {

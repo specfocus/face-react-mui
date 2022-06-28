@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useResourceDefinition } from '@specfocus/view-focus/core';
+import { useResourceDefinition } from '@specfocus/view-focus/resources';
 import { useEditContext } from '@specfocus/view-focus/mutations/useEditContext';
 import { EditControllerProps } from '@specfocus/view-focus/mutations/useEditController';
 import ComponentPropType from '@specfocus/view-focus/utils/ComponentPropType';

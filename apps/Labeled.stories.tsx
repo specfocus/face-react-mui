@@ -1,4 +1,4 @@
-import { ResourceContext } from '@specfocus/view-focus/core';
+import { ResourceContext } from '@specfocus/view-focus/resources';
 import { RecordContextProvider } from '@specfocus/view-focus/records/RecordContext';
 import { TextField } from '../fields';
 import { Labeled } from './Labeled';

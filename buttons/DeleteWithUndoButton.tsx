@@ -1,7 +1,7 @@
 import ActionDelete from '@mui/icons-material/Delete';
 import { alpha, styled } from '@mui/material/styles';
 import useDeleteWithUndoController from '@specfocus/view-focus/buttons/useDeleteWithUndoController';
-import { useResourceContext } from '@specfocus/view-focus/core';
+import { useResourceContext } from '@specfocus/view-focus/resources';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import { RedirectionSideEffect } from '@specfocus/view-focus.navigation/routes/useRedirect';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';

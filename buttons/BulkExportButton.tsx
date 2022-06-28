@@ -1,5 +1,5 @@
 import DownloadIcon from '@mui/icons-material/GetApp';
-import { fetchRelatedRecords } from '@specfocus/view-focus/core';
+import { fetchRelatedRecords } from '@specfocus/view-focus/resources';
 import { useDataProvider } from '@specfocus/view-focus.data/providers/useDataProvider';
 import { useListContext } from '@specfocus/view-focus/lists';
 import { useNotify } from '@specfocus/view-focus.notification/providers/useNotify';

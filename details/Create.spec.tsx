@@ -1,6 +1,6 @@
 import React from 'react';
 import expect from 'expect';
-import { CoreAdminContext } from '@specfocus/view-focus/core';
+import { CoreAdminContext } from '@specfocus/view-focus/resources';
 import { screen, render } from '@testing-library/react';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 

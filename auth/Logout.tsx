@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import { MenuItemProps } from '@mui/material/MenuItem';
 import { styled, Theme } from '@mui/material/styles';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useLogout } from '@specfocus/view-focus.auth/providers/useLogout';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';

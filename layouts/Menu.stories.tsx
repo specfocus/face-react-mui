@@ -1,6 +1,6 @@
 import { AppBar, Box, Typography } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
-import { Resource } from '@specfocus/view-focus/core';
+import { Resource } from '@specfocus/view-focus/resources';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { Layout, Menu, SidebarToggleButton, Title } from '.';
 import { ToggleThemeButton } from '../buttons';

@@ -1,9 +1,9 @@
 import ActionUpdate from '@mui/icons-material/Update';
 import { alpha, styled } from '@mui/material/styles';
-import { useResourceContext } from '@specfocus/view-focus/core';
+import { useResourceContext } from '@specfocus/view-focus/resources';
 import { useRefresh } from '@specfocus/view-focus.data/providers/useRefresh';
 import { useUpdateMany } from '@specfocus/view-focus.data/operations/update-many/useUpdateMany';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useListContext } from '@specfocus/view-focus/lists/useListContext';
 import { useUnselectAll } from '@specfocus/view-focus/lists/useUnselectAll';
 import { useNotify } from '@specfocus/view-focus.notification/providers/useNotify';

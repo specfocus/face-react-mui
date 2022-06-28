@@ -1,6 +1,6 @@
 import { Card } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useResourceDefinition } from '@specfocus/view-focus/core';
+import { useResourceDefinition } from '@specfocus/view-focus/resources';
 import { useShowContext } from '@specfocus/view-focus/show/useShowContext';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';

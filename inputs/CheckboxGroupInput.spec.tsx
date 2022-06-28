@@ -6,7 +6,7 @@ import {
   TestTranslationProvider,
   useRecordContext,
   Form,
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 
 import { AdminContext } from '../core/AdminContext';
 import { SimpleForm } from '../forms';

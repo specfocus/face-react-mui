@@ -1,5 +1,5 @@
 import { Box, Card, Stack } from '@mui/material';
-import { Resource } from '@specfocus/view-focus/core';
+import { Resource } from '@specfocus/view-focus/resources';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import { createMemoryHistory } from 'history';
 import { EditButton } from '../buttons';

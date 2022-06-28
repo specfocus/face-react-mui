@@ -1,4 +1,4 @@
-import { InferredElement, InferredTypeMap } from '@specfocus/view-focus/core';
+import { InferredElement, InferredTypeMap } from '@specfocus/view-focus/resources';
 import { InputProps } from '@specfocus/view-focus/forms/useInput';
 import { ReactElement, ReactNode } from 'react';
 import { SimpleForm } from '../forms';

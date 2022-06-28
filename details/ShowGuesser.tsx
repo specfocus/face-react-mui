@@ -2,7 +2,7 @@ import {
   getElementsFromRecords,
   InferredElement,
   useResourceContext
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 import inflection from 'inflection';
 import { useEffect, useState } from 'react';
 import { ShowBase } from '@specfocus/view-focus/show/ShowBase';

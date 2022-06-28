@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { SxProps } from '@mui/material';
 import PropTypes from 'prop-types';
 import CircularProgress from '@mui/material/CircularProgress';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 
 export const Loading = (props: LoadingProps) => {
   const {

@@ -5,7 +5,7 @@ import {
   testDataProvider,
   ListContextProvider,
   useRecordContext,
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { Datagrid } from './Datagrid';
 

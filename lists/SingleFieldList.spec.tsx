@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ListContext, ResourceContextProvider } from '@specfocus/view-focus/core';
+import { ListContext, ResourceContextProvider } from '@specfocus/view-focus/resources';
 
 import { AdminContext } from '../core/AdminContext';
 import { SingleFieldList } from './SingleFieldList';

@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { render, screen, waitFor } from '@testing-library/react';
-import { CoreAdminContext } from '@specfocus/view-focus/core';
+import { CoreAdminContext } from '@specfocus/view-focus/resources';
 
 import { ListGuesser } from './ListGuesser';
 import { ThemeProvider } from '../layouts';

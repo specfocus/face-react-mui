@@ -1,8 +1,8 @@
 import ActionHide from '@mui/icons-material/HighlightOff';
 import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
-import { useResourceContext } from '@specfocus/view-focus/core';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useResourceContext } from '@specfocus/view-focus/resources';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React from 'react';

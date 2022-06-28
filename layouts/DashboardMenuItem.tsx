@@ -1,5 +1,5 @@
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useBasename } from '@specfocus/view-focus.navigation/routes/useBasename';
 import PropTypes from 'prop-types';
 import { ReactElement } from 'react';

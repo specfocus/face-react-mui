@@ -9,7 +9,7 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { forwardRef, ReactElement, ReactNode, useCallback } from 'react';
 import { Link, LinkProps, useMatch } from 'react-router-dom';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useBasename } from '@specfocus/view-focus.navigation/routes/useBasename';
 import { useSidebarState } from './useSidebarState';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FunctionComponent, memo, ReactElement } from 'react';
 import PropTypes from 'prop-types';
-import { ResourceContextProvider } from '@specfocus/view-focus/core';
+import { ResourceContextProvider } from '@specfocus/view-focus/resources';
 import { fieldPropTypes, PublicFieldProps, InjectedFieldProps } from './types';
 import { LinearProgress } from '../layouts';
 import { styled } from '@mui/material/styles';

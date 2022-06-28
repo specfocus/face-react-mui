@@ -3,7 +3,7 @@ import { ReactElement } from 'react';
 import PropTypes from 'prop-types';
 import ActionList from '@mui/icons-material/List';
 import { Link } from 'react-router-dom';
-import { useResourceContext } from '@specfocus/view-focus/core';
+import { useResourceContext } from '@specfocus/view-focus/resources';
 
 import { Button, ButtonProps } from './Button';
 import { useCreatePath } from '@specfocus/view-focus.navigation/routes/useCreatePath';

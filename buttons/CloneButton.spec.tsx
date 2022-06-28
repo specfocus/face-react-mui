@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { render, screen } from '@testing-library/react';
-// import { AdminContext } from '@specfocus/view-focus/core/AdminContext';
+// import { AdminContext } from '@specfocus/view-focus/resources/AdminContext';
 import { CloneButton } from './CloneButton';
 
 const invalidButtonDomProps = {

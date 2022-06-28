@@ -4,7 +4,7 @@ import {
   CoreAdminContext,
   ResourceContextProvider,
   useRecordContext,
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 import { createMemoryHistory } from 'history';
 import { Route, Routes } from 'react-router-dom';
 import { render, screen, waitFor } from '@testing-library/react';

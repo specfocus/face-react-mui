@@ -11,7 +11,7 @@ import {
   Theme,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations';
 import { Path } from 'react-router';
 
 /**

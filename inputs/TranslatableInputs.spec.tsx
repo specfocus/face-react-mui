@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { TextInput } from './TextInput';
-import { useTranslatableContext } from '@specfocus/view-focus.i18n/i18n/useTranslatableContext';
+import { useTranslatableContext } from '@specfocus/view-focus.i18n/translations/useTranslatableContext';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Tabs } from '@mui/material';

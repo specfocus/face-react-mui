@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { render } from '@testing-library/react';
-import { RecordContextProvider } from '@specfocus/view-focus/core';
+import { RecordContextProvider } from '@specfocus/view-focus/resources';
 
 import { RichTextField, removeTags } from './RichTextField';
 

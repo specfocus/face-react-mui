@@ -4,7 +4,7 @@ import { TextFieldProps } from '@mui/material/TextField';
 import { useChoicesContext } from '@specfocus/view-focus/choices/useChoicesContext';
 import { ChoicesProps, useChoices } from '@specfocus/view-focus/forms/useChoices';
 import { useInput } from '@specfocus/view-focus/forms/useInput';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';
 import FieldTitle from '@specfocus/view-focus/utils/FieldTitle';
 import clsx from 'clsx';

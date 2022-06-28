@@ -1,5 +1,5 @@
 import React from 'react';
-import createI18nProvider from '@specfocus/view-focus.i18next/providers';
+import createTranslationProvider from '@specfocus/view-focus.i18next/providers';
 import englishMessages from '@specfocus/locales/en/general';
 
 import { AdminContext } from '../core/AdminContext';
@@ -28,7 +28,7 @@ export const CustomIcon = () => (
   </Wrapper>
 );
 
-const i18nProvider = createI18nProvider(() => englishMessages);
+const i18nProvider = createTranslationProvider(() => englishMessages);
 
 const Wrapper = ({ children }) => (
   <AdminContext i18nProvider={i18nProvider}>

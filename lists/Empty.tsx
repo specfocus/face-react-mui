@@ -5,8 +5,8 @@ import {
   useGetResourceLabel,
   useResourceContext,
   useResourceDefinition
-} from '@specfocus/view-focus/core';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+} from '@specfocus/view-focus/resources';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { CreateButton } from '../buttons';
 
 export const Empty = (props: EmptyProps) => {

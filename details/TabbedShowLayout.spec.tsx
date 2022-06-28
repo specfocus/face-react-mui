@@ -2,7 +2,7 @@ import React from 'react';
 import expect from 'expect';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
-import { CoreAdminContext, testDataProvider } from '@specfocus/view-focus/core';
+import { CoreAdminContext, testDataProvider } from '@specfocus/view-focus/resources';
 
 import { TabbedShowLayout } from './TabbedShowLayout';
 import { Tab } from './Tab';

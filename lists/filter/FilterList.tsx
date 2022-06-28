@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactNode } from 'react';
 import { Box, BoxProps, List, Typography } from '@mui/material';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 
 /**
  * Header and container for a list of filter list items

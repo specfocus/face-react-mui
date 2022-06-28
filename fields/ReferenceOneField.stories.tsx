@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 import {
   CoreAdminContext,
   ResourceContextProvider
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 import { createMemoryHistory } from 'history';
 import { useState } from 'react';
 import { ListContextProvider } from '@specfocus/view-focus/lists/ListContextProvider';

@@ -1,6 +1,6 @@
 import { Drawer, DrawerProps, Theme, useMediaQuery } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useLocaleState } from '@specfocus/view-focus.i18n/i18n/useLocaleState';
+import { useLocaleState } from '@specfocus/view-focus.i18n/translations/useLocaleState';
 import lodashGet from 'lodash/get';
 import PropTypes from 'prop-types';
 import { ReactElement } from 'react';

@@ -3,7 +3,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import DoneIcon from '@mui/icons-material/Done';
 import { Tooltip, Typography, TypographyProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import get from 'lodash/get';
 import PropTypes from 'prop-types';

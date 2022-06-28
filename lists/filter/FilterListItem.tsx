@@ -6,7 +6,7 @@ import {
   ListItemProps, ListItemSecondaryAction, ListItemText
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useListFilterContext } from '@specfocus/view-focus/lists/useListFilterContext';
 import { shallowEqual } from '@specfocus/view-focus/utils/shallowEqual';
 import matches from 'lodash/matches';

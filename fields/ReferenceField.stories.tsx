@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 import {
   CoreAdminContext,
   ResourceContextProvider
-} from '@specfocus/view-focus/core';
+} from '@specfocus/view-focus/resources';
 import { ListContextProvider } from '@specfocus/view-focus/lists/ListContextProvider';
 import { RecordContextProvider } from '@specfocus/view-focus/records/RecordContext';
 import { createMemoryHistory } from 'history';

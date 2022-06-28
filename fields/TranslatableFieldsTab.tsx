@@ -1,6 +1,6 @@
 import React from 'react';
 import Tab, { TabProps } from '@mui/material/Tab';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { capitalize } from 'inflection';
 
 /**

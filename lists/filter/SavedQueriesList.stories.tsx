@@ -4,8 +4,8 @@ import { Box, Card, CardContent, styled, Typography } from '@mui/material';
 import englishMessages from '@specfocus/locales/en/general';
 import frenchMessages from '@specfocus/locales/fr/general';
 import fakeRestProvider from '@specfocus/sham-focus.rest';
-import createI18nProvider from '@specfocus/view-focus.i18next/providers';
-import { Resource } from '@specfocus/view-focus/core/Resource';
+import createTranslationProvider from '@specfocus/view-focus.i18next/providers';
+import { Resource } from '@specfocus/view-focus/resources/Resource';
 import { createMemoryHistory } from 'history';
 import merge from 'lodash/merge';
 import { LocalesMenuButton, ToggleThemeButton } from '../../buttons';
@@ -172,7 +172,7 @@ const frenchAppMessages = {
   },
 };
 
-const i18nProvider = createI18nProvider(
+const i18nProvider = createTranslationProvider(
   locale =>
     locale === 'fr'
       ? merge(frenchMessages, frenchAppMessages)

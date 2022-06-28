@@ -1,9 +1,9 @@
 import ActionDelete from '@mui/icons-material/Delete';
 import { alpha, styled } from '@mui/material/styles';
-import { useResourceContext } from '@specfocus/view-focus/core/useResourceContext';
+import { useResourceContext } from '@specfocus/view-focus/resources/useResourceContext';
 import { useDeleteMany } from '@specfocus/view-focus.data/operations/delete-many/useDeleteMany';
 import { useRefresh } from '@specfocus/view-focus.data/providers/useRefresh';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useListContext, useUnselectAll } from '@specfocus/view-focus/lists';
 import { useNotify } from '@specfocus/view-focus.notification/providers/useNotify';
 import type { MutationMode } from '@specfocus/view-focus.data/operations/MutationMode';

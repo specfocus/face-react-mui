@@ -1,6 +1,6 @@
 import DefaultIcon from '@mui/icons-material/ViewList';
 import { styled } from '@mui/material/styles';
-import { useGetResourceLabel, useResourceDefinitions } from '@specfocus/view-focus/core';
+import { useGetResourceLabel, useResourceDefinitions } from '@specfocus/view-focus/resources';
 import { useCreatePath } from '@specfocus/view-focus.navigation/routes/useCreatePath';
 import clsx from 'clsx';
 import lodashGet from 'lodash/get';

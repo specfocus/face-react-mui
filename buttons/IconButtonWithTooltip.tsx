@@ -1,7 +1,7 @@
 import React from 'react';
 import { MouseEvent } from 'react';
 import { IconButton, IconButtonProps, Tooltip } from '@mui/material';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations';
 
 /**
  * An IconButton with a tooltip which ensures the tooltip is closed on click to avoid ghost tooltips

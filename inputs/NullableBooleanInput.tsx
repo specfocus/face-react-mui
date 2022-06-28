@@ -2,7 +2,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material/styles';
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 import { useInput } from '@specfocus/view-focus/forms/useInput';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { FieldTitle } from '@specfocus/view-focus/utils';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';

@@ -1,5 +1,5 @@
 import { Divider as MuiDivider } from '@mui/material';
-import { ResourceContext } from '@specfocus/view-focus/core';
+import { ResourceContext } from '@specfocus/view-focus/resources';
 import { RecordContextProvider } from '@specfocus/view-focus/records/RecordContext';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import { WithRecord } from '@specfocus/view-focus/records/WithRecord';

@@ -1,8 +1,8 @@
 import ActionDelete from '@mui/icons-material/Delete';
 import { alpha, styled } from '@mui/material/styles';
 import useDeleteWithConfirmController from '@specfocus/view-focus/buttons/useDeleteWithConfirmController';
-import { useResourceContext } from '@specfocus/view-focus/core';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useResourceContext } from '@specfocus/view-focus/resources';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import { RedirectionSideEffect } from '@specfocus/view-focus.navigation/routes/useRedirect';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';

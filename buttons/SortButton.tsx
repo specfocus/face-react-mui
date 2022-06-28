@@ -13,7 +13,7 @@ import { styled } from '@mui/material/styles';
 import SortIcon from '@mui/icons-material/Sort';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useListSortContext } from '@specfocus/view-focus/lists/useListSortContext';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useTranslateLabel } from '@specfocus/view-focus/i18n/useTranslateLabel';
 import { shallowEqual } from '@specfocus/view-focus/utils/shallowEqual';
 

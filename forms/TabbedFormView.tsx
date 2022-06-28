@@ -20,7 +20,7 @@ import {
 } from 'react-router-dom';
 import { CardContent, Divider, SxProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useResourceContext } from '@specfocus/view-focus/core';
+import { useResourceContext } from '@specfocus/view-focus/resources';
 import { Toolbar } from './Toolbar';
 import { TabbedFormTabs, getTabbedFormTabFullPath } from './TabbedFormTabs';
 

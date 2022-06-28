@@ -1,6 +1,6 @@
 import React from 'react';
 import { MouseEvent, useState } from 'react';
-import { useLocaleState } from '@specfocus/view-focus.i18n/i18n/useLocaleState';
+import { useLocaleState } from '@specfocus/view-focus.i18n/translations/useLocaleState';
 import { Box, Button, Menu, MenuItem, styled } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Translate';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

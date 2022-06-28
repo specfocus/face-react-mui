@@ -1,4 +1,4 @@
-import { CoreAdminContext, CoreAdminContextProps } from '@specfocus/view-focus/core';
+import { CoreAdminContext, CoreAdminContextProps } from '@specfocus/view-focus/resources';
 import { ThemeProvider } from '../themes';
 import { defaultTheme } from './defaultTheme';
 

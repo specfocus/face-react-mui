@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { TranslatableContextProvider } from '@specfocus/view-focus.i18n/i18n/TranslatableContextProvider';
+import { TranslatableContextProvider } from '@specfocus/view-focus.i18n/translations/TranslatableContextProvider';
 import { useTranslatable, UseTranslatableOptions } from '@specfocus/view-focus/i18n/useTranslatable';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';

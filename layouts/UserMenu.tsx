@@ -12,7 +12,7 @@ import {
 import { styled } from '@mui/material/styles';
 import { useAuthProvider } from '@specfocus/view-focus.auth/providers/useAuthProvider';
 import useGetIdentity from '@specfocus/view-focus.auth/providers/useGetIdentity';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import PropTypes from 'prop-types';
 import { ReactNode, useCallback, useMemo, useState } from 'react';
 import { Logout } from '../auth/Logout';

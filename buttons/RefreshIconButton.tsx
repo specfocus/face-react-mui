@@ -2,7 +2,7 @@ import NavigationRefresh from '@mui/icons-material/Refresh';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import { useRefresh } from '@specfocus/view-focus.data/providers/useRefresh';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import PropTypes from 'prop-types';
 import { ReactElement, useCallback } from 'react';
 

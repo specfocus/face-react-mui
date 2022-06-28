@@ -1,7 +1,7 @@
 import { Button, Snackbar, SnackbarOrigin, SnackbarProps } from '@mui/material';
 import { styled, Theme } from '@mui/material/styles';
 import undoableEventEmitter from '@specfocus/view-focus.data/providers/undoableEventEmitter';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useNotificationContext } from '@specfocus/view-focus.notification/providers/useNotificationContext';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';

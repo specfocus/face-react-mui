@@ -1,9 +1,9 @@
 import { Checkbox, TableCell, TableHead, TableRow } from '@mui/material';
-import { useResourceContext } from '@specfocus/view-focus/core';
+import { useResourceContext } from '@specfocus/view-focus/resources';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import React, { Children, isValidElement, useCallback } from 'react';
-import { useTranslate } from '@specfocus/view-focus.i18n/i18n/useTranslate';
+import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useListContext } from '@specfocus/view-focus/lists/useListContext';
 import { Identifier, Entity } from '@specfocus/spec-focus/entities/Entity';
 import DatagridHeaderCell from './DatagridHeaderCell';

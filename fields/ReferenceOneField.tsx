@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import { ResourceContextProvider } from '@specfocus/view-focus/core';
+import { ResourceContextProvider } from '@specfocus/view-focus/resources';
 import { useReferenceOneFieldController } from '@specfocus/view-focus/forms/useReferenceOneFieldController';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import { LinkToType } from '@specfocus/view-focus.navigation/routes/types';

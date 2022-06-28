@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { useTranslatableContext } from '@specfocus/view-focus/core';
+import { useTranslatableContext } from '@specfocus/view-focus/resources';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { TranslatableFields } from './TranslatableFields';

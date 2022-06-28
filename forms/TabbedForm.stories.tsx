@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material';
-import { ResourceContextProvider } from '@specfocus/view-focus/core';
+import { ResourceContextProvider } from '@specfocus/view-focus/resources';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { AdminContext } from '../core/AdminContext';
 import { Edit } from '../details';

@@ -33,7 +33,7 @@
     "@nivo/bar": "^0.76.0",
     "@size-limit/preset-small-lib": "^7.0.8",
     "@specfocus/locales": "^0.0.1",
-    "@specfocus/spec-focus": "^0.2.0",
+    "@specfocus/spec-focus": "^0.2.2",
     "@specfocus/view-focus": "^0.0.1",
     "@specfocus/view-focus.auth": "^0.0.1",
     "@specfocus/view-focus.data": "^0.0.1",
@@ -78,7 +78,7 @@
   "peerDependencies": {
     "@specfocus/locales": ">= 0.0.x",
     "@specfocus/main-focus": ">= 0.0.x",
-    "@specfocus/spec-focus": ">= 0.1.x",
+    "@specfocus/spec-focus": ">= 0.2.2",
     "@specfocus/view-focus": ">= 0.0.x",
     "@specfocus/view-focus.auth": ">= 0.0.x",
     "@specfocus/view-focus.data": ">= 0.0.x",

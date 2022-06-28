@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { minLength, required, testDataProvider } from '@specfocus/view-focus/resources';
 
-import { AdminContext } from '../../AdminContext';
+import { BaseRootContext } from '../../BaseRootContext';
 import { SimpleForm } from '../../forms';
 import { NumberInput } from '../NumberInput';
 import { TextInput } from '../TextInput';
@@ -19,13 +19,13 @@ describe('<ArrayInput />', () => {
     };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <ArrayInput source="foo" record={{ iAmRecord: true }}>
             <MockChild />
           </ArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     await waitFor(() => {
@@ -42,7 +42,7 @@ describe('<ArrayInput />', () => {
       return null;
     };
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn}
           defaultValues={{
@@ -53,7 +53,7 @@ describe('<ArrayInput />', () => {
             <MockChild />
           </ArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     await waitFor(() => {
@@ -63,20 +63,20 @@ describe('<ArrayInput />', () => {
 
   it('should not create any section subform when the value is undefined', () => {
     const { baseElement } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <ArrayInput source="foo">
             <SimpleFormIterator />
           </ArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(baseElement.querySelectorAll('section')).toHaveLength(0);
   });
 
   it('should create one section subform per value in the array', async () => {
     const { baseElement } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn}
           defaultValues={{
@@ -87,7 +87,7 @@ describe('<ArrayInput />', () => {
             <SimpleFormIterator />
           </ArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(baseElement.querySelectorAll('section')).toHaveLength(3);
@@ -96,7 +96,7 @@ describe('<ArrayInput />', () => {
 
   it('should clone each input once per value in the array', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn}
           defaultValues={{
@@ -113,7 +113,7 @@ describe('<ArrayInput />', () => {
             </SimpleFormIterator>
           </ArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       screen.queryAllByLabelText('resources.bar.fields.arr.id')
@@ -135,7 +135,7 @@ describe('<ArrayInput />', () => {
 
   it('should apply validation to both itself and its inner inputs', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn}
           defaultValues={{
@@ -159,7 +159,7 @@ describe('<ArrayInput />', () => {
             </SimpleFormIterator>
           </ArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     fireEvent.click(screen.getByText('action.add'));
@@ -219,7 +219,7 @@ describe('<ArrayInput />', () => {
     };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn}
           defaultValues={{
@@ -231,7 +231,7 @@ describe('<ArrayInput />', () => {
         >
           <MyArrayInput />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     await waitFor(() => {

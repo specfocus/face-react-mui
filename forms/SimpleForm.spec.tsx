@@ -1,19 +1,19 @@
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { render, screen } from '@testing-library/react';
 import expect from 'expect';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { TextInput } from '../inputs';
 import { SimpleForm } from './SimpleForm';
 
 describe('<SimpleForm />', () => {
   it('should embed a form with given component children', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm>
           <TextInput source="name" />
           <TextInput source="city" />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       screen.queryByLabelText('resources.undefined.fields.name')
@@ -25,12 +25,12 @@ describe('<SimpleForm />', () => {
 
   it('should display <Toolbar />', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm>
           <TextInput source="name" />
           <TextInput source="city" />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByLabelText('action.save')).not.toBeNull();
   });

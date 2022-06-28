@@ -2,7 +2,7 @@ import React from 'react';
 import expect from 'expect';
 import { render, screen, waitFor } from '@testing-library/react';
 import { ReferenceInput } from './ReferenceInput';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { QueryClient } from 'react-query';
@@ -21,7 +21,7 @@ describe('<ReferenceInput />', () => {
       .mockImplementationOnce(() => { });
     const MyComponent = () => <span id="mycomponent" />;
     render(
-      <AdminContext
+      <BaseRootContext
         queryClient={
           new QueryClient({
             defaultOptions: { queries: { retry: false } },
@@ -36,7 +36,7 @@ describe('<ReferenceInput />', () => {
             <MyComponent />
           </ReferenceInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.queryByDisplayValue('fetch error')).not.toBeNull();
@@ -53,13 +53,13 @@ describe('<ReferenceInput />', () => {
         Promise.resolve({ data: [{ id: 1 }, { id: 2 }], total: 2 }),
     });
     render(
-      <AdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <SimpleForm onSubmit={jest.fn()}>
           <ReferenceInput {...defaultProps}>
             <MyComponent />
           </ReferenceInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.queryByText('posts')).not.toBeNull();
@@ -76,13 +76,13 @@ describe('<ReferenceInput />', () => {
         Promise.resolve({ data: [{ id: 1 }, { id: 2 }], total: 2 }),
     });
     render(
-      <AdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <SimpleForm onSubmit={jest.fn()}>
           <ReferenceInput {...defaultProps}>
             <Children />
           </ReferenceInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.getByLabelText('total').innerHTML).toEqual('2');

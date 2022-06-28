@@ -3,7 +3,7 @@ import { Resource } from '@specfocus/view-focus/resources';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import { createMemoryHistory } from 'history';
 import { EditButton } from '../buttons';
-import { Admin } from '../core/Admin';
+import { BaseRoot } from '../core/BaseRoot';
 import { Labeled } from '../core/Labeled';
 import { TextField } from '../fields';
 import TopToolbar from '../layouts/TopToolbar';
@@ -40,9 +40,9 @@ const PostShowBasic = () => (
 );
 
 export const Basic = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" show={PostShowBasic} />
-  </Admin>
+  </BaseRoot>
 );
 
 const PostShowWithFields = () => (
@@ -65,9 +65,9 @@ const PostShowWithFields = () => (
 );
 
 export const WithFields = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" show={PostShowWithFields} />
-  </Admin>
+  </BaseRoot>
 );
 
 const PostShowWithCustomActions = () => (
@@ -83,9 +83,9 @@ const PostShowWithCustomActions = () => (
 );
 
 export const Actions = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" show={PostShowWithCustomActions} />
-  </Admin>
+  </BaseRoot>
 );
 
 const PostShowWithTitle = () => (
@@ -95,9 +95,9 @@ const PostShowWithTitle = () => (
 );
 
 export const Title = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" show={PostShowWithTitle} />
-  </Admin>
+  </BaseRoot>
 );
 
 const AsideComponent = () => <Card sx={{ padding: 2 }}>Aside</Card>;
@@ -109,9 +109,9 @@ const PostShowWithAside = () => (
 );
 
 export const Aside = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" show={PostShowWithAside} />
-  </Admin>
+  </BaseRoot>
 );
 
 const CustomWrapper = ({ children }) => (
@@ -130,9 +130,9 @@ const PostShowWithComponent = () => (
 );
 
 export const Component = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" show={PostShowWithComponent} />
-  </Admin>
+  </BaseRoot>
 );
 
 const PostShowWithStyles = () => (
@@ -147,9 +147,9 @@ const PostShowWithStyles = () => (
 );
 
 export const SX = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" show={PostShowWithStyles} />
-  </Admin>
+  </BaseRoot>
 );
 
 const DefaultPostShow = () => (
@@ -164,7 +164,7 @@ const DefaultPostShow = () => (
 );
 
 export const Default = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" show={DefaultPostShow} edit={() => <span />} />
-  </Admin>
+  </BaseRoot>
 );

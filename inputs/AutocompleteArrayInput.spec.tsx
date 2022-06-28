@@ -7,7 +7,7 @@ import {
   useRecordContext,
 } from '@specfocus/view-focus/resources';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { AutocompleteArrayInput } from './AutocompleteArrayInput';
 import { useCreateSuggestionContext } from './useSupportCreateSuggestion';
@@ -20,7 +20,7 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should extract suggestions from choices', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -30,7 +30,7 @@ describe('<AutocompleteArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     userEvent.type(
@@ -44,7 +44,7 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should use optionText with a string value as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -55,7 +55,7 @@ describe('<AutocompleteArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     userEvent.type(
@@ -70,7 +70,7 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should use optionText with a string value including "." as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -81,7 +81,7 @@ describe('<AutocompleteArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     userEvent.type(
@@ -96,7 +96,7 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should use optionText with a function value as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -107,7 +107,7 @@ describe('<AutocompleteArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     userEvent.type(
@@ -122,7 +122,7 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should translate the choices by default', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <TestTranslationProvider translate={x => `**${x}**`}>
           <SimpleForm onSubmit={jest.fn()}>
             <AutocompleteArrayInput
@@ -134,7 +134,7 @@ describe('<AutocompleteArrayInput />', () => {
             />
           </SimpleForm>
         </TestTranslationProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     userEvent.type(
@@ -149,7 +149,7 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should not translate the choices if translateChoice is false', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <TestTranslationProvider translate={x => `**${x}**`}>
           <SimpleForm onSubmit={jest.fn()}>
             <AutocompleteArrayInput
@@ -162,7 +162,7 @@ describe('<AutocompleteArrayInput />', () => {
             />
           </SimpleForm>
         </TestTranslationProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     userEvent.type(
@@ -178,7 +178,7 @@ describe('<AutocompleteArrayInput />', () => {
   it('should make debounced calls to setFilter', async () => {
     const setFilter = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -186,7 +186,7 @@ describe('<AutocompleteArrayInput />', () => {
             setFilter={setFilter}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -202,7 +202,7 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should respect shouldRenderSuggestions over default if passed in', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -211,7 +211,7 @@ describe('<AutocompleteArrayInput />', () => {
             noOptionsText="No choices"
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('resources.posts.fields.tags');
     fireEvent.focus(input);
@@ -226,25 +226,25 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should not fail when value is empty and new choices are applied', () => {
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
             choices={[{ id: 't', name: 'Technical' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
             choices={[{ id: 't', name: 'Technical' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.tags'
@@ -254,14 +254,14 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should repopulate the suggestions after the suggestions are dismissed', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
             choices={[{ id: 't', name: 'Technical' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText('resources.posts.fields.tags');
@@ -274,14 +274,14 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should not rerender searchText while having focus and new choices arrive', () => {
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
             choices={[{ id: 't', name: 'Technical' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.tags'
@@ -293,7 +293,7 @@ describe('<AutocompleteArrayInput />', () => {
     expect(screen.queryAllByRole('option')).toHaveLength(0);
 
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -303,7 +303,7 @@ describe('<AutocompleteArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(input.value).toEqual('foo');
@@ -311,14 +311,14 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should revert the searchText on blur', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
             choices={[{ id: 't', name: 'Technical' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -337,7 +337,7 @@ describe('<AutocompleteArrayInput />', () => {
   it('should resolve value from input value', () => {
     const onChange = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -345,7 +345,7 @@ describe('<AutocompleteArrayInput />', () => {
             choices={[{ id: 't', name: 'Technical' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText('resources.posts.fields.tags');
@@ -362,7 +362,7 @@ describe('<AutocompleteArrayInput />', () => {
   it('should reset filter when input value changed', async () => {
     const setFilter = jest.fn();
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} record={{ tags: ['t'] }}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -373,7 +373,7 @@ describe('<AutocompleteArrayInput />', () => {
             setFilter={setFilter}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('resources.posts.fields.tags');
     userEvent.type(input, 'p');
@@ -381,7 +381,7 @@ describe('<AutocompleteArrayInput />', () => {
     expect(setFilter).toHaveBeenCalledTimes(1);
     expect(setFilter).toHaveBeenCalledWith('p');
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} record={{ tags: ['p'] }}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -392,7 +392,7 @@ describe('<AutocompleteArrayInput />', () => {
             setFilter={setFilter}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(setFilter).toHaveBeenCalledTimes(2);
@@ -403,7 +403,7 @@ describe('<AutocompleteArrayInput />', () => {
   it('should reset filter only when needed, even if the value is an array of objects (fixes #4454)', async () => {
     const setFilter = jest.fn();
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn()}
           record={{ tags: [{ id: 't' }] }}
@@ -419,7 +419,7 @@ describe('<AutocompleteArrayInput />', () => {
             setFilter={setFilter}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('resources.posts.fields.tags');
     userEvent.type(input, 'p');
@@ -428,7 +428,7 @@ describe('<AutocompleteArrayInput />', () => {
     });
     expect(setFilter).toHaveBeenCalledWith('p');
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn()}
           record={{ tags: [{ id: 'p' }] }}
@@ -444,7 +444,7 @@ describe('<AutocompleteArrayInput />', () => {
             setFilter={setFilter}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(setFilter).toHaveBeenCalledTimes(2);
@@ -459,7 +459,7 @@ describe('<AutocompleteArrayInput />', () => {
     };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -472,7 +472,7 @@ describe('<AutocompleteArrayInput />', () => {
             matchSuggestion={(filter, choice) => true}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     userEvent.type(
       screen.getByLabelText('resources.posts.fields.tags'),
@@ -484,14 +484,14 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should display helperText', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
             helperText="Can I help you?"
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.getByText('Can I help you?')).not.toBeNull();
   });
@@ -501,7 +501,7 @@ describe('<AutocompleteArrayInput />', () => {
 
     it('should not be displayed if field is pristine', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn()}>
             <AutocompleteArrayInput
               {...defaultProps}
@@ -509,14 +509,14 @@ describe('<AutocompleteArrayInput />', () => {
               validate={failingValidator}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       expect(screen.queryByText('validation.error')).toBeNull();
     });
 
     it('should be displayed if field has been touched and is invalid', async () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm mode="onBlur" onSubmit={jest.fn()}>
             <AutocompleteArrayInput
               {...defaultProps}
@@ -524,7 +524,7 @@ describe('<AutocompleteArrayInput />', () => {
               validate={failingValidator}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText('resources.posts.fields.tags');
       fireEvent.focus(input);
@@ -540,7 +540,7 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('updates suggestions when input is blurred and refocused', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -551,7 +551,7 @@ describe('<AutocompleteArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('resources.posts.fields.tags');
 
@@ -569,7 +569,7 @@ describe('<AutocompleteArrayInput />', () => {
     const onChange = jest.fn();
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -580,7 +580,7 @@ describe('<AutocompleteArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('resources.posts.fields.tags');
     fireEvent.focus(input);
@@ -592,7 +592,7 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should limit suggestions when suggestionLimit is passed', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -603,7 +603,7 @@ describe('<AutocompleteArrayInput />', () => {
             suggestionLimit={1}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('resources.posts.fields.tags');
     userEvent.type(input, 'a');
@@ -625,7 +625,7 @@ describe('<AutocompleteArrayInput />', () => {
     };
 
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             source="language"
@@ -634,7 +634,7 @@ describe('<AutocompleteArrayInput />', () => {
             onCreate={handleCreate}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -645,7 +645,7 @@ describe('<AutocompleteArrayInput />', () => {
     fireEvent.click(screen.getByText('action.create_item'));
     await new Promise(resolve => setTimeout(resolve));
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             source="language"
@@ -654,7 +654,7 @@ describe('<AutocompleteArrayInput />', () => {
             onCreate={handleCreate}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.queryByText('New Kid On The Block')).not.toBeNull();
@@ -677,7 +677,7 @@ describe('<AutocompleteArrayInput />', () => {
     };
 
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             source="language"
@@ -686,7 +686,7 @@ describe('<AutocompleteArrayInput />', () => {
             onCreate={handleCreate}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -697,7 +697,7 @@ describe('<AutocompleteArrayInput />', () => {
     fireEvent.click(screen.getByText('action.create_item'));
     await new Promise(resolve => setTimeout(resolve));
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             source="language"
@@ -706,7 +706,7 @@ describe('<AutocompleteArrayInput />', () => {
             onCreate={handleCreate}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.queryByText('New Kid On The Block')).not.toBeNull();
@@ -730,7 +730,7 @@ describe('<AutocompleteArrayInput />', () => {
     };
 
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             source="language"
@@ -739,7 +739,7 @@ describe('<AutocompleteArrayInput />', () => {
             create={<Create />}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -751,7 +751,7 @@ describe('<AutocompleteArrayInput />', () => {
     fireEvent.click(screen.getByText('Get the kid'));
     await new Promise(resolve => setTimeout(resolve));
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             source="language"
@@ -760,7 +760,7 @@ describe('<AutocompleteArrayInput />', () => {
             create={<Create />}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.queryByText('New Kid On The Block')).not.toBeNull();
@@ -784,7 +784,7 @@ describe('<AutocompleteArrayInput />', () => {
     };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -793,7 +793,7 @@ describe('<AutocompleteArrayInput />', () => {
             choices={choices}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     fireEvent.focus(
@@ -821,7 +821,7 @@ describe('<AutocompleteArrayInput />', () => {
     };
 
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             source="language"
@@ -831,7 +831,7 @@ describe('<AutocompleteArrayInput />', () => {
             optionText={choice => `Choice is ${choice.name}`}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText('resources.posts.fields.language', {
@@ -842,7 +842,7 @@ describe('<AutocompleteArrayInput />', () => {
     fireEvent.click(screen.getByText('Choice is ra.action.create_item'));
     await new Promise(resolve => setTimeout(resolve));
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             source="language"
@@ -852,7 +852,7 @@ describe('<AutocompleteArrayInput />', () => {
             optionText={choice => `Choice is ${choice.name}`}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(
@@ -862,14 +862,14 @@ describe('<AutocompleteArrayInput />', () => {
 
   it('should show the suggestions when the input value is empty and the input is focused and choices arrived late', () => {
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteArrayInput
             {...defaultProps}
@@ -879,7 +879,7 @@ describe('<AutocompleteArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     userEvent.type(

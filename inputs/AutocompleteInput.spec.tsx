@@ -7,7 +7,7 @@ import {
   TestTranslationProvider,
   useRecordContext,
 } from '@specfocus/view-focus/resources';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleForm } from '../forms';
 
 import { AutocompleteInput } from './AutocompleteInput';
@@ -25,14 +25,14 @@ describe('<AutocompleteInput />', () => {
 
   it('should set AutocompleteInput value to an empty string when the selected item is null', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: null }}>
           <AutocompleteInput
             {...defaultProps}
             choices={[{ id: 2, name: 'foo' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     await waitFor(() => {
@@ -42,21 +42,21 @@ describe('<AutocompleteInput />', () => {
 
   it('should use the input value as the initial state and input searchText', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 2 }}>
           <AutocompleteInput
             {...defaultProps}
             choices={[{ id: 2, name: 'foo' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByDisplayValue('foo')).not.toBeNull();
   });
 
   it('should use optionValue as value identifier', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 2 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -67,7 +67,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByDisplayValue('foo')).not.toBeNull();
     fireEvent.focus(screen.getByLabelText('resources.users.fields.role'));
@@ -78,7 +78,7 @@ describe('<AutocompleteInput />', () => {
 
   it('should use optionValue including "." as value identifier', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 2 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -89,7 +89,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByDisplayValue('foo')).not.toBeNull();
     fireEvent.focus(screen.getByLabelText('resources.users.fields.role'));
@@ -100,7 +100,7 @@ describe('<AutocompleteInput />', () => {
 
   it('should use optionText with a string value as text identifier', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 2 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -111,7 +111,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByDisplayValue('foo')).not.toBeNull();
 
@@ -123,7 +123,7 @@ describe('<AutocompleteInput />', () => {
 
   it('should use optionText with a string value including "." as text identifier', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 2 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -134,7 +134,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByDisplayValue('foo')).not.toBeNull();
     fireEvent.focus(screen.getByLabelText('resources.users.fields.role'));
@@ -145,7 +145,7 @@ describe('<AutocompleteInput />', () => {
 
   it('should use optionText with a function value as text identifier', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 2 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -156,7 +156,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByDisplayValue('foo')).not.toBeNull();
 
@@ -168,7 +168,7 @@ describe('<AutocompleteInput />', () => {
 
   it('should translate the value by default', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <TestTranslationProvider translate={x => `**${x}**`}>
           <SimpleForm
             onSubmit={jest.fn()}
@@ -183,7 +183,7 @@ describe('<AutocompleteInput />', () => {
             />
           </SimpleForm>
         </TestTranslationProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByDisplayValue('**foo**')).not.toBeNull();
     fireEvent.focus(
@@ -196,7 +196,7 @@ describe('<AutocompleteInput />', () => {
 
   it('should not translate the value if translateChoice is false', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <TestTranslationProvider translate={x => `**${x}**`}>
           <SimpleForm
             onSubmit={jest.fn()}
@@ -212,7 +212,7 @@ describe('<AutocompleteInput />', () => {
             />
           </SimpleForm>
         </TestTranslationProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByDisplayValue('foo')).not.toBeNull();
     expect(screen.queryByDisplayValue('**foo**')).toBeNull();
@@ -227,7 +227,7 @@ describe('<AutocompleteInput />', () => {
 
   it('should show the suggestions on focus', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 2 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -237,7 +237,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     fireEvent.focus(screen.getByLabelText('resources.users.fields.role'));
@@ -248,7 +248,7 @@ describe('<AutocompleteInput />', () => {
 
   it('should respect shouldRenderSuggestions over default if passed in', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 2 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -260,7 +260,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText('resources.users.fields.role');
@@ -272,14 +272,14 @@ describe('<AutocompleteInput />', () => {
 
   it('should not fail when value is null and new choices are applied', () => {
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: null }}>
           <AutocompleteInput
             {...defaultProps}
             choices={[{ id: 2, name: 'foo' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.users.fields.role'
@@ -289,14 +289,14 @@ describe('<AutocompleteInput />', () => {
     input.focus();
 
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: null }}>
           <AutocompleteInput
             {...defaultProps}
             choices={[{ id: 1, name: 'bar' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(input.value).toEqual('');
@@ -304,14 +304,14 @@ describe('<AutocompleteInput />', () => {
 
   it('should repopulate the suggestions after the suggestions are dismissed', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: null }}>
           <AutocompleteInput
             {...defaultProps}
             choices={[{ id: 2, name: 'foo' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('resources.users.fields.role');
     fireEvent.focus(input);
@@ -331,14 +331,14 @@ describe('<AutocompleteInput />', () => {
 
   it('should not rerender searchText while having focus and new choices arrive', () => {
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: null }}>
           <AutocompleteInput
             {...defaultProps}
             choices={[{ id: 2, name: 'foo' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.users.fields.role'
@@ -348,14 +348,14 @@ describe('<AutocompleteInput />', () => {
     expect(input.value).toEqual('foo');
 
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: null }}>
           <AutocompleteInput
             {...defaultProps}
             choices={[{ id: 1, name: 'bar' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(input.value).toEqual('foo');
@@ -363,18 +363,18 @@ describe('<AutocompleteInput />', () => {
 
   it('should show the suggestions when the input value is null and the input is focussed and choices arrived late', () => {
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 2 }}>
           <AutocompleteInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText('resources.users.fields.role');
     fireEvent.focus(input);
 
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 2 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -384,7 +384,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       screen.queryByText('bar', {
@@ -396,7 +396,7 @@ describe('<AutocompleteInput />', () => {
   it('should reset filter when input value changed', async () => {
     const setFilter = jest.fn();
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} record={{ role: 2 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -407,7 +407,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('resources.users.fields.role');
     userEvent.type(input, '{selectall}bar');
@@ -417,7 +417,7 @@ describe('<AutocompleteInput />', () => {
     expect(setFilter).toHaveBeenCalledWith('bar');
 
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} record={{ role: 1 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -428,7 +428,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(setFilter).toHaveBeenCalledTimes(2);
@@ -443,7 +443,7 @@ describe('<AutocompleteInput />', () => {
     };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 2 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -456,7 +456,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText('resources.users.fields.role');
@@ -474,7 +474,7 @@ describe('<AutocompleteInput />', () => {
     const t = () => {
       act(() => {
         render(
-          <AdminContext dataProvider={testDataProvider()}>
+          <BaseRootContext dataProvider={testDataProvider()}>
             <SimpleForm
               onSubmit={jest.fn()}
               defaultValues={{ role: 2 }}
@@ -489,7 +489,7 @@ describe('<AutocompleteInput />', () => {
                 ]}
               />
             </SimpleForm>
-          </AdminContext>
+          </BaseRootContext>
         );
       });
     };
@@ -501,7 +501,7 @@ describe('<AutocompleteInput />', () => {
 
   it('should display helperText if specified', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 1 }}>
           <AutocompleteInput
             {...defaultProps}
@@ -509,7 +509,7 @@ describe('<AutocompleteInput />', () => {
             choices={[{ id: 1, name: 'hello' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('Can I help you?')).not.toBeNull();
   });
@@ -519,7 +519,7 @@ describe('<AutocompleteInput />', () => {
 
     it('should not be displayed if field is pristine', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm
             onSubmit={jest.fn()}
             defaultValues={{ role: 1 }}
@@ -530,14 +530,14 @@ describe('<AutocompleteInput />', () => {
               validate={failingValidator}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       expect(screen.queryByText('validation.error')).toBeNull();
     });
 
     it('should be displayed if field has been touched and is invalid', async () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm
             onSubmit={jest.fn()}
             mode="onBlur"
@@ -549,7 +549,7 @@ describe('<AutocompleteInput />', () => {
               validate={failingValidator}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       fireEvent.click(
         screen.getByLabelText('action.clear_input_value')
@@ -568,7 +568,7 @@ describe('<AutocompleteInput />', () => {
 
   it('updates suggestions when input is blurred and refocused', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteInput
             {...defaultProps}
@@ -579,7 +579,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('resources.users.fields.role');
 
@@ -597,7 +597,7 @@ describe('<AutocompleteInput />', () => {
 
   it('does not automatically select a matched choice if there is only one', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <AutocompleteInput
             {...defaultProps}
@@ -608,7 +608,7 @@ describe('<AutocompleteInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('resources.users.fields.role');
     fireEvent.focus(input);
@@ -620,14 +620,14 @@ describe('<AutocompleteInput />', () => {
 
   it('should accept 0 as an input value', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ role: 0 }}>
           <AutocompleteInput
             {...defaultProps}
             choices={[{ id: 0, name: 'foo' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByDisplayValue('foo')).not.toBeNull();
   });
@@ -647,7 +647,7 @@ describe('<AutocompleteInput />', () => {
     };
 
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           mode="onBlur"
           onSubmit={jest.fn()}
@@ -660,7 +660,7 @@ describe('<AutocompleteInput />', () => {
             onCreate={handleCreate}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -671,7 +671,7 @@ describe('<AutocompleteInput />', () => {
     fireEvent.click(screen.getByText('action.create_item'));
     await new Promise(resolve => setTimeout(resolve));
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           mode="onBlur"
           onSubmit={jest.fn()}
@@ -684,7 +684,7 @@ describe('<AutocompleteInput />', () => {
             onCreate={handleCreate}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       screen.queryByDisplayValue('New Kid On The Block')
@@ -712,7 +712,7 @@ describe('<AutocompleteInput />', () => {
     };
 
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           mode="onBlur"
           onSubmit={jest.fn()}
@@ -725,7 +725,7 @@ describe('<AutocompleteInput />', () => {
             onCreate={handleCreate}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -736,7 +736,7 @@ describe('<AutocompleteInput />', () => {
     fireEvent.click(screen.getByText('action.create_item'));
     await new Promise(resolve => setTimeout(resolve, 100));
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           mode="onBlur"
           onSubmit={jest.fn()}
@@ -749,7 +749,7 @@ describe('<AutocompleteInput />', () => {
             onCreate={handleCreate}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       screen.queryByDisplayValue('New Kid On The Block')
@@ -778,7 +778,7 @@ describe('<AutocompleteInput />', () => {
     };
 
     const { rerender } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           mode="onBlur"
           onSubmit={jest.fn()}
@@ -791,7 +791,7 @@ describe('<AutocompleteInput />', () => {
             create={<Create />}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -802,7 +802,7 @@ describe('<AutocompleteInput />', () => {
     fireEvent.click(screen.getByText('Get the kid'));
     await new Promise(resolve => setTimeout(resolve));
     rerender(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           mode="onBlur"
           onSubmit={jest.fn()}
@@ -815,7 +815,7 @@ describe('<AutocompleteInput />', () => {
             create={<Create />}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       screen.queryByDisplayValue('New Kid On The Block')
@@ -869,7 +869,7 @@ describe('<AutocompleteInput />', () => {
 
   it("should allow to edit the input if it's inside a FormDataConsumer", () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           mode="onBlur"
           resource="posts"
@@ -901,7 +901,7 @@ describe('<AutocompleteInput />', () => {
             }}
           </FormDataConsumer>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('Id', {
       selector: 'input',
@@ -913,7 +913,7 @@ describe('<AutocompleteInput />', () => {
 
   it('should display "No options" and not throw any error inside a ReferenceArrayInput field when referenced list is empty', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm>
           <ReferenceArrayInput
             label="Tags"
@@ -923,7 +923,7 @@ describe('<AutocompleteInput />', () => {
             <AutocompleteArrayInput />
           </ReferenceArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     // Give time for the (previously thrown) error to happen
     await new Promise(resolve => setTimeout(resolve, 1000));

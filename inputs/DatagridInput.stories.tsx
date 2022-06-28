@@ -1,6 +1,6 @@
 import { Resource } from '@specfocus/view-focus/resources';
 import { createMemoryHistory } from 'history';
-import { Admin } from '../core/Admin';
+import { BaseRoot } from '../core/BaseRoot';
 import { Edit } from '../details';
 import { TextField } from '../fields';
 import { SimpleForm } from '../forms';
@@ -58,9 +58,9 @@ const BookEdit = () => {
 };
 
 export const Basic = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" edit={BookEdit} />
-  </Admin>
+  </BaseRoot>
 );
 
 const authors = [
@@ -149,8 +149,8 @@ const BookEditWithReference = () => (
 );
 
 export const InsideReferenceInput = () => (
-  <Admin dataProvider={dataProviderWithAuthors} history={history}>
+  <BaseRoot dataProvider={dataProviderWithAuthors} history={history}>
     <Resource name="authors" />
     <Resource name="books" edit={BookEditWithReference} />
-  </Admin>
+  </BaseRoot>
 );

@@ -7,7 +7,7 @@ import {
 import { useLocation } from 'react-router-dom';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 
-import { AdminContext } from '../../AdminContext';
+import { BaseRootContext } from '../../BaseRootContext';
 import DatagridRow from './DatagridRow';
 import DatagridContextProvider from './DatagridContextProvider';
 
@@ -22,11 +22,11 @@ const ExpandPanel = () => <span>expanded</span>;
 const render = element =>
   baseRender(element, {
     wrapper: ({ children }) => (
-      <AdminContext>
+      <BaseRootContext>
         <table>
           <tbody>{children}</tbody>
         </table>
-      </AdminContext>
+      </BaseRootContext>
     ),
   });
 

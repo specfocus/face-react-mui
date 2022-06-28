@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { NumberInput } from './NumberInput';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SaveButton } from '../buttons';
 import { SimpleForm, Toolbar } from '../forms';
 import { useFormContext, useWatch } from 'react-hook-form';
@@ -26,11 +26,11 @@ describe('<NumberInput />', () => {
 
   it('should use a mui TextField', () => {
     render(
-      <AdminContext>
+      <BaseRootContext>
         <SimpleForm defaultValues={{ views: 12 }} onSubmit={jest.fn()}>
           <NumberInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.views'
@@ -41,11 +41,11 @@ describe('<NumberInput />', () => {
 
   it('should accept `step` prop and pass it to native input', () => {
     render(
-      <AdminContext>
+      <BaseRootContext>
         <SimpleForm onSubmit={jest.fn()}>
           <NumberInput {...defaultProps} step="0.1" />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.views'
@@ -55,12 +55,12 @@ describe('<NumberInput />', () => {
 
   it('should change when the user types a number and blurs', () => {
     render(
-      <AdminContext>
+      <BaseRootContext>
         <SimpleForm defaultValues={{ views: 12 }} onSubmit={jest.fn()}>
           <NumberInput {...defaultProps} />
           <RecordWatcher />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     screen.getByText('views:12');
     const input = screen.getByLabelText(
@@ -73,12 +73,12 @@ describe('<NumberInput />', () => {
 
   it('should change when the user types a number and presses enter', () => {
     render(
-      <AdminContext>
+      <BaseRootContext>
         <SimpleForm defaultValues={{ views: 12 }} onSubmit={jest.fn()}>
           <NumberInput {...defaultProps} />
           <RecordWatcher />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     screen.getByText('views:12');
     const input = screen.getByLabelText(
@@ -99,13 +99,13 @@ describe('<NumberInput />', () => {
       );
     };
     render(
-      <AdminContext>
+      <BaseRootContext>
         <SimpleForm defaultValues={{ views: 12 }} onSubmit={jest.fn()}>
           <NumberInput {...defaultProps} />
           <UpdateViewsButton />
           <RecordWatcher />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     screen.getByText('views:12');
     fireEvent.click(screen.getByText('Update views'));
@@ -117,7 +117,7 @@ describe('<NumberInput />', () => {
       const onSubmit = jest.fn();
 
       render(
-        <AdminContext>
+        <BaseRootContext>
           <SimpleForm
             toolbar={<MyToolbar />}
             defaultValues={{ views: 12 }}
@@ -125,7 +125,7 @@ describe('<NumberInput />', () => {
           >
             <NumberInput {...defaultProps} />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       fireEvent.click(screen.getByText('action.save'));
       await waitFor(() => {
@@ -137,11 +137,11 @@ describe('<NumberInput />', () => {
     it('should return null when no defaultValue', async () => {
       const onSubmit = jest.fn();
       render(
-        <AdminContext>
+        <BaseRootContext>
           <SimpleForm toolbar={<MyToolbar />} onSubmit={onSubmit}>
             <NumberInput {...defaultProps} />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       fireEvent.click(screen.getByText('action.save'));
       await waitFor(() => {
@@ -154,14 +154,14 @@ describe('<NumberInput />', () => {
       const onSubmit = jest.fn();
 
       render(
-        <AdminContext>
+        <BaseRootContext>
           <SimpleForm
             defaultValues={{ views: 12 }}
             onSubmit={onSubmit}
           >
             <NumberInput {...defaultProps} />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText('resources.posts.fields.views');
       fireEvent.change(input, { target: { value: '3' } });
@@ -177,14 +177,14 @@ describe('<NumberInput />', () => {
       const onSubmit = jest.fn();
 
       render(
-        <AdminContext>
+        <BaseRootContext>
           <SimpleForm
             defaultValues={{ views: 12 }}
             onSubmit={onSubmit}
           >
             <NumberInput {...defaultProps} />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText('resources.posts.fields.views');
       fireEvent.change(input, { target: { value: '' } });
@@ -205,14 +205,14 @@ describe('<NumberInput />', () => {
       });
 
       render(
-        <AdminContext>
+        <BaseRootContext>
           <SimpleForm
             defaultValues={{ views: 12 }}
             onSubmit={jest.fn()}
           >
             <NumberInput {...defaultProps} onChange={onChange} />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText('resources.posts.fields.views');
       fireEvent.change(input, { target: { value: '3' } });
@@ -229,14 +229,14 @@ describe('<NumberInput />', () => {
         value = event.target.value;
       });
       render(
-        <AdminContext>
+        <BaseRootContext>
           <SimpleForm
             defaultValues={{ views: 12 }}
             onSubmit={onSubmit}
           >
             <NumberInput {...defaultProps} onChange={onChange} />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText('resources.posts.fields.views');
       fireEvent.change(input, { target: { value: '3' } });
@@ -254,14 +254,14 @@ describe('<NumberInput />', () => {
       const onFocus = jest.fn();
 
       render(
-        <AdminContext>
+        <BaseRootContext>
           <SimpleForm
             defaultValues={{ views: 12 }}
             onSubmit={jest.fn()}
           >
             <NumberInput {...defaultProps} onFocus={onFocus} />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText('resources.posts.fields.views');
       fireEvent.focus(input);
@@ -274,14 +274,14 @@ describe('<NumberInput />', () => {
       const onBlur = jest.fn();
 
       render(
-        <AdminContext>
+        <BaseRootContext>
           <SimpleForm
             defaultValues={{ views: 12 }}
             onSubmit={jest.fn()}
           >
             <NumberInput {...defaultProps} onBlur={onBlur} />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText('resources.posts.fields.views');
       fireEvent.blur(input);
@@ -292,7 +292,7 @@ describe('<NumberInput />', () => {
   describe('error message', () => {
     it('should not be displayed if field is pristine', () => {
       render(
-        <AdminContext>
+        <BaseRootContext>
           <SimpleForm
             toolbar={<MyToolbar />}
             defaultValues={{ views: 12 }}
@@ -303,7 +303,7 @@ describe('<NumberInput />', () => {
               validate={() => 'error'}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       fireEvent.click(screen.getByText('action.save'));
       const error = screen.queryByText('error');
@@ -312,7 +312,7 @@ describe('<NumberInput />', () => {
 
     it('should not be displayed if field has been touched but is valid', () => {
       render(
-        <AdminContext>
+        <BaseRootContext>
           <SimpleForm
             toolbar={<MyToolbar />}
             defaultValues={{ views: 12 }}
@@ -323,7 +323,7 @@ describe('<NumberInput />', () => {
               validate={value => undefined}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText('resources.posts.fields.views');
       fireEvent.change(input, { target: { value: '3' } });
@@ -337,7 +337,7 @@ describe('<NumberInput />', () => {
 
     it('should be displayed if field has been touched and is invalid', async () => {
       render(
-        <AdminContext>
+        <BaseRootContext>
           <SimpleForm
             toolbar={<MyToolbar />}
             defaultValues={{ views: 12 }}
@@ -348,7 +348,7 @@ describe('<NumberInput />', () => {
               validate={() => 'error'}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText('resources.posts.fields.views');
       fireEvent.change(input, { target: { value: '3' } });

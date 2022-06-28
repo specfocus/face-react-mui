@@ -3,7 +3,7 @@ import { Form } from '@specfocus/view-focus/forms/Form';
 import createTranslationProvider from '@specfocus/view-focus.i18next/providers';
 import englishMessages from '@specfocus/locales/en/general';
 import { DatagridInput } from '.';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { TextField } from '../fields';
 import { ReferenceArrayInput } from './ReferenceArrayInput';
 
@@ -29,7 +29,7 @@ const dataProvider = testDataProvider({
 const i18nProvider = createTranslationProvider(() => englishMessages);
 
 export const WithDatagridChild = () => (
-  <AdminContext dataProvider={dataProvider} i18nProvider={i18nProvider}>
+  <BaseRootContext dataProvider={dataProvider} i18nProvider={i18nProvider}>
     <Form
       onSubmit={() => { }}
       defaultValues={{ tag_ids: [5] }}
@@ -44,5 +44,5 @@ export const WithDatagridChild = () => (
         </DatagridInput>
       </ReferenceArrayInput>
     </Form>
-  </AdminContext>
+  </BaseRootContext>
 );

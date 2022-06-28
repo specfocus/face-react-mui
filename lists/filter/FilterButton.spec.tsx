@@ -3,7 +3,7 @@ import expect from 'expect';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { createTheme } from '@mui/material/styles';
 
-import { AdminContext } from '../../AdminContext';
+import { BaseRootContext } from '../../BaseRootContext';
 import { FilterButton } from './FilterButton';
 import { TextInput } from '../../input';
 
@@ -30,12 +30,12 @@ describe('<FilterButton />', () => {
         <TextInput source="Returned" label="Returned" />
       );
       const { getByLabelText, queryByText } = render(
-        <AdminContext theme={theme}>
+        <BaseRootContext theme={theme}>
           <FilterButton
             {...defaultProps}
             filters={defaultProps.filters.concat(hiddenFilter)}
           />
-        </AdminContext>
+        </BaseRootContext>
       );
 
       fireEvent.click(getByLabelText('action.add_filter'));
@@ -46,7 +46,7 @@ describe('<FilterButton />', () => {
 
     it('should not display the filter button if all filters are shown and there is no filter value', () => {
       render(
-        <AdminContext theme={theme}>
+        <BaseRootContext theme={theme}>
           <FilterButton
             {...defaultProps}
             filters={[
@@ -58,14 +58,14 @@ describe('<FilterButton />', () => {
               'customer.name': true,
             }}
           />
-        </AdminContext>
+        </BaseRootContext>
       );
       expect(screen.queryByLabelText('action.add_filter')).toBeNull();
     });
 
     it('should display the filter button if all filters are shown and there is a filter value', () => {
       render(
-        <AdminContext theme={theme}>
+        <BaseRootContext theme={theme}>
           <FilterButton
             {...defaultProps}
             filters={[
@@ -78,7 +78,7 @@ describe('<FilterButton />', () => {
             }}
             filterValues={{ title: 'foo' }}
           />
-        </AdminContext>
+        </BaseRootContext>
       );
       expect(
         screen.queryByLabelText('action.add_filter')
@@ -92,12 +92,12 @@ describe('<FilterButton />', () => {
         <TextInput source="Returned" label="Returned" disabled={true} />
       );
       const { getByRole, getByLabelText } = render(
-        <AdminContext theme={theme}>
+        <BaseRootContext theme={theme}>
           <FilterButton
             {...defaultProps}
             filters={defaultProps.filters.concat(hiddenFilter)}
           />
-        </AdminContext>
+        </BaseRootContext>
       );
 
       fireEvent.click(getByLabelText('action.add_filter'));

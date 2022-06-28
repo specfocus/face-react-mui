@@ -1,6 +1,6 @@
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { BooleanInput } from './BooleanInput';
 
@@ -12,14 +12,14 @@ describe('<BooleanInput />', () => {
 
   it('should render as a checkbox', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{ isPublished: true }}
           onSubmit={jest.fn}
         >
           <BooleanInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -31,14 +31,14 @@ describe('<BooleanInput />', () => {
 
   it('should be checked if the value is true', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn}
           defaultValues={{ isPublished: true }}
         >
           <BooleanInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -50,14 +50,14 @@ describe('<BooleanInput />', () => {
 
   it('should not be checked if the value is false', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn}
           defaultValues={{ isPublished: false }}
         >
           <BooleanInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -69,11 +69,11 @@ describe('<BooleanInput />', () => {
 
   it('should not be checked if the value is undefined', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <BooleanInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -85,11 +85,11 @@ describe('<BooleanInput />', () => {
 
   it('should be checked if the value is undefined and defaultValue is true', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <BooleanInput {...defaultProps} defaultValue={true} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -101,11 +101,11 @@ describe('<BooleanInput />', () => {
 
   it('should be checked if the value is true and defaultValue is false', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn} record={{ isPublished: true }}>
           <BooleanInput {...defaultProps} defaultValue={false} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -117,14 +117,14 @@ describe('<BooleanInput />', () => {
 
   it('should update on click', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{ isPublished: false }}
           onSubmit={jest.fn}
         >
           <BooleanInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -142,7 +142,7 @@ describe('<BooleanInput />', () => {
     const validate = () => 'validation.error';
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn}
           defaultValues={{ isPublished: true }}
@@ -150,7 +150,7 @@ describe('<BooleanInput />', () => {
         >
           <BooleanInput {...defaultProps} validate={validate} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.isPublished'

@@ -1,4 +1,4 @@
-import { ThemeOptions } from '@mui/material';
+import { ThemeOptions as MuiThemeOptions } from '@mui/material';
 
 export const defaultTheme = {
   palette: {
@@ -49,7 +49,7 @@ export const defaultTheme = {
   },
 };
 
-export interface RaThemeOptions extends ThemeOptions {
+export interface ThemeOptions extends MuiThemeOptions {
   sidebar?: {
     width?: number;
     closedWidth?: number;

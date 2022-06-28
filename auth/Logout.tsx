@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
 import React, { FunctionComponent, ReactElement, useCallback } from 'react';
 
 /**
- * Logout button component, to be passed to the Admin component
+ * Logout button component, to be passed to the BaseRoot component
  *
  * Used for the Logout Menu item in the sidebar
  */

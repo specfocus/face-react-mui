@@ -5,7 +5,7 @@ import { required, testDataProvider } from '@specfocus/view-focus/resources';
 import { format } from 'date-fns';
 import { useFormState } from 'react-hook-form';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleForm, Toolbar } from '../forms';
 import { DateTimeInput } from './DateTimeInput';
 import { ArrayInput, SimpleFormIterator } from './ArrayInput';
@@ -19,11 +19,11 @@ describe('<DateTimeInput />', () => {
 
   it('should render a date time input', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <DateTimeInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.publishedAt'
@@ -39,7 +39,7 @@ describe('<DateTimeInput />', () => {
       return <p>Dirty: {isDirty.toString()}</p>;
     };
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn()}
           record={{ id: 1, publishedAt: publishedAt.toISOString() }}
@@ -47,7 +47,7 @@ describe('<DateTimeInput />', () => {
           <DateTimeInput {...defaultProps} />
           <FormState />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       screen.getByDisplayValue(format(publishedAt, "yyyy-MM-dd'T'HH:mm"))
@@ -63,7 +63,7 @@ describe('<DateTimeInput />', () => {
       },
     ];
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <ArrayInput
             defaultValue={backlinksDefaultValue}
@@ -74,7 +74,7 @@ describe('<DateTimeInput />', () => {
             </SimpleFormIterator>
           </ArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.getByDisplayValue(format(date, "yyyy-MM-dd'T'HH:mm")));
@@ -84,7 +84,7 @@ describe('<DateTimeInput />', () => {
     const publishedAt = new Date('Wed Oct 05 2011 16:48:00 GMT+0200');
     const onSubmit = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={onSubmit}
           defaultValues={{ publishedAt }}
@@ -96,7 +96,7 @@ describe('<DateTimeInput />', () => {
         >
           <DateTimeInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       screen.queryByDisplayValue(
@@ -115,7 +115,7 @@ describe('<DateTimeInput />', () => {
     const publishedAt = new Date('Wed Oct 05 2011 16:48:00 GMT+0200');
     const onSubmit = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={onSubmit}
           toolbar={
@@ -129,7 +129,7 @@ describe('<DateTimeInput />', () => {
             defaultValue={publishedAt}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       screen.queryByDisplayValue(
@@ -147,28 +147,28 @@ describe('<DateTimeInput />', () => {
   describe('error message', () => {
     it('should not be displayed if field is pristine', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn()}>
             <DateTimeInput
               {...defaultProps}
               validate={required()}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       expect(screen.queryByText('validation.required')).toBeNull();
     });
 
     it('should be displayed if field has been touched and is invalid', async () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn()} mode="onBlur">
             <DateTimeInput
               {...defaultProps}
               validate={required()}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText(
         'resources.posts.fields.publishedAt *'
@@ -184,14 +184,14 @@ describe('<DateTimeInput />', () => {
     it('should be displayed if field has been touched multiple times and is invalid', async () => {
       const onSubmit = jest.fn();
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={onSubmit}>
             <DateTimeInput
               {...defaultProps}
               validate={required()}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText(
         'resources.posts.fields.publishedAt *'

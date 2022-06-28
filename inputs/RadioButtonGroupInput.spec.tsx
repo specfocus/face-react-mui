@@ -7,7 +7,7 @@ import {
   useRecordContext,
 } from '@specfocus/view-focus/resources';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { RadioButtonGroupInput } from './RadioButtonGroupInput';
 
@@ -23,7 +23,7 @@ describe('<RadioButtonGroupInput />', () => {
 
   it('should render choices as radio inputs', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{ type: 'visa' }}
           onSubmit={jest.fn()}
@@ -33,7 +33,7 @@ describe('<RadioButtonGroupInput />', () => {
             label="Credit card"
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('Credit card')).not.toBeNull();
     const input1 = screen.getByLabelText('VISA') as HTMLInputElement;
@@ -54,7 +54,7 @@ describe('<RadioButtonGroupInput />', () => {
     );
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{ type: 'visa' }}
           onSubmit={jest.fn()}
@@ -78,7 +78,7 @@ describe('<RadioButtonGroupInput />', () => {
             label="People"
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('People')).not.toBeNull();
     const input1 = screen.getByLabelText('Leo Tolstoi');
@@ -90,7 +90,7 @@ describe('<RadioButtonGroupInput />', () => {
   it('should trigger custom onChange when clicking radio button', async () => {
     const onChange = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{ type: 'visa' }}
           onSubmit={jest.fn()}
@@ -101,7 +101,7 @@ describe('<RadioButtonGroupInput />', () => {
             onChange={onChange}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('Credit card')).not.toBeNull();
 
@@ -120,14 +120,14 @@ describe('<RadioButtonGroupInput />', () => {
 
   it('should use the value provided by the form default values', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn()}
           defaultValues={{ type: 'mastercard' }}
         >
           <RadioButtonGroupInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       (screen.getByLabelText('VISA') as HTMLInputElement).checked
@@ -143,14 +143,14 @@ describe('<RadioButtonGroupInput />', () => {
       { id: 2, name: 'Mastercard' },
     ];
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()} defaultValues={{ type: 1 }}>
           <RadioButtonGroupInput
             {...defaultProps}
             choices={choices}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('Mastercard') as HTMLInputElement;
     expect(input.checked).toBe(false);
@@ -160,7 +160,7 @@ describe('<RadioButtonGroupInput />', () => {
 
   it('should use optionValue as value identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm defaultValues={{ type: 'mc' }} onSubmit={jest.fn()}>
           <RadioButtonGroupInput
             {...defaultProps}
@@ -168,7 +168,7 @@ describe('<RadioButtonGroupInput />', () => {
             choices={[{ short: 'mc', name: 'Mastercard' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       (screen.getByLabelText('Mastercard') as HTMLInputElement).value
@@ -177,7 +177,7 @@ describe('<RadioButtonGroupInput />', () => {
 
   it('should use optionValue including "." as value identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm defaultValues={{ type: 'mc' }} onSubmit={jest.fn()}>
           <RadioButtonGroupInput
             {...defaultProps}
@@ -187,7 +187,7 @@ describe('<RadioButtonGroupInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       (screen.getByLabelText('Mastercard') as HTMLInputElement).value
@@ -196,7 +196,7 @@ describe('<RadioButtonGroupInput />', () => {
 
   it('should use optionText with a string value as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm defaultValues={{ type: 'mc' }} onSubmit={jest.fn()}>
           <RadioButtonGroupInput
             {...defaultProps}
@@ -204,14 +204,14 @@ describe('<RadioButtonGroupInput />', () => {
             choices={[{ id: 'mc', longname: 'Mastercard' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('Mastercard')).not.toBeNull();
   });
 
   it('should use optionText with a string value including "." as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm defaultValues={{ type: 'mc' }} onSubmit={jest.fn()}>
           <RadioButtonGroupInput
             {...defaultProps}
@@ -221,14 +221,14 @@ describe('<RadioButtonGroupInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('Mastercard')).not.toBeNull();
   });
 
   it('should use optionText with a function value as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm defaultValues={{ type: 'mc' }} onSubmit={jest.fn()}>
           <RadioButtonGroupInput
             {...defaultProps}
@@ -236,7 +236,7 @@ describe('<RadioButtonGroupInput />', () => {
             choices={[{ id: 'mc', longname: 'Mastercard' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('Mastercard')).not.toBeNull();
   });
@@ -247,7 +247,7 @@ describe('<RadioButtonGroupInput />', () => {
       return <span data-testid="label">{record.longname}</span>;
     };
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm defaultValues={{ type: 'mc' }} onSubmit={jest.fn()}>
           <RadioButtonGroupInput
             {...defaultProps}
@@ -255,14 +255,14 @@ describe('<RadioButtonGroupInput />', () => {
             choices={[{ id: 'mc', longname: 'Mastercard' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('Mastercard')).not.toBeNull();
   });
 
   it('should translate the choices by default', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <TestTranslationProvider translate={x => `**${x}**`}>
           <SimpleForm
             defaultValues={{ type: 'mc' }}
@@ -274,14 +274,14 @@ describe('<RadioButtonGroupInput />', () => {
             />
           </SimpleForm>
         </TestTranslationProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('**Mastercard**')).not.toBeNull();
   });
 
   it('should not translate the choices if translateChoice is false', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <TestTranslationProvider translate={x => `**${x}**`}>
           <SimpleForm
             defaultValues={{ type: 'mc' }}
@@ -294,7 +294,7 @@ describe('<RadioButtonGroupInput />', () => {
             />
           </SimpleForm>
         </TestTranslationProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('**Mastercard**')).toBeNull();
     expect(screen.queryByText('Mastercard')).not.toBeNull();
@@ -302,7 +302,7 @@ describe('<RadioButtonGroupInput />', () => {
 
   it('should display helperText if prop is present in meta', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{ type: 'visa' }}
           onSubmit={jest.fn()}
@@ -312,7 +312,7 @@ describe('<RadioButtonGroupInput />', () => {
             helperText="Can I help you?"
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('Can I help you?')).not.toBeNull();
   });
@@ -323,7 +323,7 @@ describe('<RadioButtonGroupInput />', () => {
       const validate = () => 'validation.error';
 
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm
             defaultValues={{ type: 'visa' }}
             onSubmit={jest.fn()}
@@ -334,7 +334,7 @@ describe('<RadioButtonGroupInput />', () => {
               validate={validate}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       expect(screen.queryByText('validation.required')).toBeNull();
     });
@@ -344,7 +344,7 @@ describe('<RadioButtonGroupInput />', () => {
       const validate = () => 'validation.error';
 
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm
             defaultValues={{ type: 'visa' }}
             onSubmit={jest.fn()}
@@ -355,7 +355,7 @@ describe('<RadioButtonGroupInput />', () => {
               validate={validate}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       const input = screen.getByLabelText(
@@ -376,7 +376,7 @@ describe('<RadioButtonGroupInput />', () => {
       const validate = () => 'validation.error';
 
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm
             defaultValues={{ type: 'visa' }}
             onSubmit={jest.fn()}
@@ -388,7 +388,7 @@ describe('<RadioButtonGroupInput />', () => {
               helperText="Can I help you?"
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText(
         'Mastercard'
@@ -407,14 +407,14 @@ describe('<RadioButtonGroupInput />', () => {
 
   it('should not render a LinearProgress if isLoading is true and a second has not passed yet', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{ type: 'visa' }}
           onSubmit={jest.fn()}
         >
           <RadioButtonGroupInput {...defaultProps} isLoading />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.queryByRole('progressbar')).toBeNull();
@@ -422,14 +422,14 @@ describe('<RadioButtonGroupInput />', () => {
 
   it('should render a LinearProgress if isLoading is true and a second has passed', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{ type: 'visa' }}
           onSubmit={jest.fn()}
         >
           <RadioButtonGroupInput {...defaultProps} isLoading />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     await new Promise(resolve => setTimeout(resolve, 1001));
@@ -439,14 +439,14 @@ describe('<RadioButtonGroupInput />', () => {
 
   it('should not render a LinearProgress if isLoading is false', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{ type: 'visa' }}
           onSubmit={jest.fn()}
         >
           <RadioButtonGroupInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.queryByRole('progressbar')).toBeNull();

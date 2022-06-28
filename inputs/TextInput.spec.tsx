@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { required, testDataProvider } from '@specfocus/view-focus/resources';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { TextInput } from './TextInput';
 
@@ -14,14 +14,14 @@ describe('<TextInput />', () => {
 
   it('should render the input correctly', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{ title: 'hello' }}
           onSubmit={jest.fn}
         >
           <TextInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const TextFieldElement = screen.getByLabelText(
       'resources.posts.fields.title'
@@ -32,14 +32,14 @@ describe('<TextInput />', () => {
 
   it('should use a ResettableTextField when type is password', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{ title: 'hello' }}
           onSubmit={jest.fn}
         >
           <TextInput {...defaultProps} type="password" />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const TextFieldElement = screen.getByLabelText(
       'resources.posts.fields.title'
@@ -50,7 +50,7 @@ describe('<TextInput />', () => {
   describe('error message', () => {
     it('should not be displayed if field is pristine', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn}>
             <TextInput
               {...defaultProps}
@@ -58,7 +58,7 @@ describe('<TextInput />', () => {
               validate={required()}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       fireEvent.click(screen.getByText('action.save'));
       const error = screen.queryByText('validation.required');
@@ -67,7 +67,7 @@ describe('<TextInput />', () => {
 
     it('should not be displayed if field has been touched but is valid', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn}>
             <TextInput
               {...defaultProps}
@@ -75,7 +75,7 @@ describe('<TextInput />', () => {
               validate={required()}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       const input = screen.getByLabelText(
@@ -89,7 +89,7 @@ describe('<TextInput />', () => {
 
     it('should be displayed if field has been touched and is invalid', async () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm mode="onBlur" onSubmit={jest.fn}>
             <TextInput
               {...defaultProps}
@@ -97,7 +97,7 @@ describe('<TextInput />', () => {
               validate={required()}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       const input = screen.getByLabelText(

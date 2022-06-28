@@ -4,7 +4,7 @@ import {
   getByText, render, screen, waitFor
 } from '@testing-library/react';
 import expect from 'expect';
-import { AdminContext } from '../../core/AdminContext';
+import { BaseRootContext } from '../../core/BaseRootContext';
 import { SimpleForm } from '../../forms';
 import { TextInput } from '../TextInput';
 import { ArrayInput } from './ArrayInput';
@@ -20,9 +20,9 @@ describe('<SimpleFormIterator />', () => {
   afterAll(() => confirmSpy.mockRestore());
 
   const Wrapper = ({ children }) => (
-    <AdminContext dataProvider={testDataProvider()}>
+    <BaseRootContext dataProvider={testDataProvider()}>
       {children}
-    </AdminContext>
+    </BaseRootContext>
   );
 
   it('should display one input group per row', () => {

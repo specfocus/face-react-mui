@@ -1,7 +1,7 @@
 import { Stack } from '@mui/material';
 import { ResourceContextProvider } from '@specfocus/view-focus/resources';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { Edit } from '../details';
 import { NumberInput, TextInput } from '../inputs';
 import { FormTab } from './FormTab';
@@ -19,7 +19,7 @@ const data = {
 };
 
 const Wrapper = ({ children }) => (
-  <AdminContext
+  <BaseRootContext
     i18nProvider={{
       translate: (x, options) => options?._ ?? x,
       changeLocale: () => Promise.resolve(),
@@ -34,7 +34,7 @@ const Wrapper = ({ children }) => (
         {children}
       </Edit>
     </ResourceContextProvider>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const Basic = () => (

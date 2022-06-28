@@ -1,7 +1,7 @@
 import React from 'react';
 import createTranslationProvider from '@specfocus/view-focus.i18next/providers';
 import englishMessages from '@specfocus/locales/en/general';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { Create } from '../details';
 import { SimpleForm } from '../forms';
 import { DateInput } from './DateInput';
@@ -29,9 +29,9 @@ export const Disabled = () => (
 const i18nProvider = createTranslationProvider(() => englishMessages);
 
 const Wrapper = ({ children }) => (
-  <AdminContext i18nProvider={i18nProvider}>
+  <BaseRootContext i18nProvider={i18nProvider}>
     <Create resource="posts">
       <SimpleForm>{children}</SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );

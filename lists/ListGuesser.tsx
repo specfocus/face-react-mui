@@ -24,12 +24,12 @@ import { ListView, ListViewProps } from './ListView';
  *
  * @example
  *
- * import { Admin, Resource, ListGuesser } from '@specfocus/view-focus.mui-demo';
+ * import { BaseRoot, Resource, ListGuesser } from '@specfocus/view-focus.mui-demo';
  *
  * const App = () => (
- *     <Admin dataProvider={myDataProvider}>
+ *     <BaseRoot dataProvider={myDataProvider}>
  *         <Resource name="posts" list={ListGuesser} />
- *     </Admin>
+ *     </BaseRoot>
  * );
  */
 export const ListGuesser = <RecordType extends Entity = any>(

@@ -8,7 +8,7 @@ import {
   Form,
 } from '@specfocus/view-focus/resources';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { CheckboxGroupInput } from './CheckboxGroupInput';
 
@@ -24,11 +24,11 @@ describe('<CheckboxGroupInput />', () => {
 
   it('should render choices as checkbox components', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <CheckboxGroupInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input1 = screen.getByLabelText('Angular') as HTMLInputElement;
     expect(input1.type).toBe('checkbox');
@@ -42,7 +42,7 @@ describe('<CheckboxGroupInput />', () => {
 
   it('should use the input parameter value as the initial input value', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn}
           defaultValues={{
@@ -57,7 +57,7 @@ describe('<CheckboxGroupInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input1 = screen.getByLabelText('Angular') as HTMLInputElement;
     expect(input1.checked).toEqual(true);
@@ -67,7 +67,7 @@ describe('<CheckboxGroupInput />', () => {
 
   it('should use optionValue as value identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <CheckboxGroupInput
             {...defaultProps}
@@ -75,7 +75,7 @@ describe('<CheckboxGroupInput />', () => {
             choices={[{ foobar: 'foo', name: 'Bar' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('Bar') as HTMLInputElement;
     expect(input.value).toBe('foo');
@@ -83,7 +83,7 @@ describe('<CheckboxGroupInput />', () => {
 
   it('should use optionValue including "." as value identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <CheckboxGroupInput
             {...defaultProps}
@@ -91,7 +91,7 @@ describe('<CheckboxGroupInput />', () => {
             choices={[{ foobar: { id: 'foo' }, name: 'Bar' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText('Bar') as HTMLInputElement;
     expect(input.value).toBe('foo');
@@ -99,7 +99,7 @@ describe('<CheckboxGroupInput />', () => {
 
   it('should use optionText with a string value as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <CheckboxGroupInput
             {...defaultProps}
@@ -107,14 +107,14 @@ describe('<CheckboxGroupInput />', () => {
             choices={[{ id: 'foo', foobar: 'Bar' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByLabelText('Bar')).not.toBeNull();
   });
 
   it('should use optionText with a string value including "." as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <CheckboxGroupInput
             {...defaultProps}
@@ -122,14 +122,14 @@ describe('<CheckboxGroupInput />', () => {
             choices={[{ id: 'foo', foobar: { name: 'Bar' } }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByLabelText('Bar')).not.toBeNull();
   });
 
   it('should use optionText with a function value as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <CheckboxGroupInput
             {...defaultProps}
@@ -137,7 +137,7 @@ describe('<CheckboxGroupInput />', () => {
             choices={[{ id: 'foo', foobar: 'Bar' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByLabelText('Bar')).not.toBeNull();
   });
@@ -148,7 +148,7 @@ describe('<CheckboxGroupInput />', () => {
       return <span data-testid="label">{record.foobar}</span>;
     };
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <CheckboxGroupInput
             {...defaultProps}
@@ -156,7 +156,7 @@ describe('<CheckboxGroupInput />', () => {
             choices={[{ id: 'foo', foobar: 'Bar' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByLabelText('Bar')).not.toBeNull();
     expect(screen.queryByTestId('label')).not.toBeNull();
@@ -164,7 +164,7 @@ describe('<CheckboxGroupInput />', () => {
 
   it('should translate the choices by default', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <TestTranslationProvider
           messages={{
             Angular: 'Angular **',
@@ -175,7 +175,7 @@ describe('<CheckboxGroupInput />', () => {
             <CheckboxGroupInput {...defaultProps} />
           </SimpleForm>
         </TestTranslationProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByLabelText('Angular **')).not.toBeNull();
     expect(screen.queryByLabelText('React **')).not.toBeNull();
@@ -183,7 +183,7 @@ describe('<CheckboxGroupInput />', () => {
 
   it('should not translate the choices if translateChoice is false', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <TestTranslationProvider
           messages={{
             Angular: 'Angular **',
@@ -197,7 +197,7 @@ describe('<CheckboxGroupInput />', () => {
             />
           </SimpleForm>
         </TestTranslationProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByLabelText('Angular **')).toBeNull();
     expect(screen.queryByLabelText('React **')).toBeNull();
@@ -207,14 +207,14 @@ describe('<CheckboxGroupInput />', () => {
 
   it('should display helperText', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn}>
           <CheckboxGroupInput
             {...defaultProps}
             helperText="Can I help you?"
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('Can I help you?')).not.toBeNull();
   });
@@ -222,7 +222,7 @@ describe('<CheckboxGroupInput />', () => {
   it('should not parse selected values types to numbers if all choices types are non numbers', async () => {
     const handleSubmit = jest.fn();
     const { getByLabelText } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <Form
           onSubmit={handleSubmit}
           defaultValues={{ notifications: ['31', '42'] }}
@@ -237,7 +237,7 @@ describe('<CheckboxGroupInput />', () => {
           />
           <button type="submit" aria-label="Save" />
         </Form>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = getByLabelText('Ray Hakt') as HTMLInputElement;
     fireEvent.click(input);
@@ -253,7 +253,7 @@ describe('<CheckboxGroupInput />', () => {
   it('should parse selected values types to numbers if some choices are numbers', async () => {
     const handleSubmit = jest.fn();
     const { getByLabelText } = render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <Form
           onSubmit={handleSubmit}
           defaultValues={{ notifications: [31, 42] }}
@@ -268,7 +268,7 @@ describe('<CheckboxGroupInput />', () => {
           />
           <button type="submit" aria-label="Save" />
         </Form>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = getByLabelText('Ray Hakt') as HTMLInputElement;
     fireEvent.click(input);
@@ -284,42 +284,42 @@ describe('<CheckboxGroupInput />', () => {
   describe('error message', () => {
     it('should not be displayed if field is pristine', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn}>
             <CheckboxGroupInput
               {...defaultProps}
               validate={() => 'error'}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       expect(screen.queryByText('error')).toBeNull();
     });
 
     it('should be empty if field has been touched but is valid', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn}>
             <CheckboxGroupInput
               {...defaultProps}
               validate={() => 'error'}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       expect(screen.queryByText('error')).toBeNull();
     });
 
     it('should be displayed if field has been touched and is invalid', async () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn} mode="onBlur">
             <CheckboxGroupInput
               {...defaultProps}
               validate={() => 'error'}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.queryByLabelText(
         'Angular'
@@ -334,7 +334,7 @@ describe('<CheckboxGroupInput />', () => {
 
   it('should not render a LinearProgress if loading is true and a second has not passed yet', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <CheckboxGroupInput
             {...defaultProps}
@@ -342,7 +342,7 @@ describe('<CheckboxGroupInput />', () => {
             isLoading
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.queryByRole('progressbar')).toBeNull();
@@ -350,7 +350,7 @@ describe('<CheckboxGroupInput />', () => {
 
   it('should render a LinearProgress if loading is true, choices are empty and a second has passed', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm mode="onBlur" onSubmit={jest.fn()}>
           <CheckboxGroupInput
             {...defaultProps}
@@ -359,7 +359,7 @@ describe('<CheckboxGroupInput />', () => {
             isLoading
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     await new Promise(resolve => setTimeout(resolve, 1001));
@@ -369,11 +369,11 @@ describe('<CheckboxGroupInput />', () => {
 
   it('should not render a LinearProgress if loading is false', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <CheckboxGroupInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.queryByRole('progressbar')).toBeNull();

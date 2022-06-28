@@ -1,6 +1,6 @@
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { ImageField } from '../fields';
 import { SimpleForm } from '../forms';
 import { ImageInput } from './ImageInput';
@@ -19,13 +19,13 @@ describe('<ImageInput />', () => {
 
   it('should display a dropzone for single file dropping', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <ImageInput {...defaultProps}>
             <div />
           </ImageInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(
@@ -35,13 +35,13 @@ describe('<ImageInput />', () => {
 
   it('should display a dropzone for multiple files dropping', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <ImageInput {...defaultProps} multiple>
             <div />
           </ImageInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(
@@ -54,7 +54,7 @@ describe('<ImageInput />', () => {
     const onSubmit = jest.fn();
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn()}
           defaultValues={{
@@ -65,7 +65,7 @@ describe('<ImageInput />', () => {
             <div />
           </ImageInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const file = createFile('cats.gif', 1234, 'image/gif');
@@ -92,7 +92,7 @@ describe('<ImageInput />', () => {
     const onSubmit = jest.fn();
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{
             images: [],
@@ -103,7 +103,7 @@ describe('<ImageInput />', () => {
             <div />
           </ImageInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const file1 = createFile('cats.gif', 1234, 'image/gif');
@@ -133,7 +133,7 @@ describe('<ImageInput />', () => {
     const onSubmit = jest.fn();
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{
             image: {
@@ -147,7 +147,7 @@ describe('<ImageInput />', () => {
             <ImageField source="src" title="title" />
           </ImageInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.getByTitle('cats')).not.toBeNull();
@@ -165,7 +165,7 @@ describe('<ImageInput />', () => {
     const onSubmit = jest.fn();
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{
             images: [
@@ -185,7 +185,7 @@ describe('<ImageInput />', () => {
             <ImageField source="src" title="title" />
           </ImageInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.getByTitle('cats')).not.toBeNull();
@@ -208,7 +208,7 @@ describe('<ImageInput />', () => {
     const onSubmit = jest.fn();
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           defaultValues={{
             images: [
@@ -228,7 +228,7 @@ describe('<ImageInput />', () => {
             <ImageField source="src" title="title" />
           </ImageInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.getByTitle('cats')).not.toBeNull();
@@ -251,7 +251,7 @@ describe('<ImageInput />', () => {
   it('should display correct custom label', () => {
     const test = (expectedLabel, expectedLabelText = expectedLabel) => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn()}>
             <ImageInput
               {...defaultProps}
@@ -260,7 +260,7 @@ describe('<ImageInput />', () => {
               <div />
             </ImageInput>
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       expect(screen.getByText(expectedLabelText)).not.toBeNull();
@@ -275,7 +275,7 @@ describe('<ImageInput />', () => {
   describe('Image Preview', () => {
     it('should display file preview using child as preview component', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm
             onSubmit={jest.fn()}
             defaultValues={{
@@ -289,7 +289,7 @@ describe('<ImageInput />', () => {
               <ImageField source="url" title="title" />
             </ImageInput>
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       const previewImage = screen.queryByTitle('Hello world!');
@@ -301,7 +301,7 @@ describe('<ImageInput />', () => {
 
     it('should display all files (when several) previews using child as preview component', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm
             onSubmit={jest.fn()}
             defaultValues={{
@@ -321,7 +321,7 @@ describe('<ImageInput />', () => {
               <ImageField source="url" title="title" />
             </ImageInput>
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       const previewImage1 = screen.queryByTitle('Hello world!');
@@ -339,7 +339,7 @@ describe('<ImageInput />', () => {
 
     it('should update previews when updating input value', () => {
       const { rerender } = render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm
             onSubmit={jest.fn()}
             record={{
@@ -353,7 +353,7 @@ describe('<ImageInput />', () => {
               <ImageField source="url" title="title" />
             </ImageInput>
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       const previewImage = screen.queryByTitle('Hello world!');
@@ -363,7 +363,7 @@ describe('<ImageInput />', () => {
       );
 
       rerender(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm
             onSubmit={jest.fn()}
             record={{
@@ -377,7 +377,7 @@ describe('<ImageInput />', () => {
               <ImageField source="url" title="title" />
             </ImageInput>
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       const updatedPreviewImage = screen.queryByTitle('Hello world!');
@@ -392,7 +392,7 @@ describe('<ImageInput />', () => {
       const onSubmit = jest.fn();
 
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm
             defaultValues={{
               images: [],
@@ -403,7 +403,7 @@ describe('<ImageInput />', () => {
               <ImageField source="url" />
             </ImageInput>
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       const file = createFile('cats.gif', 1234, 'image/gif');

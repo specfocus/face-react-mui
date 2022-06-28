@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { Basic, InsideRouter, SubPath } from './App.stories';
+import { Basic, InsideRouter, SubPath } from './BaseApp.stories';
 
-describe('<Admin>', () => {
+describe('<BaseRoot>', () => {
   beforeEach(() => {
     window.history.replaceState({}, '', '/');
     window.scrollTo = jest.fn();

@@ -2,7 +2,7 @@ import { BaseRootContext, BaseRootContextProps } from '@specfocus/view-focus/res
 import { ThemeProvider } from '../themes';
 import { defaultTheme } from './defaultTheme';
 
-export const AppContext = (props: BaseRootContextProps) => {
+export const BaseAppContext = (props: BaseRootContextProps) => {
   const { theme = defaultTheme, children, ...rest } = props;
   return (
     <BaseRootContext {...rest}>
@@ -11,4 +11,4 @@ export const AppContext = (props: BaseRootContextProps) => {
   );
 };
 
-AppContext.displayName = 'AppContext';
+BaseAppContext.displayName = 'AppContext';

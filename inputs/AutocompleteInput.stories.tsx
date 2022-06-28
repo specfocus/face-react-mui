@@ -12,7 +12,7 @@ import { required } from '@specfocus/view-focus.forms/forms/validate';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import { createMemoryHistory } from 'history';
 import React from 'react';
-import { Admin } from '../core/Admin';
+import { BaseRoot } from '../core/BaseRoot';
 import { Edit } from '../details';
 import { SimpleForm } from '../forms';
 import { AutocompleteInput } from './AutocompleteInput';
@@ -68,9 +68,9 @@ const BookEdit = () => {
 };
 
 export const Basic = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" edit={BookEdit} />
-  </Admin>
+  </BaseRoot>
 );
 
 const BookEditCustomText = () => {
@@ -103,9 +103,9 @@ const BookEditCustomText = () => {
 };
 
 export const CustomText = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" edit={BookEditCustomText} />
-  </Admin>
+  </BaseRoot>
 );
 
 const BookEditCustomTextFunction = () => {
@@ -138,9 +138,9 @@ const BookEditCustomTextFunction = () => {
 };
 
 export const CustomTextFunction = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" edit={BookEditCustomTextFunction} />
-  </Admin>
+  </BaseRoot>
 );
 
 const CustomOption = props => {
@@ -196,9 +196,9 @@ const BookEditCustomOptions = () => {
 };
 
 export const CustomOptions = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" edit={BookEditCustomOptions} />
-  </Admin>
+  </BaseRoot>
 );
 
 const choicesForCreationSupport = [
@@ -243,9 +243,9 @@ const BookEditWithCreationSupport = () => (
 );
 
 export const CreationSupport = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" edit={BookEditWithCreationSupport} />
-  </Admin>
+  </BaseRoot>
 );
 
 const authors = [
@@ -332,10 +332,10 @@ const BookEditWithReference = () => (
 );
 
 export const InsideReferenceInput = () => (
-  <Admin dataProvider={dataProviderWithAuthors} history={history}>
+  <BaseRoot dataProvider={dataProviderWithAuthors} history={history}>
     <Resource name="authors" />
     <Resource name="books" edit={BookEditWithReference} />
-  </Admin>
+  </BaseRoot>
 );
 
 const CreateAuthor = () => {
@@ -412,8 +412,8 @@ const BookEditWithReferenceAndCreationSupport = () => (
 );
 
 export const InsideReferenceInputWithCreationSupport = () => (
-  <Admin dataProvider={dataProviderWithAuthors} history={history}>
+  <BaseRoot dataProvider={dataProviderWithAuthors} history={history}>
     <Resource name="authors" />
     <Resource name="books" edit={BookEditWithReferenceAndCreationSupport} />
-  </Admin>
+  </BaseRoot>
 );

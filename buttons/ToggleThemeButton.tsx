@@ -4,7 +4,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { useTheme } from '../layouts';
-import { RaThemeOptions } from '../apps';
+import { ThemeOptions } from '../apps';
 
 /**
  * Button toggling the theme (light or dark).
@@ -52,6 +52,6 @@ export const ToggleThemeButton = (props: ToggleThemeButtonProps) => {
 };
 
 export interface ToggleThemeButtonProps {
-  darkTheme: RaThemeOptions;
-  lightTheme?: RaThemeOptions;
+  darkTheme: ThemeOptions;
+  lightTheme?: ThemeOptions;
 }

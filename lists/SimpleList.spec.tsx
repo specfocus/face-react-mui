@@ -2,16 +2,16 @@ import React from 'react';
 import { render, screen, waitFor, within } from '@testing-library/react';
 import { ListContext, ResourceContextProvider } from '@specfocus/view-focus/resources';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleList } from './SimpleList';
 import { TextField } from '../fields';
 
 const Wrapper = ({ children }: any) => (
-  <AdminContext>
+  <BaseRootContext>
     <ResourceContextProvider value="posts">
       {children}
     </ResourceContextProvider>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 describe('<SimpleList />', () => {

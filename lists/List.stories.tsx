@@ -3,7 +3,7 @@ import fakeRestDataProvider from '@specfocus/sham-focus.rest';
 import { Resource } from '@specfocus/view-focus/resources';
 import { useListContext } from '@specfocus/view-focus/lists/useListContext';
 import { createMemoryHistory } from 'history';
-import { Admin } from '../core/Admin';
+import { BaseRoot } from '../core/BaseRoot';
 import { TextField } from '../fields';
 import { SearchInput, TextInput } from '../inputs';
 import { Datagrid } from './datagrid';
@@ -108,9 +108,9 @@ const BookListBasic = () => (
 );
 
 export const Basic = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" list={BookListBasic} />
-  </Admin>
+  </BaseRoot>
 );
 
 const BookListBasicWithCustomActions = () => (
@@ -120,9 +120,9 @@ const BookListBasicWithCustomActions = () => (
 );
 
 export const Actions = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" list={BookListBasicWithCustomActions} />
-  </Admin>
+  </BaseRoot>
 );
 
 const BookListWithFilters = () => (
@@ -137,9 +137,9 @@ const BookListWithFilters = () => (
 );
 
 export const Filters = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" list={BookListWithFilters} />
-  </Admin>
+  </BaseRoot>
 );
 
 const BookListWithPermanentFilter = () => (
@@ -149,9 +149,9 @@ const BookListWithPermanentFilter = () => (
 );
 
 export const Filter = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" list={BookListWithPermanentFilter} />
-  </Admin>
+  </BaseRoot>
 );
 
 const BookListWithCustomTitle = () => (
@@ -161,9 +161,9 @@ const BookListWithCustomTitle = () => (
 );
 
 export const Title = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" list={BookListWithCustomTitle} />
-  </Admin>
+  </BaseRoot>
 );
 
 const BookListWithCreate = () => (
@@ -173,9 +173,9 @@ const BookListWithCreate = () => (
 );
 
 export const HasCreate = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" list={BookListWithCreate} />
-  </Admin>
+  </BaseRoot>
 );
 
 const AsideComponent = () => <Card sx={{ padding: 2 }}>Aside</Card>;
@@ -187,9 +187,9 @@ const BookListWithAside = () => (
 );
 
 export const Aside = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" list={BookListWithAside} />
-  </Admin>
+  </BaseRoot>
 );
 
 const CustomWrapper = ({ children }) => (
@@ -208,9 +208,9 @@ const BookListWithCustomComponent = () => (
 );
 
 export const Component = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" list={BookListWithCustomComponent} />
-  </Admin>
+  </BaseRoot>
 );
 
 const EmptyAuthorList = () => (
@@ -223,9 +223,9 @@ const CreateAuthor = () => <span />;
 const historyAuthors = createMemoryHistory({ initialEntries: ['/authors'] });
 
 export const Empty = () => (
-  <Admin dataProvider={dataProvider} history={historyAuthors}>
+  <BaseRoot dataProvider={dataProvider} history={historyAuthors}>
     <Resource name="authors" list={EmptyAuthorList} create={CreateAuthor} />
-  </Admin>
+  </BaseRoot>
 );
 
 const BookListWithStyles = () => (
@@ -242,9 +242,9 @@ const BookListWithStyles = () => (
 );
 
 export const SX = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" list={BookListWithStyles} />
-  </Admin>
+  </BaseRoot>
 );
 
 const BookListWithDatagrid = () => (
@@ -259,7 +259,7 @@ const BookListWithDatagrid = () => (
 );
 
 export const Default = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" list={BookListWithDatagrid} />
-  </Admin>
+  </BaseRoot>
 );

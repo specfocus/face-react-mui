@@ -3,7 +3,7 @@ import fakerestDataProvider from '@specfocus/sham-focus.rest';
 import { Resource } from '@specfocus/view-focus/resources/Resource';
 import { ListBase } from '@specfocus/view-focus/lists/ListBase';
 import CreateButton from '../../buttons/CreateButton';
-import Admin from '../../core/Admin';
+import BaseRoot from '../../core/BaseRoot';
 import { TextField } from '../../fields/TextField';
 import { TextInput } from '../../inputs/TextInput';
 import { Datagrid } from '../../lists/datagrid/Datagrid';
@@ -13,7 +13,7 @@ import { FilterForm } from './FilterForm';
 
 /*
 import {
-  Admin,
+  BaseRoot,
   CreateButton,
   Datagrid,
   FilterButton,
@@ -138,7 +138,7 @@ const PostList = () => (
 );
 
 export const Basic = () => (
-  <Admin dataProvider={fakerestDataProvider(data)}>
+  <BaseRoot dataProvider={fakerestDataProvider(data)}>
     <Resource name="posts" list={PostList} />
-  </Admin>
+  </BaseRoot>
 );

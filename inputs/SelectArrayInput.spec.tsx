@@ -7,7 +7,7 @@ import {
   useRecordContext,
 } from '@specfocus/view-focus/resources';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { SelectArrayInput } from './SelectArrayInput';
 import { useCreateSuggestionContext } from './useSupportCreateSuggestion';
@@ -25,25 +25,25 @@ describe('<SelectArrayInput />', () => {
 
   it('should use a mui Select', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByTestId('selectArray')).toBeDefined();
   });
 
   it('should use the input parameter value as the initial input value', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn()}
           defaultValues={{ categories: ['programming', 'lifestyle'] }}
         >
           <SelectArrayInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(
       screen.getByDisplayValue('programming,lifestyle')
@@ -52,11 +52,11 @@ describe('<SelectArrayInput />', () => {
 
   it('should reveal choices on click', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('Programming')).toBeNull();
     expect(screen.queryByText('Lifestyle')).toBeNull();
@@ -71,7 +71,7 @@ describe('<SelectArrayInput />', () => {
 
   it('should use optionValue as value identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -81,7 +81,7 @@ describe('<SelectArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     fireEvent.mouseDown(
       screen.getByLabelText('resources.posts.fields.categories')
@@ -92,7 +92,7 @@ describe('<SelectArrayInput />', () => {
 
   it('should use optionValue including "." as value identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -105,7 +105,7 @@ describe('<SelectArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     fireEvent.mouseDown(
       screen.getByLabelText('resources.posts.fields.categories')
@@ -116,7 +116,7 @@ describe('<SelectArrayInput />', () => {
 
   it('should use optionText with a string value as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -124,7 +124,7 @@ describe('<SelectArrayInput />', () => {
             choices={[{ id: 'programming', foobar: 'Programming' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     fireEvent.mouseDown(
       screen.getByLabelText('resources.posts.fields.categories')
@@ -134,7 +134,7 @@ describe('<SelectArrayInput />', () => {
 
   it('should use optionText with a string value including "." as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -147,7 +147,7 @@ describe('<SelectArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     fireEvent.mouseDown(
       screen.getByLabelText('resources.posts.fields.categories')
@@ -157,7 +157,7 @@ describe('<SelectArrayInput />', () => {
 
   it('should use optionText with a function value as text identifier', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -165,7 +165,7 @@ describe('<SelectArrayInput />', () => {
             choices={[{ id: 'programming', foobar: 'Programming' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     fireEvent.mouseDown(
       screen.getByLabelText('resources.posts.fields.categories')
@@ -179,7 +179,7 @@ describe('<SelectArrayInput />', () => {
       return <span>{record.foobar}</span>;
     };
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -187,7 +187,7 @@ describe('<SelectArrayInput />', () => {
             choices={[{ id: 'programming', foobar: 'Programming' }]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     fireEvent.mouseDown(
       screen.getByLabelText('resources.posts.fields.categories')
@@ -197,7 +197,7 @@ describe('<SelectArrayInput />', () => {
 
   it('should render disable choices marked so', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -207,7 +207,7 @@ describe('<SelectArrayInput />', () => {
             ]}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     fireEvent.mouseDown(
       screen.getByLabelText('resources.posts.fields.categories')
@@ -221,13 +221,13 @@ describe('<SelectArrayInput />', () => {
 
   it('should translate the choices', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <TestTranslationProvider translate={x => `**${x}**`}>
           <SimpleForm onSubmit={jest.fn()}>
             <SelectArrayInput {...defaultProps} />
           </SimpleForm>
         </TestTranslationProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
     fireEvent.mouseDown(
       screen.getByLabelText('**resources.posts.fields.categories**')
@@ -238,14 +238,14 @@ describe('<SelectArrayInput />', () => {
 
   it('should display helperText if prop is specified', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
             helperText="Can I help you?"
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('Can I help you?')).toBeDefined();
   });
@@ -253,14 +253,14 @@ describe('<SelectArrayInput />', () => {
   describe('error message', () => {
     it('should not be displayed if field is pristine', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm mode="onBlur" onSubmit={jest.fn()}>
             <SelectArrayInput
               {...defaultProps}
               validate={() => 'error'}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       expect(screen.queryByText('error')).toBeNull();
@@ -268,14 +268,14 @@ describe('<SelectArrayInput />', () => {
 
     it('should be displayed if field has been touched and is invalid', async () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn()}>
             <SelectArrayInput
               {...defaultProps}
               validate={() => 'error'}
             />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       fireEvent.blur(
@@ -288,11 +288,11 @@ describe('<SelectArrayInput />', () => {
 
     it('should not render a LinearProgress if loading is true and a second has not passed yet', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn()}>
             <SelectArrayInput {...defaultProps} isLoading />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       expect(screen.queryByRole('progressbar')).toBeNull();
@@ -300,11 +300,11 @@ describe('<SelectArrayInput />', () => {
 
     it('should render a LinearProgress if loading is true and a second has passed', async () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn()}>
             <SelectArrayInput {...defaultProps} isLoading />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       await new Promise(resolve => setTimeout(resolve, 1001));
@@ -314,11 +314,11 @@ describe('<SelectArrayInput />', () => {
 
     it('should not render a LinearProgress if loading is false', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn()}>
             <SelectArrayInput {...defaultProps} />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
 
       expect(screen.queryByRole('progressbar')).toBeNull();
@@ -330,7 +330,7 @@ describe('<SelectArrayInput />', () => {
     const newChoice = { id: 'js_fatigue', name: 'New Kid On The Block' };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -341,7 +341,7 @@ describe('<SelectArrayInput />', () => {
             }}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -360,7 +360,7 @@ describe('<SelectArrayInput />', () => {
     const newChoice = { id: 'js_fatigue', name: 'New Kid On The Block' };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -375,7 +375,7 @@ describe('<SelectArrayInput />', () => {
             }}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -405,7 +405,7 @@ describe('<SelectArrayInput />', () => {
     };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -417,7 +417,7 @@ describe('<SelectArrayInput />', () => {
             optionText="name.en"
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -437,7 +437,7 @@ describe('<SelectArrayInput />', () => {
     const newChoice = { id: 'js_fatigue', name: 'New Kid On The Block' };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -449,7 +449,7 @@ describe('<SelectArrayInput />', () => {
             optionText={item => item.name}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -479,7 +479,7 @@ describe('<SelectArrayInput />', () => {
     };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -487,7 +487,7 @@ describe('<SelectArrayInput />', () => {
             create={<Create />}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -508,7 +508,7 @@ describe('<SelectArrayInput />', () => {
     const onChange = jest.fn();
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm>
           <SelectArrayInput
             {...defaultProps}
@@ -516,7 +516,7 @@ describe('<SelectArrayInput />', () => {
             onChange={onChange}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(
@@ -550,7 +550,7 @@ describe('<SelectArrayInput />', () => {
     };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <SelectArrayInput
             {...defaultProps}
@@ -559,7 +559,7 @@ describe('<SelectArrayInput />', () => {
             onChange={onChange}
           />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const input = screen.getByLabelText(

@@ -52,14 +52,14 @@ import { useSidebarState } from './useSidebarState';
  *
  * export const Layout = (props) => <Layout {...props} menu={Menu} />;
  *
- * // then, use this layout in the <Admin layout> prop:
+ * // then, use this layout in the <BaseRoot layout> prop:
  * // in src/App.js
  * import { Layout }  from './Layout';
  *
  * const App = () => (
- *     <Admin layout={Layout} dataProvider={simpleRestProvider('http://path.to.my.api')}>
+ *     <BaseRoot layout={Layout} dataProvider={simpleRestProvider('http://path.to.my.api')}>
  *         // ...
- *     </Admin>
+ *     </BaseRoot>
  * );
  */
 export const MenuItemLink = forwardRef((props: MenuItemLinkProps, ref) => {

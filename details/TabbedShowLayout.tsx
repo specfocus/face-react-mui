@@ -48,14 +48,14 @@ import { getShowLayoutTabFullPath, TabbedShowLayoutTabs } from './TabbedShowLayo
  *
  * // in src/App.js
  * import React from "react";
- * import { Admin, Resource } from '@specfocus/view-focus.mui-demo';
+ * import { BaseRoot, Resource } from '@specfocus/view-focus.mui-demo';
  *
  * import { PostShow } from './posts';
  *
  * const App = () => (
- *     <Admin dataProvider={...}>
+ *     <BaseRoot dataProvider={...}>
  *         <Resource name="posts" show={PostShow} />
- *     </Admin>
+ *     </BaseRoot>
  * );
  *
  * @param {TabbedShowLayoutProps} props

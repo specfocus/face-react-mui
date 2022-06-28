@@ -1,28 +1,28 @@
-import { Resource } from '@specfocus/view-focus/resources/Resource';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
+import { Resource } from '@specfocus/view-focus/resources/Resource';
 import { Link, MemoryRouter, Route, Routes } from 'react-router-dom';
-import { App } from './App';
+import { BaseApp } from './BaseApp';
 
 export default {
-  title: '@specfocus/view-focus.mui/Admin',
+  title: '@specfocus/view-focus.mui/BaseRoot',
 };
 
 const PostList = () => <h1>Post List</h1>;
 const CommentList = () => <h1>Comment List</h1>;
 
 export const Basic = () => (
-  <App dataProvider={testDataProvider()}>
+  <BaseApp dataProvider={testDataProvider()}>
     <Resource name="posts" list={PostList} />
     <Resource name="comments" list={CommentList} />
-  </App>
+  </BaseApp>
 );
 
 export const InsideRouter = () => (
   <MemoryRouter>
-    <App dataProvider={testDataProvider()}>
+    <BaseApp dataProvider={testDataProvider()}>
       <Resource name="posts" list={PostList} />
       <Resource name="comments" list={CommentList} />
-    </App>
+    </BaseApp>
   </MemoryRouter>
 );
 
@@ -43,10 +43,10 @@ export const SubPath = () => (
       <Route
         path="/admin/*"
         element={
-          <App dataProvider={testDataProvider()} basename="/admin">
+          <BaseApp dataProvider={testDataProvider()} basename="/admin">
             <Resource name="posts" list={PostList} />
             <Resource name="comments" list={CommentList} />
-          </App>
+          </BaseApp>
         }
       />
     </Routes>

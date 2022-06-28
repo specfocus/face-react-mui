@@ -9,8 +9,8 @@ import { Resource } from '@specfocus/view-focus/resources/Resource';
 import { createMemoryHistory } from 'history';
 import merge from 'lodash/merge';
 import { LocalesMenuButton, ToggleThemeButton } from '../../buttons';
-import { defaultTheme, RaThemeOptions } from '../../core';
-import Admin from '../../core/Admin';
+import { defaultTheme, ThemeOptions } from '../../core';
+import BaseRoot from '../../core/BaseRoot';
 import { DateField } from '../../fields/DateField';
 import { NumberField } from '../../fields/NumberField';
 import { TextField } from '../../fields/TextField';
@@ -148,9 +148,9 @@ const SongList = () => (
 );
 
 export const Basic = () => (
-  <Admin history={createMemoryHistory()} dataProvider={dataProvider}>
+  <BaseRoot history={createMemoryHistory()} dataProvider={dataProvider}>
     <Resource name="songs" list={SongList} />
-  </Admin>
+  </BaseRoot>
 );
 
 /****************** With Theme and Locale Switcher ********************/
@@ -179,7 +179,7 @@ const i18nProvider = createTranslationProvider(
       : englishMessages,
   'en' // Default locale
 );
-const darkTheme: RaThemeOptions = {
+const darkTheme: ThemeOptions = {
   ...defaultTheme,
   palette: {
     secondary: {
@@ -212,14 +212,14 @@ const MyLayout = (props: LayoutProps) => (
 );
 
 export const WithThemeAndLocale = () => (
-  <Admin
+  <BaseRoot
     history={createMemoryHistory()}
     i18nProvider={i18nProvider}
     dataProvider={dataProvider}
     layout={MyLayout}
   >
     <Resource name="songs" list={SongList} />
-  </Admin>
+  </BaseRoot>
 );
 
 const dataProvider = fakeRestProvider(

@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import expect from 'expect';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import CreateButton from './CreateButton';
 
 const invalidButtonDomProps = {
@@ -15,9 +15,9 @@ describe('<CreateButton />', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation(() => { });
 
     const { getByLabelText } = render(
-      <AdminContext>
+      <BaseRootContext>
         <CreateButton {...invalidButtonDomProps} />
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(spy).not.toHaveBeenCalled();

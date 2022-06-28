@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { render, screen } from '@testing-library/react';
-// import { AdminContext } from '@specfocus/view-focus/resources/AdminContext';
+// import { BaseRootContext } from '@specfocus/view-focus/resources/BaseRootContext';
 import { CloneButton } from './CloneButton';
 
 const invalidButtonDomProps = {
@@ -12,12 +12,12 @@ const invalidButtonDomProps = {
 describe('<CloneButton />', () => {
   it('should pass a clone of the record in the location state', () => {
     render(
-      <AdminContext>
+      <BaseRootContext>
         <CloneButton
           resource="posts"
           record={{ id: 123, foo: 'bar' }}
         />
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(
@@ -29,9 +29,9 @@ describe('<CloneButton />', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation(() => { });
 
     render(
-      <AdminContext>
+      <BaseRootContext>
         <CloneButton {...invalidButtonDomProps} />
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(spy).not.toHaveBeenCalled();

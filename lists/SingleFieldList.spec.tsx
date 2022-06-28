@@ -2,14 +2,14 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ListContext, ResourceContextProvider } from '@specfocus/view-focus/resources';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SingleFieldList } from './SingleFieldList';
 import { ChipField } from '../fields';
 
 describe('<SingleFieldList />', () => {
   it('should render a link to the Edit page of the related record by default', () => {
     render(
-      <AdminContext>
+      <BaseRootContext>
         <ResourceContextProvider value="posts">
           <ListContext.Provider
             value={{
@@ -25,7 +25,7 @@ describe('<SingleFieldList />', () => {
             </SingleFieldList>
           </ListContext.Provider>
         </ResourceContextProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
     const linkElements = screen.queryAllByRole('link');
     expect(linkElements).toHaveLength(2);
@@ -37,7 +37,7 @@ describe('<SingleFieldList />', () => {
 
   it('should render a link to the Edit page of the related record when the resource contains slashes', () => {
     render(
-      <AdminContext>
+      <BaseRootContext>
         <ResourceContextProvider value="posts/foo">
           <ListContext.Provider
             value={{
@@ -52,7 +52,7 @@ describe('<SingleFieldList />', () => {
             </SingleFieldList>
           </ListContext.Provider>
         </ResourceContextProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
     const linkElements = screen.queryAllByRole('link');
     expect(linkElements).toHaveLength(2);
@@ -65,7 +65,7 @@ describe('<SingleFieldList />', () => {
   ['edit', 'show'].forEach(action => {
     it(`should render a link to the Edit page of the related record when the resource is named ${action}`, () => {
       render(
-        <AdminContext>
+        <BaseRootContext>
           <ResourceContextProvider value={action}>
             <ListContext.Provider
               value={{
@@ -81,7 +81,7 @@ describe('<SingleFieldList />', () => {
               </SingleFieldList>
             </ListContext.Provider>
           </ResourceContextProvider>
-        </AdminContext>
+        </BaseRootContext>
       );
       const linkElements = screen.queryAllByRole('link');
       expect(linkElements).toHaveLength(2);
@@ -93,7 +93,7 @@ describe('<SingleFieldList />', () => {
 
   it('should render a link to the Show page of the related record when the linkType is show', () => {
     render(
-      <AdminContext>
+      <BaseRootContext>
         <ResourceContextProvider value="prefix/bar">
           <ListContext.Provider
             value={{
@@ -109,7 +109,7 @@ describe('<SingleFieldList />', () => {
             </SingleFieldList>
           </ListContext.Provider>
         </ResourceContextProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const linkElements = screen.queryAllByRole('link');
@@ -123,7 +123,7 @@ describe('<SingleFieldList />', () => {
   ['edit', 'show'].forEach(action => {
     it(`should render a link to the Edit page of the related record when the resource is named ${action} and linkType is show`, () => {
       render(
-        <AdminContext>
+        <BaseRootContext>
           <ResourceContextProvider value={action}>
             <ListContext.Provider
               value={{
@@ -139,7 +139,7 @@ describe('<SingleFieldList />', () => {
               </SingleFieldList>
             </ListContext.Provider>
           </ResourceContextProvider>
-        </AdminContext>
+        </BaseRootContext>
       );
       const linkElements = screen.queryAllByRole('link');
       expect(linkElements).toHaveLength(2);
@@ -151,7 +151,7 @@ describe('<SingleFieldList />', () => {
 
   it('should render no link when the linkType is false', () => {
     render(
-      <AdminContext>
+      <BaseRootContext>
         <ListContext.Provider
           value={{
             data: [
@@ -165,7 +165,7 @@ describe('<SingleFieldList />', () => {
             <ChipField source="title" />
           </SingleFieldList>
         </ListContext.Provider>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const linkElements = screen.queryAllByRole('link');

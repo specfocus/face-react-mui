@@ -3,7 +3,7 @@ import i18nProviderFactory from '@specfocus/view-focus.i18next/providers';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import englishMessages from '@specfocus/locales/en/general';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { Create } from '../details';
 import { SimpleForm } from '../forms';
 import { CheckboxGroupInput } from './CheckboxGroupInput';
@@ -21,7 +21,7 @@ const choices = [
 ];
 
 export const Basic = () => (
-  <AdminContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
+  <BaseRootContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
     <Create
       resource="posts"
       record={{ options: [1, 2] }}
@@ -31,7 +31,7 @@ export const Basic = () => (
         <CheckboxGroupInput source="options" choices={choices} />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 const dataProvider = testDataProvider({
@@ -44,7 +44,7 @@ const dataProvider = testDataProvider({
 });
 
 export const InsideReferenceArrayInput = () => (
-  <AdminContext dataProvider={dataProvider} i18nProvider={i18nProviderFactory(() => englishMessages)}>
+  <BaseRootContext dataProvider={dataProvider} i18nProvider={i18nProviderFactory(() => englishMessages)}>
     <Create
       resource="posts"
       record={{ options: [1, 2] }}
@@ -56,11 +56,11 @@ export const InsideReferenceArrayInput = () => (
         </ReferenceArrayInput>
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const Disabled = () => (
-  <AdminContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
+  <BaseRootContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
     <Create
       resource="posts"
       record={{ options: [1, 2] }}
@@ -74,11 +74,11 @@ export const Disabled = () => (
         />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const Column = () => (
-  <AdminContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
+  <BaseRootContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
     <Create
       resource="posts"
       record={{ options: [1, 2] }}
@@ -92,11 +92,11 @@ export const Column = () => (
         />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const CustomOptionText = () => (
-  <AdminContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
+  <BaseRootContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
     <Create
       resource="posts"
       record={{ options: [1, 2] }}
@@ -116,7 +116,7 @@ export const CustomOptionText = () => (
         />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 const OptionText = () => {

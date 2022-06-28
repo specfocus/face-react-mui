@@ -1,6 +1,6 @@
 import { Resource } from '@specfocus/view-focus/resources';
 import { createMemoryHistory } from 'history';
-import { Admin } from '../../core/Admin';
+import { BaseRoot } from '../../core/BaseRoot';
 import { Edit } from '../../details';
 import { SimpleForm } from '../../forms';
 import { AutocompleteInput } from '../AutocompleteInput';
@@ -56,9 +56,9 @@ const BookEdit = () => {
 };
 
 export const Basic = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" edit={BookEdit} />
-  </Admin>
+  </BaseRoot>
 );
 
 const BookEditWithAutocomplete = () => {
@@ -90,7 +90,7 @@ const BookEditWithAutocomplete = () => {
 };
 
 export const AutocompleteFirst = () => (
-  <Admin dataProvider={dataProvider} history={history}>
+  <BaseRoot dataProvider={dataProvider} history={history}>
     <Resource name="books" edit={BookEditWithAutocomplete} />
-  </Admin>
+  </BaseRoot>
 );

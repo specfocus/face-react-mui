@@ -4,7 +4,7 @@ import { Resource } from '@specfocus/view-focus/resources';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { Layout, Menu, SidebarToggleButton, Title } from '.';
 import { ToggleThemeButton } from '../buttons';
-import { Admin } from '../core/Admin';
+import { BaseRoot } from '../core/BaseRoot';
 import { defaultTheme } from '../core/defaultTheme';
 
 export default { title: 'view-focus.mui/layouts/Menu' };
@@ -50,7 +50,7 @@ export const Default = () => {
   };
 
   return (
-    <Admin dataProvider={testDataProvider()} layout={DefaultLayout}>
+    <BaseRoot dataProvider={testDataProvider()} layout={DefaultLayout}>
       {resources.map((resource, index) => {
         return (
           <Resource
@@ -60,7 +60,7 @@ export const Default = () => {
           />
         );
       })}
-    </Admin>
+    </BaseRoot>
   );
 };
 
@@ -73,7 +73,7 @@ export const Dense = () => {
   };
 
   return (
-    <Admin dataProvider={testDataProvider()} layout={LayoutDense}>
+    <BaseRoot dataProvider={testDataProvider()} layout={LayoutDense}>
       {resources.map((resource, index) => {
         return (
           <Resource
@@ -83,6 +83,6 @@ export const Dense = () => {
           />
         );
       })}
-    </Admin>
+    </BaseRoot>
   );
 };

@@ -38,14 +38,14 @@ import { CreateView } from './CreateView';
  *
  * // in src/App.js
  * import React from "react";
- * import { Admin, Resource } from '@specfocus/view-focus.mui-demo';
+ * import { BaseRoot, Resource } from '@specfocus/view-focus.mui-demo';
  *
  * import { PostCreate } from './posts';
  *
  * const App = () => (
- *     <Admin dataProvider={...}>
+ *     <BaseRoot dataProvider={...}>
  *         <Resource name="posts" create={PostCreate} />
- *     </Admin>
+ *     </BaseRoot>
  * );
  * export default App;
  */

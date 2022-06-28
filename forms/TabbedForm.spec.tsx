@@ -14,7 +14,7 @@ import {
   waitFor,
 } from '@testing-library/react';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { TabbedForm } from './TabbedForm';
 import { TabbedFormClasses } from './TabbedFormView';
 import { FormTab } from './FormTab';
@@ -24,12 +24,12 @@ describe('<TabbedForm />', () => {
   it('should display the tabs', () => {
     const history = createMemoryHistory();
     render(
-      <AdminContext dataProvider={testDataProvider()} history={history}>
+      <BaseRootContext dataProvider={testDataProvider()} history={history}>
         <TabbedForm>
           <FormTab label="tab1" />
           <FormTab label="tab2" />
         </TabbedForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const tabs = screen.queryAllByRole('tab');
@@ -39,7 +39,7 @@ describe('<TabbedForm />', () => {
   it('should set the style of an inactive Tab button with errors', async () => {
     const history = createMemoryHistory({ initialEntries: ['/1'] });
     render(
-      <AdminContext dataProvider={testDataProvider()} history={history}>
+      <BaseRootContext dataProvider={testDataProvider()} history={history}>
         <ResourceContextProvider value="posts">
           <TabbedForm mode="onBlur">
             <FormTab label="tab1">
@@ -58,7 +58,7 @@ describe('<TabbedForm />', () => {
             </FormTab>
           </TabbedForm>
         </ResourceContextProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const tabs = screen.getAllByRole('tab');
@@ -84,7 +84,7 @@ describe('<TabbedForm />', () => {
   it('should set the style of an active Tab button with errors', async () => {
     const history = createMemoryHistory({ initialEntries: ['/1'] });
     render(
-      <AdminContext dataProvider={testDataProvider()} history={history}>
+      <BaseRootContext dataProvider={testDataProvider()} history={history}>
         <ResourceContextProvider value="posts">
           <TabbedForm mode="onBlur">
             <FormTab label="tab1">
@@ -103,7 +103,7 @@ describe('<TabbedForm />', () => {
             </FormTab>
           </TabbedForm>
         </ResourceContextProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const tabs = screen.getAllByRole('tab');
@@ -125,7 +125,7 @@ describe('<TabbedForm />', () => {
   it('should set the style of any Tab button with errors on submit', async () => {
     const history = createMemoryHistory({ initialEntries: ['/1'] });
     render(
-      <AdminContext dataProvider={testDataProvider()} history={history}>
+      <BaseRootContext dataProvider={testDataProvider()} history={history}>
         <ResourceContextProvider value="posts">
           <TabbedForm mode="onBlur">
             <FormTab label="tab1">
@@ -144,7 +144,7 @@ describe('<TabbedForm />', () => {
             </FormTab>
           </TabbedForm>
         </ResourceContextProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const tabs = screen.getAllByRole('tab');
@@ -168,7 +168,7 @@ describe('<TabbedForm />', () => {
     const history = createMemoryHistory({ initialEntries: ['/'] });
 
     render(
-      <AdminContext dataProvider={testDataProvider()} history={history}>
+      <BaseRootContext dataProvider={testDataProvider()} history={history}>
         <ResourceContextProvider value="posts">
           <TabbedForm>
             <FormTab label="tab1">
@@ -187,7 +187,7 @@ describe('<TabbedForm />', () => {
             </FormTab>
           </TabbedForm>
         </ResourceContextProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const tabs = screen.getAllByRole('tab');
@@ -217,7 +217,7 @@ describe('<TabbedForm />', () => {
     const history = createMemoryHistory({ initialEntries: ['/'] });
 
     render(
-      <AdminContext dataProvider={testDataProvider()} history={history}>
+      <BaseRootContext dataProvider={testDataProvider()} history={history}>
         <ResourceContextProvider value="posts">
           <TabbedForm syncWithLocation={false}>
             <FormTab label="tab1">
@@ -231,7 +231,7 @@ describe('<TabbedForm />', () => {
             </FormTab>
           </TabbedForm>
         </ResourceContextProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     const tabs = screen.getAllByRole('tab');

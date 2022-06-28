@@ -22,7 +22,7 @@ import { UserMenu } from './UserMenu';
  * @param {ReactNode} props.children React node/s to be rendered as children of the AppBar
  * @param {string} props.className CSS class applied to the MuiAppBar component
  * @param {string} props.color The color of the AppBar
- * @param {boolean} props.open State of the <Admin/> Sidebar
+ * @param {boolean} props.open State of the <BaseRoot/> Sidebar
  * @param {Element | boolean} props.userMenu A custom user menu component for the AppBar. <UserMenu/> component by default. Pass false to disable.
  *
  * @example

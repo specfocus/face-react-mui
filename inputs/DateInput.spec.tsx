@@ -5,7 +5,7 @@ import { required, testDataProvider } from '@specfocus/view-focus/resources';
 import { format } from 'date-fns';
 import { useFormState } from 'react-hook-form';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { DateInput } from './DateInput';
 
@@ -17,11 +17,11 @@ describe('<DateInput />', () => {
 
   it('should render a date input', () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm onSubmit={jest.fn()}>
           <DateInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.publishedAt'
@@ -32,14 +32,14 @@ describe('<DateInput />', () => {
   it('should accept a date string as value', async () => {
     let onSubmit = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={onSubmit}
           defaultValues={{ publishedAt: '2021-09-11' }}
         >
           <DateInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.publishedAt'
@@ -59,14 +59,14 @@ describe('<DateInput />', () => {
   it('should accept a date time string as value', async () => {
     let onSubmit = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={onSubmit}
           defaultValues={{ publishedAt: '2021-09-11T06:51:17.772Z' }}
         >
           <DateInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.publishedAt'
@@ -86,14 +86,14 @@ describe('<DateInput />', () => {
   it('should accept a date object as value', async () => {
     let onSubmit = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={onSubmit}
           defaultValues={{ publishedAt: new Date('2021-09-11') }}
         >
           <DateInput {...defaultProps} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.publishedAt'
@@ -113,14 +113,14 @@ describe('<DateInput />', () => {
   it('should accept a parse function', async () => {
     const onSubmit = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={onSubmit}
           defaultValues={{ publishedAt: new Date('2021-09-11') }}
         >
           <DateInput {...defaultProps} parse={val => new Date(val)} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.publishedAt'
@@ -140,14 +140,14 @@ describe('<DateInput />', () => {
   it('should accept a parse function returning null', async () => {
     const onSubmit = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={onSubmit}
           defaultValues={{ publishedAt: new Date('2021-09-11') }}
         >
           <DateInput {...defaultProps} parse={val => null} />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     const input = screen.getByLabelText(
       'resources.posts.fields.publishedAt'
@@ -172,7 +172,7 @@ describe('<DateInput />', () => {
       return <p>Dirty: {isDirty.toString()}</p>;
     };
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           onSubmit={jest.fn()}
           record={{ id: 1, publishedAt: publishedAt.toISOString() }}
@@ -180,7 +180,7 @@ describe('<DateInput />', () => {
           <DateInput {...defaultProps} />
           <FormState />
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.getByDisplayValue(format(publishedAt, 'yyy-MM-dd')));
     expect(screen.queryByText('Dirty: false')).not.toBeNull();
@@ -189,22 +189,22 @@ describe('<DateInput />', () => {
   describe('error message', () => {
     it('should not be displayed if field is pristine', () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn()}>
             <DateInput {...defaultProps} validate={required()} />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       expect(screen.queryByText('validation.required')).toBeNull();
     });
 
     it('should be displayed if field has been touched and is invalid', async () => {
       render(
-        <AdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <SimpleForm onSubmit={jest.fn()} mode="onBlur">
             <DateInput {...defaultProps} validate={required()} />
           </SimpleForm>
-        </AdminContext>
+        </BaseRootContext>
       );
       const input = screen.getByLabelText(
         'resources.posts.fields.publishedAt *'

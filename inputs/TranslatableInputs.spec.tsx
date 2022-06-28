@@ -6,7 +6,7 @@ import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataP
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Tabs } from '@mui/material';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { TranslatableInputs } from './TranslatableInputs';
 import { TranslatableInputsTab } from './TranslatableInputsTab';
@@ -33,7 +33,7 @@ describe('<TranslatableInputs />', () => {
   it('should display every input for every locale', () => {
     const handleSubmit = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm record={record} onSubmit={handleSubmit}>
           <TranslatableInputs locales={['en', 'fr']}>
             <TextInput source="name" />
@@ -41,7 +41,7 @@ describe('<TranslatableInputs />', () => {
             <TextInput source="nested.field" />
           </TranslatableInputs>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(
@@ -102,7 +102,7 @@ describe('<TranslatableInputs />', () => {
     };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm
           record={record}
           onSubmit={handleSubmit}
@@ -115,7 +115,7 @@ describe('<TranslatableInputs />', () => {
             <TextInput source="name" validate={() => 'error'} />
           </TranslatableInputs>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(
@@ -152,7 +152,7 @@ describe('<TranslatableInputs />', () => {
   it('should allow to update any input for any locale', async () => {
     const save = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm record={record} onSubmit={save}>
           <TranslatableInputs locales={['en', 'fr']}>
             <TextInput source="name" />
@@ -160,7 +160,7 @@ describe('<TranslatableInputs />', () => {
             <TextInput source="nested.field" />
           </TranslatableInputs>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     fireEvent.change(screen.queryByDisplayValue('english name'), {
@@ -225,7 +225,7 @@ describe('<TranslatableInputs />', () => {
     };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <SimpleForm record={record}>
           <TranslatableInputs
             locales={['en', 'fr']}
@@ -236,7 +236,7 @@ describe('<TranslatableInputs />', () => {
             <TextInput source="nested.field" />
           </TranslatableInputs>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.getByLabelText('en').getAttribute('hidden')).toBeNull();

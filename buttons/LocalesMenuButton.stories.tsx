@@ -6,8 +6,8 @@ import createTranslationProvider from '@specfocus/view-focus.i18next/providers';
 import { Resource } from '@specfocus/view-focus/resources';
 import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { createMemoryHistory } from 'history';
-import { AdminContext } from '../core/AdminContext';
-import { AdminUI } from '../core/AdminUI';
+import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootLayout } from '../core/BaseRootLayout';
 import { TextField } from '../fields';
 import { AppBar, Layout } from '../layouts';
 import { Datagrid, List } from '../lists';
@@ -43,7 +43,7 @@ const Component = () => {
 };
 
 export const Basic = () => (
-  <AdminContext i18nProvider={i18nProvider}>
+  <BaseRootContext i18nProvider={i18nProvider}>
     <LocalesMenuButton
       languages={[
         { locale: 'en', name: 'English' },
@@ -51,7 +51,7 @@ export const Basic = () => (
       ]}
     />
     <Component />
-  </AdminContext>
+  </BaseRootContext>
 );
 
 const dataProvider = fakeRestDataProvider({
@@ -155,13 +155,13 @@ const MyAppBar = props => (
 const MyLayout = props => <Layout {...props} appBar={MyAppBar} />;
 
 export const FullApp = () => (
-  <AdminContext
+  <BaseRootContext
     dataProvider={dataProvider}
     i18nProvider={i18nProvider}
     history={history}
   >
-    <AdminUI layout={MyLayout}>
+    <BaseRootLayout layout={MyLayout}>
       <Resource name="books" list={BookList} />
-    </AdminUI>
-  </AdminContext>
+    </BaseRootLayout>
+  </BaseRootContext>
 );

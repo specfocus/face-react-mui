@@ -14,7 +14,7 @@ import {
   useSaveContext,
 } from '@specfocus/view-focus/resources';
 
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { Edit } from './Edit';
 
 describe('<Edit />', () => {
@@ -35,11 +35,11 @@ describe('<Edit />', () => {
       return <>{record.title}</>;
     };
     render(
-      <AdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <Edit {...defaultEditProps}>
           <FakeForm />
         </Edit>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.queryAllByText('lorem')).toHaveLength(1);
@@ -69,7 +69,7 @@ describe('<Edit />', () => {
     };
 
     render(
-      <AdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <Edit
           {...defaultEditProps}
           id="1234"
@@ -77,7 +77,7 @@ describe('<Edit />', () => {
         >
           <FakeForm />
         </Edit>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.queryAllByText('lorem')).toHaveLength(1);
@@ -289,7 +289,7 @@ describe('<Edit />', () => {
         );
       };
       render(
-        <AdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit
             {...defaultEditProps}
             mutationMode="pessimistic"
@@ -297,7 +297,7 @@ describe('<Edit />', () => {
           >
             <FakeForm />
           </Edit>
-        </AdminContext>
+        </BaseRootContext>
       );
       await waitFor(() => {
         expect(screen.queryAllByText('lorem')).toHaveLength(1);
@@ -351,7 +351,7 @@ describe('<Edit />', () => {
         );
       };
       render(
-        <AdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit
             {...defaultEditProps}
             mutationMode="pessimistic"
@@ -359,7 +359,7 @@ describe('<Edit />', () => {
           >
             <FakeForm />
           </Edit>
-        </AdminContext>
+        </BaseRootContext>
       );
       await waitFor(() => {
         expect(screen.queryAllByText('lorem')).toHaveLength(1);
@@ -409,7 +409,7 @@ describe('<Edit />', () => {
         );
       };
       render(
-        <AdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit
             {...defaultEditProps}
             mutationMode="pessimistic"
@@ -417,7 +417,7 @@ describe('<Edit />', () => {
           >
             <FakeForm />
           </Edit>
-        </AdminContext>
+        </BaseRootContext>
       );
       await waitFor(() => {
         expect(screen.queryAllByText('lorem')).toHaveLength(1);
@@ -469,7 +469,7 @@ describe('<Edit />', () => {
         );
       };
       render(
-        <AdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit
             {...defaultEditProps}
             mutationMode="pessimistic"
@@ -477,7 +477,7 @@ describe('<Edit />', () => {
           >
             <FakeForm />
           </Edit>
-        </AdminContext>
+        </BaseRootContext>
       );
       await waitFor(() => {
         expect(screen.queryAllByText('lorem')).toHaveLength(1);
@@ -533,7 +533,7 @@ describe('<Edit />', () => {
         );
       };
       render(
-        <AdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit
             {...defaultEditProps}
             transform={transform}
@@ -541,7 +541,7 @@ describe('<Edit />', () => {
           >
             <FakeForm />
           </Edit>
-        </AdminContext>
+        </BaseRootContext>
       );
       await waitFor(() => {
         expect(screen.queryAllByText('lorem')).toHaveLength(1);
@@ -604,7 +604,7 @@ describe('<Edit />', () => {
         );
       };
       render(
-        <AdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit
             {...defaultEditProps}
             transform={transform}
@@ -612,7 +612,7 @@ describe('<Edit />', () => {
           >
             <FakeForm />
           </Edit>
-        </AdminContext>
+        </BaseRootContext>
       );
       await waitFor(() => {
         expect(screen.queryAllByText('lorem')).toHaveLength(1);
@@ -666,7 +666,7 @@ describe('<Edit />', () => {
         );
       };
       const { queryAllByText, getByText } = render(
-        <AdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit
             {...defaultEditProps}
             transform={transform}
@@ -674,7 +674,7 @@ describe('<Edit />', () => {
           >
             <FakeForm />
           </Edit>
-        </AdminContext>
+        </BaseRootContext>
       );
       await waitFor(() => {
         expect(queryAllByText('lorem')).toHaveLength(1);
@@ -736,7 +736,7 @@ describe('<Edit />', () => {
         );
       };
       const { queryAllByText, getByText } = render(
-        <AdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit
             {...defaultEditProps}
             transform={transform}
@@ -744,7 +744,7 @@ describe('<Edit />', () => {
           >
             <FakeForm />
           </Edit>
-        </AdminContext>
+        </BaseRootContext>
       );
       await waitFor(() => {
         expect(queryAllByText('lorem')).toHaveLength(1);
@@ -776,11 +776,11 @@ describe('<Edit />', () => {
       } as any;
       const Dummy = () => <div />;
       render(
-        <AdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit {...defaultEditProps} aside={<Aside />}>
             <Dummy />
           </Edit>
-        </AdminContext>
+        </BaseRootContext>
       );
       expect(screen.queryAllByText('Hello')).toHaveLength(1);
     });

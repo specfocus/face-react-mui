@@ -3,7 +3,7 @@ import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataP
 import { render, screen, waitFor } from '@testing-library/react';
 import expect from 'expect';
 import { createMemoryHistory } from 'history';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { SingleFieldList } from '../lists/SingleFieldList';
 import { ReferenceManyField } from './ReferenceManyField';
 import { TextField } from './TextField';
@@ -28,7 +28,7 @@ describe('<ReferenceManyField />', () => {
     ];
     const history = createMemoryHistory();
     render(
-      <AdminContext
+      <BaseRootContext
         dataProvider={testDataProvider({
           getManyReference: () => Promise.resolve({ data, total: 2 }),
         })}
@@ -41,7 +41,7 @@ describe('<ReferenceManyField />', () => {
             </SingleFieldList>
           </ReferenceManyField>
         </ThemeProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.queryAllByRole('progressbar')).toHaveLength(0);
@@ -56,7 +56,7 @@ describe('<ReferenceManyField />', () => {
 
   it('should render nothing when there are no related records', async () => {
     render(
-      <AdminContext
+      <BaseRootContext
         dataProvider={testDataProvider({
           getManyReference: () =>
             Promise.resolve({ data: [], total: 0 }),
@@ -67,7 +67,7 @@ describe('<ReferenceManyField />', () => {
             <TextField source="title" />
           </SingleFieldList>
         </ReferenceManyField>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.queryAllByRole('progressbar')).toHaveLength(0);
@@ -82,7 +82,7 @@ describe('<ReferenceManyField />', () => {
     ];
     const history = createMemoryHistory();
     render(
-      <AdminContext
+      <BaseRootContext
         dataProvider={testDataProvider({
           getManyReference: () => Promise.resolve({ data, total: 2 }),
         })}
@@ -93,7 +93,7 @@ describe('<ReferenceManyField />', () => {
             <TextField source="title" />
           </SingleFieldList>
         </ReferenceManyField>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     await waitFor(() => {
@@ -114,7 +114,7 @@ describe('<ReferenceManyField />', () => {
     ];
     const history = createMemoryHistory();
     render(
-      <AdminContext
+      <BaseRootContext
         dataProvider={testDataProvider({
           getManyReference: () => Promise.resolve({ data, total: 2 }),
         })}
@@ -125,7 +125,7 @@ describe('<ReferenceManyField />', () => {
             <TextField source="title" />
           </SingleFieldList>
         </ReferenceManyField>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.queryAllByRole('progressbar')).toHaveLength(0);

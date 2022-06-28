@@ -14,7 +14,7 @@ import {
   mergeInitialValuesWithDefaultValues,
 } from './FilterForm';
 import { ReferenceInput, SelectInput, TextInput } from '../../input';
-import { AdminContext } from '../../AdminContext';
+import { BaseRootContext } from '../../BaseRootContext';
 import { Filter } from './Filter';
 
 describe('<FilterForm />', () => {
@@ -38,14 +38,14 @@ describe('<FilterForm />', () => {
     };
 
     render(
-      <AdminContext>
+      <BaseRootContext>
         <FilterForm
           {...defaultProps}
           setFilters={setFilters}
           filters={filters}
           displayedFilters={displayedFilters}
         />
-      </AdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryAllByLabelText('Title')).toHaveLength(1);
     expect(screen.queryAllByLabelText('Name')).toHaveLength(1);
@@ -59,14 +59,14 @@ describe('<FilterForm />', () => {
     const setFilters = jest.fn();
 
     render(
-      <AdminContext>
+      <BaseRootContext>
         <FilterForm
           {...defaultProps}
           filters={filters}
           displayedFilters={displayedFilters}
           setFilters={setFilters}
         />
-      </AdminContext>
+      </BaseRootContext>
     );
     fireEvent.change(screen.queryByLabelText('Title'), {
       target: { value: 'foo' },
@@ -93,14 +93,14 @@ describe('<FilterForm />', () => {
     const setFilters = jest.fn();
 
     render(
-      <AdminContext>
+      <BaseRootContext>
         <FilterForm
           {...defaultProps}
           filters={filters}
           displayedFilters={displayedFilters}
           setFilters={setFilters}
         />
-      </AdminContext>
+      </BaseRootContext>
     );
     fireEvent.change(screen.queryByLabelText('Title') as HTMLElement, {
       target: { value: 'foo' },
@@ -125,7 +125,7 @@ describe('<FilterForm />', () => {
     });
 
     render(
-      <AdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <ResourceContextProvider value="comments">
           <ListContext.Provider value={defaultProps}>
             <Filter>
@@ -135,7 +135,7 @@ describe('<FilterForm />', () => {
             </Filter>
           </ListContext.Provider>
         </ResourceContextProvider>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(
@@ -155,14 +155,14 @@ describe('<FilterForm />', () => {
     const setFilters = jest.fn();
 
     render(
-      <AdminContext>
+      <BaseRootContext>
         <FilterForm
           {...defaultProps}
           filters={filters}
           displayedFilters={displayedFilters}
           setFilters={setFilters}
         />
-      </AdminContext>
+      </BaseRootContext>
     );
     fireEvent.change(screen.queryByLabelText('Title'), {
       target: { value: 'foo' },

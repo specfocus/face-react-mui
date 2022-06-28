@@ -7,7 +7,7 @@ import {
   within
 } from '@testing-library/react';
 import { QueryClient } from 'react-query';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { TextField } from '../fields';
 import { SimpleForm } from '../forms';
 import { DatagridInput } from './DatagridInput';
@@ -29,7 +29,7 @@ describe('<ReferenceArrayInput />', () => {
     jest.spyOn(console, 'error').mockImplementation(() => { });
     const MyComponent = () => <span id="mycomponent" />;
     render(
-      <AdminContext
+      <BaseRootContext
         queryClient={
           new QueryClient({
             defaultOptions: { queries: { retry: false } },
@@ -44,7 +44,7 @@ describe('<ReferenceArrayInput />', () => {
             <MyComponent />
           </ReferenceArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.queryByDisplayValue('fetch error')).not.toBeNull();
@@ -56,13 +56,13 @@ describe('<ReferenceArrayInput />', () => {
       return <div>{resource}</div>;
     };
     render(
-      <AdminContext>
+      <BaseRootContext>
         <SimpleForm onSubmit={jest.fn()}>
           <ReferenceArrayInput {...defaultProps}>
             <MyComponent />
           </ReferenceArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.queryByText('tags')).not.toBeNull();
@@ -79,13 +79,13 @@ describe('<ReferenceArrayInput />', () => {
         Promise.resolve({ data: [{ id: 1 }, { id: 2 }], total: 2 } as any),
     });
     render(
-      <AdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <SimpleForm onSubmit={jest.fn()}>
           <ReferenceArrayInput {...defaultProps}>
             <Children />
           </ReferenceArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.getByLabelText('total').innerHTML).toEqual('2');
@@ -108,7 +108,7 @@ describe('<ReferenceArrayInput />', () => {
         } as any),
     });
     render(
-      <AdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <SimpleForm
           onSubmit={jest.fn()}
           defaultValues={{ tag_ids: [5] }}
@@ -123,7 +123,7 @@ describe('<ReferenceArrayInput />', () => {
             </DatagridInput>
           </ReferenceArrayInput>
         </SimpleForm>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     await waitFor(() => {

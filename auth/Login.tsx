@@ -20,9 +20,9 @@ import { LoginForm as DefaultLoginForm } from './LoginForm';
  * @example
  *     import MyLoginPage from './MyLoginPage';
  *     const App = () => (
- *         <Admin loginPage={MyLoginPage} authProvider={authProvider}>
+ *         <BaseRoot loginPage={MyLoginPage} authProvider={authProvider}>
  *             ...
- *        </Admin>
+ *        </BaseRoot>
  *     );
  */
 export const Login = (props: LoginProps) => {

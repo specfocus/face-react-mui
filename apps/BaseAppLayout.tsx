@@ -9,18 +9,18 @@ import {
 } from '../layouts';
 import { Login } from '../auth';
 
-export const AppUI = ({ notification, ...props }: AppUIProps) => (
+export const BaseAppLayout = ({ notification, ...props }: BaseAppLayoutProps) => (
   <>
     <BaseRootLayout {...props} />
     {createElement(notification)}
   </>
 );
 
-export interface AppUIProps extends BaseRootLayoutProps {
+export interface BaseAppLayoutProps extends BaseRootLayoutProps {
   notification?: ComponentType;
 }
 
-AppUI.defaultProps = {
+BaseAppLayout.defaultProps = {
   layout: DefaultLayout,
   catchAll: NotFound,
   loading: LoadingPage,

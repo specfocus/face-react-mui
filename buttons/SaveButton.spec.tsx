@@ -13,7 +13,7 @@ import { SaveButton } from './SaveButton';
 import { SimpleForm, Toolbar } from '../forms';
 import { Edit } from '../details';
 import { TextInput } from '../inputs';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 
 const invalidButtonDomProps = {
   disabled: true,
@@ -25,12 +25,12 @@ describe('<SaveButton />', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation(() => { });
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <Form>
           {' '}
           <SaveButton {...invalidButtonDomProps} />
         </Form>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     expect(spy).not.toHaveBeenCalled();
@@ -45,11 +45,11 @@ describe('<SaveButton />', () => {
 
   it('should render a disabled button', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <Form>
           <SaveButton disabled={true} />
         </Form>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() =>
       expect(screen.getByLabelText('action.save')['disabled']).toEqual(
@@ -60,11 +60,11 @@ describe('<SaveButton />', () => {
 
   it('should render as submit type by default', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <Form>
           <SaveButton />
         </Form>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() =>
       expect(
@@ -75,11 +75,11 @@ describe('<SaveButton />', () => {
 
   it('should render as button type when type prop is "button"', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <Form>
           <SaveButton type="button" />
         </Form>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     await waitFor(() =>
@@ -92,11 +92,11 @@ describe('<SaveButton />', () => {
   it('should trigger submit action when clicked if no saving is in progress', async () => {
     const onSubmit = jest.fn();
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <Form onSubmit={onSubmit}>
           <SaveButton alwaysEnable />
         </Form>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     fireEvent.click(screen.getByLabelText('action.save'));
@@ -110,11 +110,11 @@ describe('<SaveButton />', () => {
     const onSubmit = jest.fn();
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <Form onSubmit={onSubmit}>
           <SaveButton />
         </Form>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     fireEvent.click(screen.getByLabelText('action.save'));
@@ -141,13 +141,13 @@ describe('<SaveButton />', () => {
       </Toolbar>
     );
     render(
-      <AdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <Edit {...defaultEditProps}>
           <SimpleForm toolbar={<EditToolbar />}>
             <TextInput source="title" />
           </SimpleForm>
         </Edit>
-      </AdminContext>
+      </BaseRootContext>
     );
     // waitFor for the dataProvider.getOne() return
     await waitFor(() => {
@@ -194,13 +194,13 @@ describe('<SaveButton />', () => {
       </Toolbar>
     );
     render(
-      <AdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <Edit {...defaultEditProps}>
           <SimpleForm toolbar={<EditToolbar />}>
             <TextInput source="title" />
           </SimpleForm>
         </Edit>
-      </AdminContext>
+      </BaseRootContext>
     );
     // waitFor for the dataProvider.getOne() return
     await waitFor(() => {
@@ -251,13 +251,13 @@ describe('<SaveButton />', () => {
       </Toolbar>
     );
     render(
-      <AdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <Edit {...defaultEditProps}>
           <SimpleForm toolbar={<EditToolbar />}>
             <TextInput source="title" />
           </SimpleForm>
         </Edit>
-      </AdminContext>
+      </BaseRootContext>
     );
     // waitFor for the dataProvider.getOne() return
     await waitFor(() => {
@@ -320,7 +320,7 @@ describe('<SaveButton />', () => {
     };
 
     render(
-      <AdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <Form mode="onChange">
           <TextInput
             label="title"
@@ -329,7 +329,7 @@ describe('<SaveButton />', () => {
           />
           <SaveButton />
         </Form>
-      </AdminContext>
+      </BaseRootContext>
     );
     // waitFor for the dataProvider.getOne() return
     await waitFor(() => {
@@ -363,7 +363,7 @@ describe('<SaveButton />', () => {
     };
 
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <>
           <Form onSubmit={jest.fn()}>
             <TextInput source="name" validate={required()} />
@@ -377,7 +377,7 @@ describe('<SaveButton />', () => {
           </Form>
           <Notification />
         </>
-      </AdminContext>
+      </BaseRootContext>
     );
 
     fireEvent.click(screen.getByText('action.save'));
@@ -388,11 +388,11 @@ describe('<SaveButton />', () => {
 
   it('should render enabled if alwaysEnable is true', async () => {
     render(
-      <AdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <Form>
           <SaveButton alwaysEnable={true} />
         </Form>
-      </AdminContext>
+      </BaseRootContext>
     );
     await waitFor(() =>
       expect(screen.getByLabelText('action.save')['disabled']).toEqual(

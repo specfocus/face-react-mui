@@ -40,14 +40,14 @@ import { EditView } from './EditView';
  *
  * // in src/App.js
  * import React from "react";
- * import { Admin, Resource } from '@specfocus/view-focus.mui-demo';
+ * import { BaseRoot, Resource } from '@specfocus/view-focus.mui-demo';
  *
  * import { PostEdit } from './posts';
  *
  * const App = () => (
- *     <Admin dataProvider={...}>
+ *     <BaseRoot dataProvider={...}>
  *         <Resource name="posts" edit={PostEdit} />
- *     </Admin>
+ *     </BaseRoot>
  * );
  * export default App;
  */

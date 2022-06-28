@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 import fakeRestDataProvider from '@specfocus/sham-focus.rest';
 import { Resource } from '@specfocus/view-focus/resources';
 import { createMemoryHistory } from 'history';
-import { Admin } from '../core/Admin';
+import { BaseRoot } from '../core/BaseRoot';
 import { TextField } from '../fields';
 import { AppBar, Layout } from '../layouts';
 import { Datagrid, List } from '../lists';
@@ -110,7 +110,7 @@ const MyAppBar = props => (
 const MyLayout = props => <Layout {...props} appBar={MyAppBar} />;
 
 export const Basic = () => (
-  <Admin dataProvider={dataProvider} history={history} layout={MyLayout}>
+  <BaseRoot dataProvider={dataProvider} history={history} layout={MyLayout}>
     <Resource name="books" list={BookList} />
-  </Admin>
+  </BaseRoot>
 );

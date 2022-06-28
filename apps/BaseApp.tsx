@@ -3,8 +3,8 @@ import { BaseRootProps } from '@specfocus/view-focus/resources';
 import { localStorageStore } from '@specfocus/view-focus.states/states/localStorageStore';
 import { ComponentType } from 'react';
 import { defaultTranslationProvider } from './defaultTranslationProvider';
-import { AppContext } from './AppContext';
-import { AppUI } from './AppUI';
+import { BaseAppContext } from './BaseAppContext';
+import { BaseAppLayout } from './BaseAppLayout';
 
 /**
  * Main admin component, entry point to the application.
@@ -20,44 +20,44 @@ import { AppUI } from './AppUI';
  * // static list of resources
  *
  * import {
- *     Admin,
+ *     BaseRoot,
  *     Resource,
  *     ListGuesser,
  *     useDataProvider,
  * } from 'view-focus';
  *
  * const App = () => (
- *     <Admin dataProvider={myDataProvider}>
+ *     <BaseRoot dataProvider={myDataProvider}>
  *         <Resource name="posts" list={ListGuesser} />
- *     </Admin>
+ *     </BaseRoot>
  * );
  *
  * // dynamic list of resources based on permissions
  *
  * import {
- *     Admin,
+ *     BaseRoot,
  *     Resource,
  *     ListGuesser,
  *     useDataProvider,
  * } from 'view-focus';
  *
  * const App = () => (
- *     <Admin dataProvider={myDataProvider}>
+ *     <BaseRoot dataProvider={myDataProvider}>
  *         {permissions => [
  *             <Resource name="posts" key="posts" list={ListGuesser} />,
  *         ]}
- *     </Admin>
+ *     </BaseRoot>
  * );
  *
  * // If you have to build a dynamic list of resources using a side effect,
- * // you can't use <Admin>. But as it delegates to sub components,
+ * // you can't use <BaseRoot>. But as it delegates to sub components,
  * // it's relatively straightforward to replace it:
  *
  * import * as React from 'react';
 import { useEffect, useState } from 'react';
  * import {
- *     AdminContext,
- *     AdminUI,
+ *     BaseRootContext,
+ *     BaseRootLayout,
  *     defaultI18nProvider,
  *     localStorageStore,
  *     Resource,
@@ -68,9 +68,9 @@ import { useEffect, useState } from 'react';
  * const store = localStorageStore();
  *
  * const App = () => (
- *     <AdminContext dataProvider={myDataProvider} i18nProvider={defaultI18nProvider} store={store}>
+ *     <BaseRootContext dataProvider={myDataProvider} i18nProvider={defaultI18nProvider} store={store}>
  *         <Resources />
- *     </AdminContext>
+ *     </BaseRootContext>
  * );
  *
  * const Resources = () => {
@@ -81,15 +81,15 @@ import { useEffect, useState } from 'react';
  *     }, []);
  *
  *     return (
- *         <AdminUI>
+ *         <BaseRootLayout>
  *             {resources.map(resource => (
  *                 <Resource name={resource.name} key={resource.key} list={ListGuesser} />
  *             ))}
- *         </AdminUI>
+ *         </BaseRootLayout>
  *     );
  * };
  */
-export const App = (props: AppProps) => {
+export const BaseApp = (props: BaseAppProps) => {
   const {
     authProvider,
     basename,
@@ -110,7 +110,7 @@ export const App = (props: AppProps) => {
     store,
     ready,
     theme,
-    title = 'React Admin',
+    title = 'React BaseRoot',
   } = props;
 
   if (loginPage === true && process.env.NODE_ENV !== 'production') {
@@ -120,7 +120,7 @@ export const App = (props: AppProps) => {
   }
 
   return (
-    <AppContext
+    <BaseAppContext
       authProvider={authProvider}
       basename={basename}
       dataProvider={dataProvider}
@@ -130,7 +130,7 @@ export const App = (props: AppProps) => {
       queryClient={queryClient}
       theme={theme}
     >
-      <AppUI
+      <BaseAppLayout
         layout={layout}
         dashboard={dashboard}
         disableTelemetry={disableTelemetry}
@@ -144,19 +144,19 @@ export const App = (props: AppProps) => {
         ready={ready}
       >
         {children}
-      </AppUI>
-    </AppContext>
+      </BaseAppLayout>
+    </BaseAppContext>
   );
 };
 
-App.defaultProps = {
+BaseApp.defaultProps = {
   i18nProvider: defaultTranslationProvider,
   store: localStorageStore(),
 };
 
-export default App;
+export default BaseApp;
 
-export interface AppProps extends BaseRootProps {
+export interface BaseAppProps extends BaseRootProps {
   theme?: ThemeOptions;
   notification?: ComponentType;
 }

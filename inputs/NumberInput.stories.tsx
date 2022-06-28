@@ -1,6 +1,6 @@
 import { useWatch } from '@specfocus/view-focus.forms/forms/useWatch';
 import { required } from '@specfocus/view-focus.forms/forms/validate';
-import { AdminContext } from '../core/AdminContext';
+import { BaseRootContext } from '../core/BaseRootContext';
 import { Create } from '../details';
 import { SimpleForm } from '../forms';
 import { NumberInput } from './NumberInput';
@@ -20,7 +20,7 @@ const FormInspector = ({ name = 'views' }) => {
 };
 
 export const Basic = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -31,11 +31,11 @@ export const Basic = () => (
         <FormInspector />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const Float = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="poi"
       record={{ id: 123, lat: 48.692054, long: 6.184417 }}
@@ -48,11 +48,11 @@ export const Float = () => (
         <FormInspector name="long" />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const DefaultValue = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -77,11 +77,11 @@ export const DefaultValue = () => (
         <FormInspector name="views3" />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const HelperText = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -96,11 +96,11 @@ export const HelperText = () => (
         />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const Label = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -112,11 +112,11 @@ export const Label = () => (
         <NumberInput source="views" label="Number of views" />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const FullWidth = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -127,11 +127,11 @@ export const FullWidth = () => (
         <NumberInput source="views" label="Full Width" fullWidth />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const Margin = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -143,11 +143,11 @@ export const Margin = () => (
         <NumberInput source="views" label="normal" margin="normal" />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const Variant = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -167,11 +167,11 @@ export const Variant = () => (
         />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const Step = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -183,11 +183,11 @@ export const Step = () => (
         <NumberInput source="views" label="Step 10" step={10} />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const MinMax = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -204,11 +204,11 @@ export const MinMax = () => (
         <NumberInput source="views" label="Min 50" min={50} />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const Required = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -221,11 +221,11 @@ export const Required = () => (
         <NumberInput source="views" validate={[required()]} />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const Error = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -245,11 +245,11 @@ export const Error = () => (
         <NumberInput source="views" />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );
 
 export const Sx = () => (
-  <AdminContext>
+  <BaseRootContext>
     <Create
       resource="posts"
       record={{ id: 123, views: 23 }}
@@ -266,5 +266,5 @@ export const Sx = () => (
         />
       </SimpleForm>
     </Create>
-  </AdminContext>
+  </BaseRootContext>
 );

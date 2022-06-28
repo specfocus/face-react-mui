@@ -4,7 +4,7 @@ import { render, screen, act, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import {
   ListContextProvider,
-  CoreAdminContext,
+  BaseRootContext,
   useRecordContext,
 } from '@specfocus/view-focus/resources';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -227,7 +227,7 @@ describe('<ReferenceArrayField />', () => {
         })),
     };
     render(
-      <CoreAdminContext dataProvider={dataProvider as any}>
+      <BaseRootContext dataProvider={dataProvider as any}>
         <ThemeProvider theme={theme}>
           <ReferenceArrayField
             record={{ id: 123, barIds: [1, 2] }}
@@ -241,7 +241,7 @@ describe('<ReferenceArrayField />', () => {
             </SingleFieldList>
           </ReferenceArrayField>
         </ThemeProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('bar1')).toBeNull();
     act(() => resolve());

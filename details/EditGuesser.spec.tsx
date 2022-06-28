@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { render, screen, waitFor } from '@testing-library/react';
-import { CoreAdminContext } from '@specfocus/view-focus/resources';
+import { BaseRootContext } from '@specfocus/view-focus/resources';
 import { EditGuesser } from './EditGuesser';
 import { ThemeProvider } from '../layouts';
 
@@ -25,9 +25,9 @@ describe('<EditGuesser />', () => {
     };
     render(
       <ThemeProvider theme={{}}>
-        <CoreAdminContext dataProvider={dataProvider as any}>
+        <BaseRootContext dataProvider={dataProvider as any}>
           <EditGuesser resource="comments" id={123} />
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     await waitFor(() => {

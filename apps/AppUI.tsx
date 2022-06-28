@@ -1,6 +1,6 @@
 import React from 'react';
 import { createElement, ComponentType } from 'react';
-import { CoreAdminUI, CoreAdminUIProps } from '@specfocus/view-focus/resources';
+import { BaseRootLayout, type BaseRootLayoutProps } from '@specfocus/view-focus/layouts/BaseRootLayout';
 import {
   Layout as DefaultLayout,
   LoadingPage,
@@ -11,12 +11,12 @@ import { Login } from '../auth';
 
 export const AppUI = ({ notification, ...props }: AppUIProps) => (
   <>
-    <CoreAdminUI {...props} />
+    <BaseRootLayout {...props} />
     {createElement(notification)}
   </>
 );
 
-export interface AppUIProps extends CoreAdminUIProps {
+export interface AppUIProps extends BaseRootLayoutProps {
   notification?: ComponentType;
 }
 

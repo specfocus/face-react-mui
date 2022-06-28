@@ -1,13 +1,13 @@
-import { CoreAdminContext, CoreAdminContextProps } from '@specfocus/view-focus/resources';
+import { BaseRootContext, BaseRootContextProps } from '@specfocus/view-focus/resources';
 import { ThemeProvider } from '../themes';
 import { defaultTheme } from './defaultTheme';
 
-export const AppContext = (props: CoreAdminContextProps) => {
+export const AppContext = (props: BaseRootContextProps) => {
   const { theme = defaultTheme, children, ...rest } = props;
   return (
-    <CoreAdminContext {...rest}>
+    <BaseRootContext {...rest}>
       <ThemeProvider theme={theme}>{children as any}</ThemeProvider>
-    </CoreAdminContext>
+    </BaseRootContext>
   );
 };
 

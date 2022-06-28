@@ -1,6 +1,6 @@
 import React from 'react';
 import expect from 'expect';
-import { CoreAdminContext } from '@specfocus/view-focus/resources';
+import { BaseRootContext } from '@specfocus/view-focus/resources';
 import { screen, render } from '@testing-library/react';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 
@@ -18,11 +18,11 @@ describe('<Create />', () => {
     const Dummy = () => <div />;
     const Aside = () => <div id="aside">Hello</div>;
     render(
-      <CoreAdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <Create {...defaultCreateProps} aside={<Aside />}>
           <Dummy />
         </Create>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryAllByText('Hello')).toHaveLength(1);
   });

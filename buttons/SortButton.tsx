@@ -1,21 +1,17 @@
-import React from 'react';
-import { ReactElement, memo } from 'react';
-import {
-  Button,
-  Menu,
-  MenuItem,
-  Tooltip,
-  IconButton,
-  useMediaQuery,
-  Theme,
-} from '@mui/material';
-import { styled } from '@mui/material/styles';
-import SortIcon from '@mui/icons-material/Sort';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { useListSortContext } from '@specfocus/view-focus/lists/useListSortContext';
+import SortIcon from '@mui/icons-material/Sort';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { styled, Theme } from '@mui/material/styles';
+import Tooltip from '@mui/material/Tooltip';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
-import { useTranslateLabel } from '@specfocus/view-focus/i18n/useTranslateLabel';
+import { useListSortContext } from '@specfocus/view-focus/lists/useListSortContext';
+import { useTranslateLabel } from '@specfocus/view-focus/translations/useTranslateLabel';
 import { shallowEqual } from '@specfocus/view-focus/utils/shallowEqual';
+import React, { memo, ReactElement } from 'react';
 
 /**
  * A button allowing to change the sort field and order.

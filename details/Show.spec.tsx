@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import {
-  CoreAdminContext,
+  BaseRootContext,
   ResourceContextProvider,
   useRecordContext,
 } from '@specfocus/view-focus/resources';
@@ -36,7 +36,7 @@ describe('<Show />', () => {
       initialEntries: ['/books/123/show'],
     });
     render(
-      <CoreAdminContext dataProvider={dataProvider} history={history}>
+      <BaseRootContext dataProvider={dataProvider} history={history}>
         <Routes>
           <Route
             path="/books/:id/show"
@@ -49,7 +49,7 @@ describe('<Show />', () => {
             }
           />
         </Routes>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('War and Peace')).toBeNull(); // while loading
     await waitFor(() => {
@@ -71,11 +71,11 @@ describe('<Show />', () => {
       return record ? <span>{record.name}</span> : null;
     };
     render(
-      <CoreAdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <Show id="123" resource="books">
           <BookName />
         </Show>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryByText('War and Peace')).toBeNull(); // while loading
     await waitFor(() => {
@@ -91,11 +91,11 @@ describe('<Show />', () => {
     } as any;
     const BookName = () => <span>foo</span>;
     render(
-      <CoreAdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <Show id="123" resource="books" queryOptions={{ onError }}>
           <BookName />
         </Show>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => expect(onError).toHaveBeenCalled());
   });

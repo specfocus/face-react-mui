@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { render, screen, waitFor } from '@testing-library/react';
-import { CoreAdminContext } from '@specfocus/view-focus/resources';
+import { BaseRootContext } from '@specfocus/view-focus/resources';
 
 import { ListGuesser } from './ListGuesser';
 import { ThemeProvider } from '../layouts';
@@ -28,9 +28,9 @@ describe('<ListGuesser />', () => {
     };
     render(
       <ThemeProvider theme={{}}>
-        <CoreAdminContext dataProvider={dataProvider as any}>
+        <BaseRootContext dataProvider={dataProvider as any}>
           <ListGuesser resource="comments" />
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     await waitFor(() => {

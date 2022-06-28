@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { CoreAdminContext, ResourceContextProvider } from '@specfocus/view-focus/resources';
+import { BaseRootContext, ResourceContextProvider } from '@specfocus/view-focus/resources';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { useGetList } from '@specfocus/view-focus.data/operations/get-list/useGetList';
 import { ListContextProvider } from '@specfocus/view-focus/lists/ListContextProvider';
@@ -67,9 +67,9 @@ const SubWrapper = ({ children }) => {
 };
 
 const Wrapper = ({ children }) => (
-  <CoreAdminContext>
+  <BaseRootContext>
     <SubWrapper>{children}</SubWrapper>
-  </CoreAdminContext>
+  </BaseRootContext>
 );
 
 export const Basic = () => (
@@ -312,7 +312,7 @@ const MyCustomListInteractive = () => {
 
 export const Standalone = () => (
   <ThemeProvider theme={theme}>
-    <CoreAdminContext
+    <BaseRootContext
       dataProvider={testDataProvider({
         getList: () => Promise.resolve({ data, total: 4 } as any),
       })}
@@ -321,6 +321,6 @@ export const Standalone = () => (
       <MyCustomList />
       <h1>Dynamic (with useList)</h1>
       <MyCustomListInteractive />
-    </CoreAdminContext>
+    </BaseRootContext>
   </ThemeProvider>
 );

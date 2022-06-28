@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import {
-  CoreAdminContext,
+  BaseRootContext,
   testDataProvider,
   ListContextProvider,
   useRecordContext,
@@ -16,11 +16,11 @@ const TitleField = (): JSX.Element => {
 
 const Wrapper = ({ children, listContext }) => (
   <ThemeProvider theme={createTheme()}>
-    <CoreAdminContext dataProvider={testDataProvider()}>
+    <BaseRootContext dataProvider={testDataProvider()}>
       <ListContextProvider value={listContext}>
         {children}
       </ListContextProvider>
-    </CoreAdminContext>
+    </BaseRootContext>
   </ThemeProvider>
 );
 describe('<Datagrid />', () => {

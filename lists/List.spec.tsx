@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
-import { CoreAdminContext, testDataProvider, useListContext } from '@specfocus/view-focus/resources';
+import { BaseRootContext, testDataProvider, useListContext } from '@specfocus/view-focus/resources';
 import { createMemoryHistory } from 'history';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -16,13 +16,13 @@ describe('<List />', () => {
   it('should render a list page', () => {
     const Datagrid = () => <div>datagrid</div>;
     const { container } = render(
-      <CoreAdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <ThemeProvider theme={theme}>
           <List resource="posts">
             <Datagrid />
           </List>
         </ThemeProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     expect(container.querySelectorAll('.list-page')).toHaveLength(1);
   });
@@ -32,7 +32,7 @@ describe('<List />', () => {
     const Pagination = () => <div>pagination</div>;
     const Datagrid = () => <div>datagrid</div>;
     render(
-      <CoreAdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <ThemeProvider theme={theme}>
           <List
             filters={<Filters />}
@@ -42,7 +42,7 @@ describe('<List />', () => {
             <Datagrid />
           </List>
         </ThemeProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryAllByText('filters')).toHaveLength(2);
     expect(screen.queryAllByLabelText('action.export')).toHaveLength(1);
@@ -54,13 +54,13 @@ describe('<List />', () => {
     const Dummy = () => <div />;
     const Aside = () => <div id="aside">Hello</div>;
     render(
-      <CoreAdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <ThemeProvider theme={theme}>
           <List resource="posts" aside={<Aside />}>
             <Dummy />
           </List>
         </ThemeProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     expect(screen.queryAllByText('Hello')).toHaveLength(1);
   });
@@ -74,13 +74,13 @@ describe('<List />', () => {
       getList: jest.fn(() => Promise.resolve({ data: [], total: 0 })),
     } as any;
     render(
-      <CoreAdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <ThemeProvider theme={theme}>
           <List resource="posts">
             <Dummy />
           </List>
         </ThemeProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       screen.getByText('resources.posts.empty');
@@ -97,13 +97,13 @@ describe('<List />', () => {
       getList: jest.fn(() => Promise.resolve({ data: [], total: 0 })),
     } as any;
     render(
-      <CoreAdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <ThemeProvider theme={theme}>
           <List resource="posts" empty={false}>
             <Dummy />
           </List>
         </ThemeProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.queryByText('resources.posts.empty')).toBeNull();
@@ -120,13 +120,13 @@ describe('<List />', () => {
       getList: jest.fn(() => Promise.resolve({ data: [], total: 0 })),
     } as any;
     render(
-      <CoreAdminContext dataProvider={dataProvider}>
+      <BaseRootContext dataProvider={dataProvider}>
         <ThemeProvider theme={theme}>
           <List resource="posts" filterDefaultValues={{ foo: 'bar' }}>
             <Dummy />
           </List>
         </ThemeProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => {
       expect(screen.queryByText('resources.posts.empty')).toBeNull();
@@ -151,13 +151,13 @@ describe('<List />', () => {
       initialEntries: [`/posts`],
     });
     render(
-      <CoreAdminContext dataProvider={dataProvider} history={history}>
+      <BaseRootContext dataProvider={dataProvider} history={history}>
         <ThemeProvider theme={theme}>
           <List filters={<DummyFilters />} resource="posts">
             <Dummy />
           </List>
         </ThemeProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => new Promise(resolve => setTimeout(resolve, 0)));
     expect(
@@ -187,13 +187,13 @@ describe('<List />', () => {
       initialEntries: [`/posts`],
     });
     render(
-      <CoreAdminContext dataProvider={dataProvider} history={history}>
+      <BaseRootContext dataProvider={dataProvider} history={history}>
         <ThemeProvider theme={theme}>
           <List filters={dummyFilters} resource="posts">
             <Dummy />
           </List>
         </ThemeProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
     await waitFor(() => new Promise(resolve => setTimeout(resolve, 0)));
     expect(

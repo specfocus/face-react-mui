@@ -3,7 +3,7 @@ import expect from 'expect';
 import { render, screen, waitFor } from '@testing-library/react';
 import {
   RecordContextProvider,
-  CoreAdminContext,
+  BaseRootContext,
   testDataProvider,
   useGetMany,
 } from '@specfocus/view-focus/resources';
@@ -35,7 +35,7 @@ describe('<ReferenceField />', () => {
       });
       render(
         <ThemeProvider theme={theme}>
-          <CoreAdminContext dataProvider={dataProvider}>
+          <BaseRootContext dataProvider={dataProvider}>
             <ReferenceField
               record={record}
               resource="comments"
@@ -44,7 +44,7 @@ describe('<ReferenceField />', () => {
             >
               <TextField source="title" />
             </ReferenceField>
-          </CoreAdminContext>
+          </BaseRootContext>
         </ThemeProvider>
       );
       await new Promise(resolve => setTimeout(resolve, 500));
@@ -69,7 +69,7 @@ describe('<ReferenceField />', () => {
       });
       render(
         <ThemeProvider theme={theme}>
-          <CoreAdminContext dataProvider={dataProvider}>
+          <BaseRootContext dataProvider={dataProvider}>
             <ReferenceField
               record={record}
               resource="comments"
@@ -78,7 +78,7 @@ describe('<ReferenceField />', () => {
             >
               <TextField source="title" />
             </ReferenceField>
-          </CoreAdminContext>
+          </BaseRootContext>
         </ThemeProvider>
       );
       await new Promise(resolve => setTimeout(resolve, 1001));
@@ -99,12 +99,12 @@ describe('<ReferenceField />', () => {
         return <span>dummy</span>;
       };
       const { rerender } = render(
-        <CoreAdminContext
+        <BaseRootContext
           dataProvider={dataProvider}
           queryClient={queryClient}
         >
           <FecthGetMany />
-        </CoreAdminContext>
+        </BaseRootContext>
       );
       await waitFor(() => {
         expect(dataProvider.getMany).toHaveBeenCalledTimes(1);
@@ -125,7 +125,7 @@ describe('<ReferenceField />', () => {
       });
       rerender(
         <ThemeProvider theme={theme}>
-          <CoreAdminContext
+          <BaseRootContext
             dataProvider={slowDataProvider}
             queryClient={queryClient}
           >
@@ -137,7 +137,7 @@ describe('<ReferenceField />', () => {
             >
               <TextField source="title" />
             </ReferenceField>
-          </CoreAdminContext>
+          </BaseRootContext>
         </ThemeProvider>
       );
       await new Promise(resolve => setTimeout(resolve, 500));
@@ -153,7 +153,7 @@ describe('<ReferenceField />', () => {
       });
       render(
         <ThemeProvider theme={theme}>
-          <CoreAdminContext dataProvider={dataProvider}>
+          <BaseRootContext dataProvider={dataProvider}>
             <ReferenceField
               record={record}
               resource="comments"
@@ -162,7 +162,7 @@ describe('<ReferenceField />', () => {
             >
               <TextField source="title" />
             </ReferenceField>
-          </CoreAdminContext>
+          </BaseRootContext>
         </ThemeProvider>
       );
       await waitFor(() =>
@@ -180,7 +180,7 @@ describe('<ReferenceField />', () => {
       });
       render(
         <ThemeProvider theme={theme}>
-          <CoreAdminContext dataProvider={dataProvider}>
+          <BaseRootContext dataProvider={dataProvider}>
             <ReferenceField
               record={record}
               resource="comments"
@@ -189,7 +189,7 @@ describe('<ReferenceField />', () => {
             >
               <TextField source="title" />
             </ReferenceField>
-          </CoreAdminContext>
+          </BaseRootContext>
         </ThemeProvider>
       );
       await new Promise(resolve => setTimeout(resolve, 10));
@@ -204,7 +204,7 @@ describe('<ReferenceField />', () => {
       });
       render(
         <ThemeProvider theme={theme}>
-          <CoreAdminContext dataProvider={dataProvider}>
+          <BaseRootContext dataProvider={dataProvider}>
             <ReferenceField
               record={record}
               resource="comments"
@@ -213,7 +213,7 @@ describe('<ReferenceField />', () => {
             >
               <TextField source="title" />
             </ReferenceField>
-          </CoreAdminContext>
+          </BaseRootContext>
         </ThemeProvider>
       );
       await new Promise(resolve => setTimeout(resolve, 10));
@@ -225,7 +225,7 @@ describe('<ReferenceField />', () => {
   it('should display the emptyText if the field is empty', () => {
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={testDataProvider()}>
+        <BaseRootContext dataProvider={testDataProvider()}>
           <ReferenceField
             record={{ id: 123 }}
             resource="comments"
@@ -235,7 +235,7 @@ describe('<ReferenceField />', () => {
           >
             <TextField source="title" />
           </ReferenceField>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     expect(screen.getByText('EMPTY')).not.toBeNull();
@@ -249,7 +249,7 @@ describe('<ReferenceField />', () => {
     });
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <RecordContextProvider value={record}>
             <ReferenceField
               resource="comments"
@@ -259,7 +259,7 @@ describe('<ReferenceField />', () => {
               <TextField source="title" />
             </ReferenceField>
           </RecordContextProvider>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     await new Promise(resolve => setTimeout(resolve, 10));
@@ -279,7 +279,7 @@ describe('<ReferenceField />', () => {
     });
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <ReferenceField
             record={record}
             resource="comments"
@@ -288,7 +288,7 @@ describe('<ReferenceField />', () => {
           >
             <TextField source="title" />
           </ReferenceField>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     await waitFor(() =>
@@ -304,7 +304,7 @@ describe('<ReferenceField />', () => {
     });
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <ReferenceField
             record={record}
             resource="comments"
@@ -313,7 +313,7 @@ describe('<ReferenceField />', () => {
           >
             <TextField source="title" />
           </ReferenceField>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     await new Promise(resolve => setTimeout(resolve, 10));
@@ -332,7 +332,7 @@ describe('<ReferenceField />', () => {
     });
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <ReferenceField
             record={record}
             resource="comments"
@@ -342,7 +342,7 @@ describe('<ReferenceField />', () => {
           >
             <TextField source="title" />
           </ReferenceField>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     await waitFor(() =>
@@ -361,7 +361,7 @@ describe('<ReferenceField />', () => {
     });
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <ReferenceField
             record={record}
             resource="comments"
@@ -371,7 +371,7 @@ describe('<ReferenceField />', () => {
           >
             <TextField source="title" />
           </ReferenceField>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     await waitFor(() =>

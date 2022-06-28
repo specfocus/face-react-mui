@@ -1,8 +1,8 @@
 import { styled } from '@mui/material/styles';
-import { TranslatableContextProvider } from '@specfocus/view-focus.i18n/translations/TranslatableContextProvider';
-import { useTranslatable, UseTranslatableOptions } from '@specfocus/view-focus/i18n/useTranslatable';
-import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import { Entity } from '@specfocus/spec-focus/entities/Entity';
+import { TranslatableContextProvider } from '@specfocus/view-focus.i18n/translations/TranslatableContextProvider';
+import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
+import { useTranslatable, UseTranslatableOptions } from '@specfocus/view-focus/translations/useTranslatable';
 import { ReactElement, ReactNode } from 'react';
 import { TranslatableFieldsTabContent } from './TranslatableFieldsTabContent';
 import { TranslatableFieldsTabs } from './TranslatableFieldsTabs';

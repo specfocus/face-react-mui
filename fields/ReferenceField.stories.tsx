@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import {
-  CoreAdminContext,
+  BaseRootContext,
   ResourceContextProvider
 } from '@specfocus/view-focus/resources';
 import { ListContextProvider } from '@specfocus/view-focus/lists/ListContextProvider';
@@ -30,13 +30,13 @@ const Wrapper = ({
   dataProvider = defaultDataProvider,
   record = defaultRecord,
 }: any) => (
-  <CoreAdminContext dataProvider={dataProvider} history={history}>
+  <BaseRootContext dataProvider={dataProvider} history={history}>
     <ResourceContextProvider value="books">
       <RecordContextProvider value={record}>
         {children}
       </RecordContextProvider>
     </ResourceContextProvider>
-  </CoreAdminContext>
+  </BaseRootContext>
 );
 
 export const Basic = () => (

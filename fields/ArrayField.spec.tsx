@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import {
-  CoreAdminContext,
+  BaseRootContext,
   ResourceContextProvider,
   testDataProvider,
 } from '@specfocus/view-focus/resources';
@@ -25,11 +25,11 @@ describe('<ArrayField />', () => {
 
   const Wrapper = ({ children }) => (
     <ThemeProvider theme={createTheme()}>
-      <CoreAdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <ResourceContextProvider value="posts">
           {children}
         </ResourceContextProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     </ThemeProvider>
   );
 

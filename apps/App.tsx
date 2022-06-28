@@ -1,8 +1,8 @@
 import { ThemeOptions } from '@mui/material';
-import { CoreAdminProps } from '@specfocus/view-focus/resources';
+import { BaseRootProps } from '@specfocus/view-focus/resources';
 import { localStorageStore } from '@specfocus/view-focus.states/states/localStorageStore';
 import { ComponentType } from 'react';
-import { defaultI18nProvider } from './defaultI18nProvider';
+import { defaultTranslationProvider } from './defaultTranslationProvider';
 import { AppContext } from './AppContext';
 import { AppUI } from './AppUI';
 
@@ -150,13 +150,13 @@ export const App = (props: AppProps) => {
 };
 
 App.defaultProps = {
-  i18nProvider: defaultI18nProvider,
+  i18nProvider: defaultTranslationProvider,
   store: localStorageStore(),
 };
 
 export default App;
 
-export interface AppProps extends CoreAdminProps {
+export interface AppProps extends BaseRootProps {
   theme?: ThemeOptions;
   notification?: ComponentType;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import expect from 'expect';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
-import { CoreAdminContext, testDataProvider } from '@specfocus/view-focus/resources';
+import { BaseRootContext, testDataProvider } from '@specfocus/view-focus/resources';
 
 import { TabbedShowLayout } from './TabbedShowLayout';
 import { Tab } from './Tab';
@@ -12,7 +12,7 @@ describe('<TabbedShowLayout />', () => {
   it('should display the first Tab component and its content', () => {
     const history = createMemoryHistory();
     render(
-      <CoreAdminContext
+      <BaseRootContext
         dataProvider={testDataProvider()}
         history={history}
       >
@@ -24,7 +24,7 @@ describe('<TabbedShowLayout />', () => {
             <TextField label="Field On Tab2" source="field2" />
           </Tab>
         </TabbedShowLayout>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.queryByText('Tab1')).not.toBeNull();
@@ -34,7 +34,7 @@ describe('<TabbedShowLayout />', () => {
   it('should display the first valid Tab component and its content', () => {
     const history = createMemoryHistory();
     render(
-      <CoreAdminContext
+      <BaseRootContext
         dataProvider={testDataProvider()}
         history={history}
       >
@@ -47,7 +47,7 @@ describe('<TabbedShowLayout />', () => {
             <TextField label="Field On Tab2" source="field2" />
           </Tab>
         </TabbedShowLayout>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
 
     expect(screen.queryByText('Tab1')).not.toBeNull();
@@ -58,7 +58,7 @@ describe('<TabbedShowLayout />', () => {
     const history = createMemoryHistory({ initialEntries: ['/'] });
 
     render(
-      <CoreAdminContext
+      <BaseRootContext
         dataProvider={testDataProvider()}
         history={history}
       >
@@ -71,7 +71,7 @@ describe('<TabbedShowLayout />', () => {
             <TextField label="Field On Tab2" source="field2" />
           </Tab>
         </TabbedShowLayout>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
 
     fireEvent.click(screen.getByText('Tab2'));
@@ -88,7 +88,7 @@ describe('<TabbedShowLayout />', () => {
     const history = createMemoryHistory({ initialEntries: ['/'] });
 
     render(
-      <CoreAdminContext
+      <BaseRootContext
         dataProvider={testDataProvider()}
         history={history}
       >
@@ -101,7 +101,7 @@ describe('<TabbedShowLayout />', () => {
             <TextField label="Field On Tab2" source="field2" />
           </Tab>
         </TabbedShowLayout>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
 
     fireEvent.click(screen.getByText('Tab2'));
@@ -118,7 +118,7 @@ describe('<TabbedShowLayout />', () => {
     const history = createMemoryHistory({ initialEntries: ['/'] });
     const record = { id: 123 };
     render(
-      <CoreAdminContext
+      <BaseRootContext
         dataProvider={testDataProvider()}
         history={history}
       >
@@ -131,7 +131,7 @@ describe('<TabbedShowLayout />', () => {
             <TextField label="Field On Tab2" source="field2" />
           </Tab>
         </TabbedShowLayout>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
 
     fireEvent.click(screen.getByText('Tab2'));

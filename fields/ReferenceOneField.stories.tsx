@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import {
-  CoreAdminContext,
+  BaseRootContext,
   ResourceContextProvider
 } from '@specfocus/view-focus/resources';
 import { createMemoryHistory } from 'history';
@@ -26,13 +26,13 @@ const defaultDataProvider = {
 const history = createMemoryHistory({ initialEntries: ['/books/1/show'] });
 
 const Wrapper = ({ children, dataProvider = defaultDataProvider }) => (
-  <CoreAdminContext dataProvider={dataProvider} history={history}>
+  <BaseRootContext dataProvider={dataProvider} history={history}>
     <ResourceContextProvider value="books">
       <RecordContextProvider value={{ id: 1, title: 'War and Peace' }}>
         {children}
       </RecordContextProvider>
     </ResourceContextProvider>
-  </CoreAdminContext>
+  </BaseRootContext>
 );
 
 export const Basic = () => (

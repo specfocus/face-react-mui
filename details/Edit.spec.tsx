@@ -8,7 +8,7 @@ import {
   act,
 } from '@testing-library/react';
 import {
-  CoreAdminContext,
+  BaseRootContext,
   undoableEventEmitter,
   useRecordContext,
   useSaveContext,
@@ -121,7 +121,7 @@ describe('<Edit />', () => {
       };
 
       render(
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit
             {...defaultEditProps}
             id="1234"
@@ -129,7 +129,7 @@ describe('<Edit />', () => {
           >
             <FakeForm />
           </Edit>
-        </CoreAdminContext>
+        </BaseRootContext>
       );
       await screen.findByText('lorem');
       screen.getByText('Update').click();
@@ -177,7 +177,7 @@ describe('<Edit />', () => {
       };
 
       render(
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit
             {...defaultEditProps}
             id="1234"
@@ -186,7 +186,7 @@ describe('<Edit />', () => {
           >
             <FakeForm />
           </Edit>
-        </CoreAdminContext>
+        </BaseRootContext>
       );
       await screen.findByText('lorem');
       screen.getByText('Update').click();
@@ -231,7 +231,7 @@ describe('<Edit />', () => {
       };
 
       render(
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit
             {...defaultEditProps}
             id="1234"
@@ -240,7 +240,7 @@ describe('<Edit />', () => {
           >
             <FakeForm />
           </Edit>
-        </CoreAdminContext>
+        </BaseRootContext>
       );
       await screen.findByText('lorem');
       screen.getByText('Update').click();

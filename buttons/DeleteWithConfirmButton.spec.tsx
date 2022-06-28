@@ -1,7 +1,7 @@
 import React from 'react';
 import { screen, render, waitFor, fireEvent } from '@testing-library/react';
 import expect from 'expect';
-import { CoreAdminContext } from '@specfocus/view-focus/resources';
+import { BaseRootContext } from '@specfocus/view-focus/resources';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { DeleteWithConfirmButton } from './DeleteWithConfirmButton';
 import { Toolbar, SimpleForm } from '../forms';
@@ -25,11 +25,11 @@ describe('<DeleteWithConfirmButton />', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation(() => { });
 
     render(
-      <CoreAdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <ThemeProvider theme={theme}>
           <DeleteWithConfirmButton {...invalidButtonDomProps} />
         </ThemeProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
 
     expect(spy).not.toHaveBeenCalled();
@@ -64,13 +64,13 @@ describe('<DeleteWithConfirmButton />', () => {
     );
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit {...defaultEditProps}>
             <SimpleForm toolbar={<EditToolbar />}>
               <TextInput source="title" />
             </SimpleForm>
           </Edit>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     // waitFor for the dataProvider.getOne() return
@@ -103,7 +103,7 @@ describe('<DeleteWithConfirmButton />', () => {
     );
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <>
             <Edit {...defaultEditProps}>
               <SimpleForm toolbar={<EditToolbar />}>
@@ -112,7 +112,7 @@ describe('<DeleteWithConfirmButton />', () => {
             </Edit>
             <Notification />
           </>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     // waitFor for the dataProvider.getOne() return
@@ -147,13 +147,13 @@ describe('<DeleteWithConfirmButton />', () => {
     );
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit {...defaultEditProps}>
             <SimpleForm toolbar={<EditToolbar />}>
               <TextInput source="title" />
             </SimpleForm>
           </Edit>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     // waitFor for the dataProvider.getOne() return
@@ -194,13 +194,13 @@ describe('<DeleteWithConfirmButton />', () => {
     );
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit {...defaultEditProps}>
             <SimpleForm toolbar={<EditToolbar />}>
               <TextInput source="title" />
             </SimpleForm>
           </Edit>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     // waitFor for the dataProvider.getOne() return
@@ -244,13 +244,13 @@ describe('<DeleteWithConfirmButton />', () => {
     );
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit {...defaultEditProps}>
             <SimpleForm toolbar={<EditToolbar />}>
               <TextInput source="title" />
             </SimpleForm>
           </Edit>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
 

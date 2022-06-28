@@ -1,5 +1,5 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { CoreAdminContext } from '@specfocus/view-focus/resources';
+import { BaseRootContext } from '@specfocus/view-focus/resources';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import type { MutationMode } from '@specfocus/view-focus.data/operations/MutationMode';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
@@ -22,11 +22,11 @@ describe('<DeleteWithUndoButton />', () => {
     const spy = jest.spyOn(console, 'error').mockImplementation(() => { });
 
     render(
-      <CoreAdminContext dataProvider={testDataProvider()}>
+      <BaseRootContext dataProvider={testDataProvider()}>
         <ThemeProvider theme={theme}>
           <DeleteWithUndoButton {...invalidButtonDomProps} />
         </ThemeProvider>
-      </CoreAdminContext>
+      </BaseRootContext>
     );
 
     expect(spy).not.toHaveBeenCalled();
@@ -68,13 +68,13 @@ describe('<DeleteWithUndoButton />', () => {
     );
     render(
       <ThemeProvider theme={theme}>
-        <CoreAdminContext dataProvider={dataProvider}>
+        <BaseRootContext dataProvider={dataProvider}>
           <Edit {...defaultEditProps}>
             <SimpleForm toolbar={<EditToolbar />}>
               <TextInput source="title" />
             </SimpleForm>
           </Edit>
-        </CoreAdminContext>
+        </BaseRootContext>
       </ThemeProvider>
     );
     // waitFor for the dataProvider.getOne() return

@@ -77,7 +77,7 @@ export const SavedQueriesList = ({
   const hasFilterValues = !isEqual(filterValues, {});
 
   return (
-    <Root label="ra.saved_queries.label" icon={icon}>
+    <Root label="saved_queries.label" icon={icon}>
       {hasSavedCurrentFilterValue ? (
         <RemoveSavedQueryIconButton
           className={SavedQueriesListClasses.floatingIcon}

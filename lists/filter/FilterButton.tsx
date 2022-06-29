@@ -115,7 +115,7 @@ export const FilterButton = (props: FilterButtonProps): JSX.Element => {
     <Root className={className} {...sanitizeRestProps(rest)}>
       <Button
         className="add-filter"
-        label="ra.action.add_filter"
+        label="action.add_filter"
         aria-haspopup="true"
         onClick={handleClickButton}
       >

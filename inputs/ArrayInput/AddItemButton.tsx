@@ -7,7 +7,7 @@ import { Button, ButtonProps } from '../../buttons';
 export const AddItemButton = (props: Omit<ButtonProps, 'onClick'>) => {
   const { add } = useSimpleFormIterator();
   return (
-    <Button label="ra.action.add" onClick={() => add()} {...props}>
+    <Button label="action.add" onClick={() => add()} {...props}>
       <AddIcon />
     </Button>
   );

@@ -839,7 +839,7 @@ describe('<AutocompleteArrayInput />', () => {
     }) as HTMLInputElement;
     input.focus();
     fireEvent.change(input, { target: { value: 'New Kid On The Block' } });
-    fireEvent.click(screen.getByText('Choice is ra.action.create_item'));
+    fireEvent.click(screen.getByText('Choice is action.create_item'));
     await new Promise(resolve => setTimeout(resolve));
     rerender(
       <BaseRootContext dataProvider={testDataProvider()}>

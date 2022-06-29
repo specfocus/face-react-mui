@@ -9,7 +9,7 @@ export const ReOrderButtons = ({ className }: { className?: string; }) => {
   return (
     <div className={className}>
       <IconButtonWithTooltip
-        label="ra.action.move_up"
+        label="action.move_up"
         size="small"
         onClick={() => reOrder(index - 1)}
         disabled={index <= 0}
@@ -17,7 +17,7 @@ export const ReOrderButtons = ({ className }: { className?: string; }) => {
         <ArrowUpwardIcon />
       </IconButtonWithTooltip>
       <IconButtonWithTooltip
-        label="ra.action.move_down"
+        label="action.move_down"
         size="small"
         onClick={() => reOrder(index + 1)}
         disabled={total == null || index >= total - 1}

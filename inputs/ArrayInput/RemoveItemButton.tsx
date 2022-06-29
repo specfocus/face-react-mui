@@ -6,7 +6,7 @@ export const RemoveItemButton = (props: Omit<ButtonProps, 'onClick'>) => {
   const { remove } = useSimpleFormIteratorItem();
 
   return (
-    <Button label="ra.action.remove" onClick={() => remove()} {...props}>
+    <Button label="action.remove" onClick={() => remove()} {...props}>
       <CloseIcon />
     </Button>
   );

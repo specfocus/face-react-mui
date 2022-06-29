@@ -4,7 +4,7 @@ import { Box, Card, CardContent, styled, Typography } from '@mui/material';
 import englishMessages from '@specfocus/locales/en/general';
 import frenchMessages from '@specfocus/locales/fr/general';
 import fakeRestProvider from '@specfocus/sham-focus.rest';
-import createTranslationProvider from '@specfocus/view-focus.i18next/providers';
+import provideTranslationContextValue from '@specfocus/view-focus.i18next/providers';
 import { Resource } from '@specfocus/view-focus/resources/Resource';
 import { createMemoryHistory } from 'history';
 import merge from 'lodash/merge';
@@ -172,7 +172,7 @@ const frenchAppMessages = {
   },
 };
 
-const i18nProvider = createTranslationProvider(
+const i18nProvider = provideTranslationContextValue(
   locale =>
     locale === 'fr'
       ? merge(frenchMessages, frenchAppMessages)

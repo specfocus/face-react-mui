@@ -1,5 +1,5 @@
 import React from 'react';
-import createTranslationProvider from '@specfocus/view-focus.i18next/providers';
+import provideTranslationContextValue from '@specfocus/view-focus.i18next/providers';
 import englishMessages from '@specfocus/locales/en/general';
 
 import { BaseRootContext } from '../core/BaseRootContext';
@@ -28,7 +28,7 @@ export const CustomIcon = () => (
   </Wrapper>
 );
 
-const i18nProvider = createTranslationProvider(() => englishMessages);
+const i18nProvider = provideTranslationContextValue(() => englishMessages);
 
 const Wrapper = ({ children }) => (
   <BaseRootContext i18nProvider={i18nProvider}>

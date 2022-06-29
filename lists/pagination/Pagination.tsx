@@ -82,7 +82,7 @@ export const Pagination: FunctionComponent<PaginationProps> = memo(props => {
   );
 
   const labelItem = useCallback(
-    type => translate(`ra.navigation.${type}`, { _: `Go to ${type} page` }),
+    type => translate(`navigation.${type}`, { _: `Go to ${type} page` }),
     [translate]
   );
 

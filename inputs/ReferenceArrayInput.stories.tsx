@@ -1,6 +1,6 @@
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { Form } from '@specfocus/view-focus/forms/Form';
-import createTranslationProvider from '@specfocus/view-focus.i18next/providers';
+import provideTranslationContextValue from '@specfocus/view-focus.i18next/providers';
 import englishMessages from '@specfocus/locales/en/general';
 import { DatagridInput } from '.';
 import { BaseRootContext } from '../core/BaseRootContext';
@@ -26,7 +26,7 @@ const dataProvider = testDataProvider({
   },
 });
 
-const i18nProvider = createTranslationProvider(() => englishMessages);
+const i18nProvider = provideTranslationContextValue(() => englishMessages);
 
 export const WithDatagridChild = () => (
   <BaseRootContext dataProvider={dataProvider} i18nProvider={i18nProvider}>

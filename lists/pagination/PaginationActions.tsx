@@ -39,7 +39,7 @@ export const PaginationActions: FunctionComponent<PaginationActionsProps> = memo
           _: `Go to page ${page}`,
         });
     }
-    return translate(`ra.navigation.${type}`, { _: `Go to ${type} page` });
+    return translate(`navigation.${type}`, { _: `Go to ${type} page` });
   };
 
   return (

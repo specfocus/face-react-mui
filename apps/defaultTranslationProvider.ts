@@ -1,7 +1,7 @@
 import defaultMessages from '@specfocus/locales/en/general';
-import { createTranslationProvider } from '@specfocus/view-focus.i18next/translations/createTranslationProvider';
+import { provideTranslationContextValue } from '@specfocus/view-focus.i18next/translations/provideTranslationContextValue';
 
-export const defaultTranslationProvider = createTranslationProvider(
+export const defaultTranslationProvider = provideTranslationContextValue(
   () => defaultMessages,
   'en'
 );

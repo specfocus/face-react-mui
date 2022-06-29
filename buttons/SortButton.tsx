@@ -71,7 +71,7 @@ const SortButton = (props: SortButtonProps) => {
       resource,
       source: sort.field,
     }),
-    order: translate(`ra.sort.${sort.order}`),
+    order: translate(`sort.${sort.order}`),
     _: label,
   });
 
@@ -119,7 +119,7 @@ const SortButton = (props: SortButtonProps) => {
               source: field,
             })}{' '}
             {translate(
-              `ra.sort.${sort.field === field
+              `sort.${sort.field === field
                 ? inverseOrder(sort.order)
                 : 'ASC'
               }`

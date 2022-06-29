@@ -19,7 +19,7 @@ export const TranslatableInputsTab = (
   return (
     <StyledTab
       id={`translatable-header-${groupKey}${locale}`}
-      label={translate(`ra.locales.${locale}`, {
+      label={translate(`locales.${locale}`, {
         _: capitalize(locale),
       })}
       className={clsx(TranslatableInputsTabClasses.root, {

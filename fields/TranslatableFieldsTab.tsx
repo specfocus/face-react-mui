@@ -16,7 +16,7 @@ export const TranslatableFieldsTab = (
   return (
     <Tab
       id={`translatable-header-${groupKey}${locale}`}
-      label={translate(`ra.locales.${groupKey}${locale}`, {
+      label={translate(`locales.${groupKey}${locale}`, {
         _: capitalize(locale),
       })}
       {...rest}

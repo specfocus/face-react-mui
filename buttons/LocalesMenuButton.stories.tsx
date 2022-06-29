@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 import englishMessages from '@specfocus/locales/en/general';
 import frenchMessages from '@specfocus/locales/fr/general';
 import fakeRestDataProvider from '@specfocus/sham-focus.rest';
-import createTranslationProvider from '@specfocus/view-focus.i18next/providers';
+import provideTranslationContextValue from '@specfocus/view-focus.i18next/providers';
 import { Resource } from '@specfocus/view-focus/resources';
 import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
 import { createMemoryHistory } from 'history';
@@ -15,7 +15,7 @@ import { LocalesMenuButton } from './LocalesMenuButton';
 
 export default { title: 'view-focus.mui/buttons/LocalesMenuButton' };
 
-const i18nProvider = createTranslationProvider(
+const i18nProvider = provideTranslationContextValue(
   locale =>
     locale === 'fr'
       ? {

@@ -1,11 +1,10 @@
-import React from 'react';
-import expect from 'expect';
+import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
+import { useFormState } from '@specfocus/view-focus.forms/forms/useFormState';
+import { required } from '@specfocus/view-focus.forms/forms/validate';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { required, testDataProvider } from '@specfocus/view-focus/resources';
 import { format } from 'date-fns';
-import { useFormState } from 'react-hook-form';
-
-import { BaseRootContext } from '../core/BaseRootContext';
+import expect from 'expect';
 import { SimpleForm } from '../forms';
 import { DateInput } from './DateInput';
 

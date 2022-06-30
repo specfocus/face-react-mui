@@ -2,7 +2,7 @@ import { ThemeOptions } from '@mui/material';
 import { BaseRootProps } from '@specfocus/view-focus/resources';
 import { localStorageStore } from '@specfocus/view-focus.states/states/localStorageStore';
 import { ComponentType } from 'react';
-import { defaultTranslationProvider } from './defaultTranslationProvider';
+import { defaultTranslator } from './defaultTranslator';
 import { BaseAppContext } from './BaseAppContext';
 import { BaseAppLayout } from './BaseAppLayout';
 
@@ -58,7 +58,7 @@ import { useEffect, useState } from 'react';
  * import {
  *     BaseRootContext,
  *     BaseRootLayout,
- *     defaultI18nProvider,
+ *     defaultTranslator,
  *     localStorageStore,
  *     Resource,
  *     ListGuesser,
@@ -68,7 +68,7 @@ import { useEffect, useState } from 'react';
  * const store = localStorageStore();
  *
  * const App = () => (
- *     <BaseRootContext dataProvider={myDataProvider} i18nProvider={defaultI18nProvider} store={store}>
+ *     <BaseRootContext dataProvider={myDataProvider} translator={defaultTranslator} store={store}>
  *         <Resources />
  *     </BaseRootContext>
  * );
@@ -99,7 +99,7 @@ export const BaseApp = (props: BaseAppProps) => {
     dataProvider,
     disableTelemetry,
     history,
-    i18nProvider,
+    translator,
     layout,
     loading,
     loginPage,
@@ -124,7 +124,7 @@ export const BaseApp = (props: BaseAppProps) => {
       authProvider={authProvider}
       basename={basename}
       dataProvider={dataProvider}
-      i18nProvider={i18nProvider}
+      translator={translator}
       store={store}
       history={history}
       queryClient={queryClient}
@@ -150,7 +150,7 @@ export const BaseApp = (props: BaseAppProps) => {
 };
 
 BaseApp.defaultProps = {
-  i18nProvider: defaultTranslationProvider,
+  translator: defaultTranslator,
   store: localStorageStore(),
 };
 

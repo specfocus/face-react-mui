@@ -2,7 +2,7 @@ import React from 'react';
 import expect from 'expect';
 import { render, screen, waitFor } from '@testing-library/react';
 import { ReferenceInput } from './ReferenceInput';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { QueryClient } from 'react-query';

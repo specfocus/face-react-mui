@@ -1,8 +1,7 @@
-import React from 'react';
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
-
-import { required, testDataProvider } from '@specfocus/view-focus/resources';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
+import { required } from '@specfocus/view-focus.forms/forms/validate';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { SimpleForm } from '../forms';
 import { TextInput } from './TextInput';
 

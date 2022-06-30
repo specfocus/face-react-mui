@@ -14,7 +14,7 @@ import {
   useSaveContext,
 } from '@specfocus/view-focus/resources';
 
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { Edit } from './Edit';
 
 describe('<Edit />', () => {

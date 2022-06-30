@@ -4,7 +4,7 @@ import { Box, Card, CardContent, styled, Typography } from '@mui/material';
 import englishMessages from '@specfocus/locales/en/general';
 import frenchMessages from '@specfocus/locales/fr/general';
 import fakeRestProvider from '@specfocus/sham-focus.rest';
-import provideTranslationContextValue from '@specfocus/view-focus.i18next/providers';
+import useTranslator from '@specfocus/view-focus.i18next/providers';
 import { Resource } from '@specfocus/view-focus/resources/Resource';
 import { createMemoryHistory } from 'history';
 import merge from 'lodash/merge';
@@ -172,12 +172,12 @@ const frenchAppMessages = {
   },
 };
 
-const i18nProvider = provideTranslationContextValue(
+const translator = useTranslator(
+  'en', // Default locale
   locale =>
     locale === 'fr'
       ? merge(frenchMessages, frenchAppMessages)
-      : englishMessages,
-  'en' // Default locale
+      : englishMessages
 );
 const darkTheme: ThemeOptions = {
   ...defaultTheme,
@@ -214,7 +214,7 @@ const MyLayout = (props: LayoutProps) => (
 export const WithThemeAndLocale = () => (
   <BaseRoot
     history={createMemoryHistory()}
-    i18nProvider={i18nProvider}
+    translator={translator}
     dataProvider={dataProvider}
     layout={MyLayout}
   >

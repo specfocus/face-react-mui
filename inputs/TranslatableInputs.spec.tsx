@@ -6,7 +6,7 @@ import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataP
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { Tabs } from '@mui/material';
 
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { TranslatableInputs } from './TranslatableInputs';
 import { TranslatableInputsTab } from './TranslatableInputsTab';

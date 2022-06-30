@@ -3,7 +3,7 @@ import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataP
 import { render, screen, waitFor } from '@testing-library/react';
 import expect from 'expect';
 import { createMemoryHistory } from 'history';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { SingleFieldList } from '../lists/SingleFieldList';
 import { ReferenceManyField } from './ReferenceManyField';
 import { TextField } from './TextField';

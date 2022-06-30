@@ -1,14 +1,14 @@
-import React from 'react';
+import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
+import { useFormContext } from '@specfocus/view-focus.forms/forms/useFormContext';
+import { minLength, required } from '@specfocus/view-focus.forms/forms/validate';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { minLength, required, testDataProvider } from '@specfocus/view-focus/resources';
-
-import { BaseRootContext } from '../../BaseRootContext';
+import React from 'react';
 import { SimpleForm } from '../../forms';
 import { NumberInput } from '../NumberInput';
 import { TextInput } from '../TextInput';
 import { ArrayInput } from './ArrayInput';
 import { SimpleFormIterator } from './SimpleFormIterator';
-import { useFormContext } from 'react-hook-form';
 
 describe('<ArrayInput />', () => {
   it('should pass its record props to its child', async () => {

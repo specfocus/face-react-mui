@@ -1,6 +1,6 @@
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { BooleanInput } from './BooleanInput';
 

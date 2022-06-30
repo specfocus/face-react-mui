@@ -7,7 +7,7 @@ import {
   waitForElementToBeRemoved
 } from '@testing-library/react';
 import { SaveButton } from '../buttons';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { FileField, ImageField } from '../fields';
 import { SimpleForm, Toolbar } from '../forms';
 import { FileInput } from './FileInput';

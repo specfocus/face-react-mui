@@ -1,7 +1,7 @@
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { render, screen, waitFor } from '@testing-library/react';
 import expect from 'expect';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { TextInput } from '../inputs';
 import { FormTab } from './FormTab';
 import { TabbedForm } from './TabbedForm';

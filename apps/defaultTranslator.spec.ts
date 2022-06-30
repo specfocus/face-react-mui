@@ -1,16 +1,16 @@
 import expect from 'expect';
-import { defaultI18nProvider } from './defaultI18nProvider';
+import { defaultTranslator } from './defaultTranslator';
 
-describe('defaultI18nProvider', () => {
+describe('defaultTranslator', () => {
   it('should use the English translations', () => {
-    expect(defaultI18nProvider.translate('action.edit')).toBe('Edit');
+    expect(defaultTranslator.translate('action.edit')).toBe('Edit');
   });
   it('should return the input when the translation is missing', () => {
-    expect(defaultI18nProvider.translate('bar')).toBe('bar');
+    expect(defaultTranslator.translate('bar')).toBe('bar');
   });
   it('should not log any warning for missing translations', () => {
     const spy = jest.spyOn(console, 'error');
-    defaultI18nProvider.translate('foo');
+    defaultTranslator.translate('foo');
     expect(spy).not.toHaveBeenCalled();
     spy.mockRestore();
   });

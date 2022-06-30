@@ -1,7 +1,7 @@
 import { Stack } from '@mui/material';
 import { ResourceContextProvider } from '@specfocus/view-focus/resources';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { Edit } from '../details';
 import { NumberInput, TextInput } from '../inputs';
 import { SimpleForm } from './SimpleForm';
@@ -17,7 +17,7 @@ const data = {
 
 const Wrapper = ({ children }) => (
   <BaseRootContext
-    i18nProvider={{
+    translator={{
       translate: (x, options) => options?._ ?? x,
       changeLocale: () => Promise.resolve(),
       getLocale: () => 'en',

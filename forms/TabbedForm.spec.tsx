@@ -14,7 +14,7 @@ import {
   waitFor,
 } from '@testing-library/react';
 
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { TabbedForm } from './TabbedForm';
 import { TabbedFormClasses } from './TabbedFormView';
 import { FormTab } from './FormTab';

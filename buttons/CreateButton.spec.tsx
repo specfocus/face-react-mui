@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import expect from 'expect';
 
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import CreateButton from './CreateButton';
 
 const invalidButtonDomProps = {

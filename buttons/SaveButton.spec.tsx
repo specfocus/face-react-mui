@@ -13,7 +13,7 @@ import { SaveButton } from './SaveButton';
 import { SimpleForm, Toolbar } from '../forms';
 import { Edit } from '../details';
 import { TextInput } from '../inputs';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 
 const invalidButtonDomProps = {
   disabled: true,

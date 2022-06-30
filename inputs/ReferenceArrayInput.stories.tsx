@@ -1,9 +1,9 @@
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { Form } from '@specfocus/view-focus/forms/Form';
-import provideTranslationContextValue from '@specfocus/view-focus.i18next/providers';
+import useTranslator from '@specfocus/view-focus.i18next/providers';
 import englishMessages from '@specfocus/locales/en/general';
 import { DatagridInput } from '.';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { TextField } from '../fields';
 import { ReferenceArrayInput } from './ReferenceArrayInput';
 
@@ -26,10 +26,10 @@ const dataProvider = testDataProvider({
   },
 });
 
-const i18nProvider = provideTranslationContextValue(() => englishMessages);
+const translator = useTranslator('end', () => englishMessages);
 
 export const WithDatagridChild = () => (
-  <BaseRootContext dataProvider={dataProvider} i18nProvider={i18nProvider}>
+  <BaseRootContext dataProvider={dataProvider} translator={translator}>
     <Form
       onSubmit={() => { }}
       defaultValues={{ tag_ids: [5] }}

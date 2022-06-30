@@ -2,12 +2,12 @@ import { Typography } from '@mui/material';
 import englishMessages from '@specfocus/locales/en/general';
 import frenchMessages from '@specfocus/locales/fr/general';
 import fakeRestDataProvider from '@specfocus/sham-focus.rest';
-import provideTranslationContextValue from '@specfocus/view-focus.i18next/providers';
-import { Resource } from '@specfocus/view-focus/resources';
 import { useTranslate } from '@specfocus/view-focus.i18n/translations/useTranslate';
+import { useTranslator } from '@specfocus/view-focus.i18next/translations/useTranslator';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
+import { BaseRootLayout } from '@specfocus/view-focus/layouts/BaseRootLayout';
+import { Resource } from '@specfocus/view-focus/resources';
 import { createMemoryHistory } from 'history';
-import { BaseRootContext } from '../core/BaseRootContext';
-import { BaseRootLayout } from '../core/BaseRootLayout';
 import { TextField } from '../fields';
 import { AppBar, Layout } from '../layouts';
 import { Datagrid, List } from '../lists';
@@ -15,7 +15,8 @@ import { LocalesMenuButton } from './LocalesMenuButton';
 
 export default { title: 'view-focus.mui/buttons/LocalesMenuButton' };
 
-const i18nProvider = provideTranslationContextValue(
+const translator = useTranslator(
+  'en', // Default locale
   locale =>
     locale === 'fr'
       ? {
@@ -33,7 +34,6 @@ const i18nProvider = provideTranslationContextValue(
         },
       }
       : englishMessages,
-  'en' // Default locale
 );
 
 const Component = () => {
@@ -43,7 +43,7 @@ const Component = () => {
 };
 
 export const Basic = () => (
-  <BaseRootContext i18nProvider={i18nProvider}>
+  <BaseRootContext translator={translator}>
     <LocalesMenuButton
       languages={[
         { locale: 'en', name: 'English' },
@@ -157,7 +157,7 @@ const MyLayout = props => <Layout {...props} appBar={MyAppBar} />;
 export const FullApp = () => (
   <BaseRootContext
     dataProvider={dataProvider}
-    i18nProvider={i18nProvider}
+    translator={translator}
     history={history}
   >
     <BaseRootLayout layout={MyLayout}>

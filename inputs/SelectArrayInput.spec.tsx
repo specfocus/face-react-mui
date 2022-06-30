@@ -7,7 +7,7 @@ import {
   useRecordContext,
 } from '@specfocus/view-focus/resources';
 
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { SimpleForm } from '../forms';
 import { SelectArrayInput } from './SelectArrayInput';
 import { useCreateSuggestionContext } from './useSupportCreateSuggestion';

@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ListContext, ResourceContextProvider } from '@specfocus/view-focus/resources';
 
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { SingleFieldList } from './SingleFieldList';
 import { ChipField } from '../fields';
 

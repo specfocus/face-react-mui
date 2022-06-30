@@ -26,7 +26,7 @@ import { UseMutationOptions } from 'react-query';
  * @prop {ReactElement} icon
  * @prop {function} mutationOptions Object of options passed to react-query.
  * @prop {function} transform Callback to execute before calling the dataProvider. Receives the data from the form, must return that transformed data. Can be asynchronous (and return a Promise)
- * @prop {boolean} alwaysEnable Force enabling the <SaveButton>. If it's not defined, the `<SaveButton>` will be enabled using `react-hook-form`'s `isValidating` state props and form context's `saving` prop (disabled if isValidating or saving, enabled otherwise).
+ * @prop {boolean} alwaysEnable Force enabling the <SaveButton>. If it's not defined, the `<SaveButton>` will be enabled using `@specfocus/view-focus.forms`'s `isValidating` state props and form context's `saving` prop (disabled if isValidating or saving, enabled otherwise).
  *
  * @param {Props} props
  *

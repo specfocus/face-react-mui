@@ -58,13 +58,13 @@ import { ArrayInputContext } from './ArrayInputContext';
  *
  * <ArrayInput> expects a single child, which must be a *form iterator* component.
  * A form iterator is a component accepting a fields object as passed by
- * react-hook-form-arrays's useFieldArray() hook, and defining a layout for
+ * @specfocus/view-focus.forms-arrays's useFieldArray() hook, and defining a layout for
  * an array of fields. For instance, the <SimpleFormIterator> component
  * displays an array of fields in an unordered list (<ul>), one sub-form by
  * list item (<li>). It also provides controls for adding and removing
  * a sub-record (a backlink in this example).
  *
- * @see {@link https://react-hook-form.com/api/usefieldarray}
+ * @see {@link https://@specfocus/view-focus.forms.com/api/usefieldarray}
  */
 export const ArrayInput = (props: ArrayInputProps) => {
   const {
@@ -119,7 +119,7 @@ export const ArrayInput = (props: ArrayInputProps) => {
   const value = useWatch({ name: source });
   const { isDirty, invalid, error } = getFieldState(source, formState);
 
-  // As react-hook-form does not handle validation on the array itself,
+  // As @specfocus/view-focus.forms does not handle validation on the array itself,
   // we need to do it manually
   const errorRef = useRef(null);
   useEffect(() => {

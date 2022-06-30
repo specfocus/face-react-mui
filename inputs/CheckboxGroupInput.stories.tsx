@@ -3,7 +3,7 @@ import i18nProviderFactory from '@specfocus/view-focus.i18next/providers';
 import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
 import { useRecordContext } from '@specfocus/view-focus/records/useRecordContext';
 import englishMessages from '@specfocus/locales/en/general';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { Create } from '../details';
 import { SimpleForm } from '../forms';
 import { CheckboxGroupInput } from './CheckboxGroupInput';
@@ -21,7 +21,7 @@ const choices = [
 ];
 
 export const Basic = () => (
-  <BaseRootContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
+  <BaseRootContext translator={i18nProviderFactory(() => englishMessages)}>
     <Create
       resource="posts"
       record={{ options: [1, 2] }}
@@ -44,7 +44,7 @@ const dataProvider = testDataProvider({
 });
 
 export const InsideReferenceArrayInput = () => (
-  <BaseRootContext dataProvider={dataProvider} i18nProvider={i18nProviderFactory(() => englishMessages)}>
+  <BaseRootContext dataProvider={dataProvider} translator={i18nProviderFactory(() => englishMessages)}>
     <Create
       resource="posts"
       record={{ options: [1, 2] }}
@@ -60,7 +60,7 @@ export const InsideReferenceArrayInput = () => (
 );
 
 export const Disabled = () => (
-  <BaseRootContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
+  <BaseRootContext translator={i18nProviderFactory(() => englishMessages)}>
     <Create
       resource="posts"
       record={{ options: [1, 2] }}
@@ -78,7 +78,7 @@ export const Disabled = () => (
 );
 
 export const Column = () => (
-  <BaseRootContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
+  <BaseRootContext translator={i18nProviderFactory(() => englishMessages)}>
     <Create
       resource="posts"
       record={{ options: [1, 2] }}
@@ -96,7 +96,7 @@ export const Column = () => (
 );
 
 export const CustomOptionText = () => (
-  <BaseRootContext i18nProvider={i18nProviderFactory(() => englishMessages)}>
+  <BaseRootContext translator={i18nProviderFactory(() => englishMessages)}>
     <Create
       resource="posts"
       record={{ options: [1, 2] }}

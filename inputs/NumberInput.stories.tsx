@@ -1,6 +1,6 @@
 import { useWatch } from '@specfocus/view-focus.forms/forms/useWatch';
 import { required } from '@specfocus/view-focus.forms/forms/validate';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { Create } from '../details';
 import { SimpleForm } from '../forms';
 import { NumberInput } from './NumberInput';

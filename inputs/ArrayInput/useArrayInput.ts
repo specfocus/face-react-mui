@@ -2,10 +2,10 @@ import { useContext, useMemo } from 'react';
 import { ArrayInputContext, ArrayInputContextValue } from './ArrayInputContext';
 
 /**
- * A hook to access an array input methods as provided by react-hook-form.
+ * A hook to access an array input methods as provided by @specfocus/view-focus.forms.
  * Useful to create custom array input iterators.
  * @see {ArrayInput}
- * @see https://react-hook-form.com/api/usefieldarray
+ * @see https://@specfocus/view-focus.forms.com/api/usefieldarray
  */
 export const useArrayInput = (
   props?: Partial<ArrayInputContextValue>

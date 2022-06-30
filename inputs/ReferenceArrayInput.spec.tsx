@@ -7,7 +7,7 @@ import {
   within
 } from '@testing-library/react';
 import { QueryClient } from 'react-query';
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { TextField } from '../fields';
 import { SimpleForm } from '../forms';
 import { DatagridInput } from './DatagridInput';

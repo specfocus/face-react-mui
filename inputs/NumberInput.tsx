@@ -118,7 +118,7 @@ export const NumberInput = ({
     <TextField
       id={id}
       {...field}
-      // override the react-hook-form value, onChange and onBlur props
+      // override the @specfocus/view-focus.forms value, onChange and onBlur props
       value={value}
       onChange={handleChange}
       onBlur={handleBlur}

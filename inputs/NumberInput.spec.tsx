@@ -1,11 +1,10 @@
-import React from 'react';
+import { useFormContext } from '@specfocus/view-focus.forms/forms/useFormContext';
+import { useWatch } from '@specfocus/view-focus.forms/forms/useWatch';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-
-import { NumberInput } from './NumberInput';
-import { BaseRootContext } from '../core/BaseRootContext';
 import { SaveButton } from '../buttons';
 import { SimpleForm, Toolbar } from '../forms';
-import { useFormContext, useWatch } from 'react-hook-form';
+import { NumberInput } from './NumberInput';
 
 describe('<NumberInput />', () => {
   const defaultProps = {

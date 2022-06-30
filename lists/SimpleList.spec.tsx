@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, waitFor, within } from '@testing-library/react';
 import { ListContext, ResourceContextProvider } from '@specfocus/view-focus/resources';
 
-import { BaseRootContext } from '../core/BaseRootContext';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { SimpleList } from './SimpleList';
 import { TextField } from '../fields';
 

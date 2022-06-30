@@ -1,12 +1,11 @@
-import React from 'react';
-import expect from 'expect';
+import { testDataProvider } from '@specfocus/view-focus.data/providers/testDataProvider';
+import { BaseRootContext } from '@specfocus/view-focus/layouts/BaseRootContext';
 import { fireEvent, render, screen } from '@testing-library/react';
+import expect from 'expect';
 import { createMemoryHistory } from 'history';
-import { BaseRootContext, testDataProvider } from '@specfocus/view-focus/resources';
-
-import { TabbedShowLayout } from './TabbedShowLayout';
-import { Tab } from './Tab';
 import { TextField } from '../fields';
+import { Tab } from './Tab';
+import { TabbedShowLayout } from './TabbedShowLayout';
 
 describe('<TabbedShowLayout />', () => {
   it('should display the first Tab component and its content', () => {
